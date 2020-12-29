@@ -3,7 +3,8 @@ let myMap = L.map('myMap').setView([51.505, -0.09], 13)
 //L.tileLayer(`https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png`, {
 //L.tileLayer(`https://a.tile.openstreetmap.org/{z}/{x}/{y}.png`, {
 L.tileLayer(`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`, {
-    attribution: '<a href="https://www.dataintelligence-group.com/">Data Intelligence</a>',
+    //attribution: '<a style="font-size:16px;margin-left:-35% !important;background-color:black;color:white;" target="_blank" href="https://www.dataintelligence-group.com/">Data Intelligence</a>',
+    attribution: '<a style="margin-left:-9% !important;" href="https://www.dataintelligence-group.com/" target="_blank"><img style="width:35%;height:35%;background-color:black" src="Content/Imagen/dataintelligence.png" /></a>',
 	maxZoom: 18,
 }).addTo(myMap);
 

@@ -202,6 +202,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Imagen\dataintelligence.png" />
     <Content Include="Content\Imagen\Icon\marker.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -242,6 +243,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Mapa\map3.js" />
+    <Content Include="Scripts\Mapa\map2.js" />
     <Content Include="Scripts\Mapa\map.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
@@ -361,6 +364,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_LayoutDeprecated.cshtml" />
     <Content Include="Views\Mapa\Index.cshtml" />
+    <Content Include="Views\Mapa\Index2.cshtml" />
+    <Content Include="Views\Mapa\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
