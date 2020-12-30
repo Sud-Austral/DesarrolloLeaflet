@@ -57,6 +57,11 @@ namespace AplicacionLogin.Controllers
         {
             return View();
         }
+        public ActionResult mapa7()
+        {
+            return View();
+        }
+
 
     }
 }

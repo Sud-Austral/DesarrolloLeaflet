@@ -433,6 +433,8 @@
     <Content Include="Scripts\Mapa\search\README.md" />
     <Content Include="Scripts\Mapa\search\TODO" />
     <Content Include="Views\Hector\mapa6.cshtml" />
+    <Content Include="Views\Shared\_hectorLayout.cshtml" />
+    <Content Include="Views\Hector\mapa7.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
