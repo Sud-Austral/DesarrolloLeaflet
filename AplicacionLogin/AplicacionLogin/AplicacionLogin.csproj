@@ -368,6 +368,7 @@
     <Content Include="Views\Mapa\Index2.cshtml" />
     <Content Include="Views\Mapa\Index3.cshtml" />
     <Content Include="Views\Hector\mapa1.cshtml" />
+    <Content Include="Views\Hector\mapa2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
