@@ -26,5 +26,20 @@ namespace AplicacionLogin.Controllers
 
             return View();
         }
+
+        public ActionResult index1()
+        {
+            return View();
+        }
+
+        public ActionResult mapa1()
+        {
+            return View();
+        }
+
+        public ActionResult test()
+        {
+            return View();
+        }
     }
 }
