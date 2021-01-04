@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui' />
+    <title>Map 4</title>
+
+    <script src="https://d19vzq90twjlae.cloudfront.net/leaflet/v0.7.7/leaflet-src.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+
+
+    <link href="https://d19vzq90twjlae.cloudfront.net/leaflet/v0.7.7/leaflet.css" rel='stylesheet' />
+    <link rel="stylesheet" href="map.css">
+
+    <script type="text/javascript" src="museos_osm.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+
+    <script>
+        function popup(feature, layer) {
+            if (feature.properties && feature.properties.barrio) {
+                layer.bindPopup("<strong>" + feature.properties.barrio + "</strong><br/>" + feature.properties.distrito);
+            }
+        }
+
+        var barriosdera = L.geoJson(null, {
+            onEachFeature: popup
+        });
+
+        var map = L.map('map').setView([37.88437176085360, -4.779524803161621], 12); // Córdoba
+
+        // Capas base
+        var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            subdomains: 'abcd',
+            minZoom: 0,
+            maxZoom: 20,
+            ext: 'png'
+        }).addTo(map);
+
+
+        function popup(feature, layer) {
+            if (feature.properties && feature.properties.barrio) {
+                layer.bindPopup("<strong>" + feature.properties.barrio + "</strong><br/>" + feature.properties.distrito);
+            }
+        }
+
+        var barriosdera = L.geoJson(null, {
+            onEachFeature: popup
+        });
+
+        $.getJSON("barrios.geojson", function (data) {
+
+            barriosdera.addData(data);
+        });
+
+        barriosdera.addTo(map);
+    </script>
+
+
+</body>
+</html>
