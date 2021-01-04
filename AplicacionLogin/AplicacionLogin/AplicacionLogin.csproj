@@ -380,6 +380,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\Hector\HtmlPage2.html" />
+    <Content Include="Views\Hector\Mapa1.html" />
+    <Content Include="Views\Hector\test.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -428,7 +431,7 @@
     <Content Include="Views\Mapa\Index.cshtml" />
     <Content Include="Views\Mapa\Index2.cshtml" />
     <Content Include="Views\Mapa\Index3.cshtml" />
-    <Content Include="Views\Hector\mapa1.cshtml" />
+    <Content Include="Views\Hector\mapa1555.cshtml" />
     <Content Include="Views\Hector\mapa2.cshtml" />
     <Content Include="Views\Hector\mapa3.cshtml" />
     <Content Include="Views\Hector\mapa4.cshtml" />
@@ -444,6 +447,10 @@
     <Content Include="Views\Hector\mapa8.cshtml" />
     <Content Include="Views\Hector\mapa9.cshtml" />
     <Content Include="Views\Hector\mapa10.cshtml" />
+    <Content Include="Views\Hector\test3.cshtml" />
+    <Content Include="Views\Hector\ViewPage1.cshtml" />
+    <Content Include="Views\Hector\ViewPage2.cshtml" />
+    <Content Include="Views\Hector\test4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

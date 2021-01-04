@@ -27,12 +27,6 @@ namespace AplicacionLogin.Controllers
             return View();
         }
 
-
-        public ActionResult mapa1()
-        {
-            return View();
-        }
-
         public ActionResult mapa2()
         {
             return View();
@@ -73,6 +67,24 @@ namespace AplicacionLogin.Controllers
         }
 
         public ActionResult mapa10()
+        {
+            return View();
+        }
+
+        public ActionResult test()
+        {
+            return View();
+        }
+
+        public ActionResult Mapa1()
+        {
+            return View();
+        }
+        public ActionResult Site1()
+        {
+            return View();
+        }
+        public ActionResult test4()
         {
             return View();
         }
