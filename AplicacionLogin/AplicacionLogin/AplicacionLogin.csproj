@@ -187,6 +187,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MapaController.cs" />
+    <Compile Include="Controllers\RMapasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,8 +204,11 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Imagen\dataDELITOblanco.svg" />
     <Content Include="Content\Imagen\dataintelligence.png" />
+    <Content Include="Content\Imagen\Icon\Mapa1.html" />
     <Content Include="Content\Imagen\Icon\marker.png" />
+    <Content Include="Content\Imagen\negro-rojo-trans.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -383,6 +387,7 @@
     <Content Include="Views\Hector\HtmlPage2.html" />
     <Content Include="Views\Hector\Mapa1.html" />
     <Content Include="Views\Hector\test.html" />
+    <Content Include="Views\RMapas\Mapa1.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -451,6 +456,7 @@
     <Content Include="Views\Hector\ViewPage1.cshtml" />
     <Content Include="Views\Hector\ViewPage2.cshtml" />
     <Content Include="Views\Hector\test4.cshtml" />
+    <Content Include="Views\RMapas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

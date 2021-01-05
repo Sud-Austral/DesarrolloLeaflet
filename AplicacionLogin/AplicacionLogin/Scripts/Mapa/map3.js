@@ -6,8 +6,11 @@ var wmsLayer = L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
 
 var basemaps = {
 
-    Topography: L.tileLayer.wms('http://ide.dataintelligence-group.com/geoserver/chile/wms?', {
-        layers: 'chile:Datos_Censo_2017__Comuna,RASTER_DIST_EDUB,chile:SIEDU_EB'
+    Topography: L.tileLayer.wms(
+        'https://ide.dataintelligence-group.com/geoserver/chile/wms?' //Servicio generado por DI
+        , {
+            layers:
+                'chile:Datos_Censo_2017__Comuna, RASTER_DIST_EDUB, chile: SIEDU_EB'
     }),
 
     Places: L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
