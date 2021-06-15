@@ -183,8 +183,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FiltrosController.cs" />
+    <Compile Include="Controllers\GlaciaresController.cs" />
     <Compile Include="Controllers\HectorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeafletController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MapaController.cs" />
     <Compile Include="Controllers\RMapasController.cs" />
@@ -192,8 +195,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DataBase.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\REGION.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -241,7 +246,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <None Include="Properties\PublishProfiles\leaftTest - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ServidorMapa - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -457,6 +462,10 @@
     <Content Include="Views\Hector\ViewPage2.cshtml" />
     <Content Include="Views\Hector\test4.cshtml" />
     <Content Include="Views\RMapas\Index.cshtml" />
+    <Content Include="Views\Leaflet\Index.cshtml" />
+    <Content Include="Views\Filtros\Region.cshtml" />
+    <Content Include="Views\Filtros\Comuna.cshtml" />
+    <Content Include="Views\Glaciares\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
