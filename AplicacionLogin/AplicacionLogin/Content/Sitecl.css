@@ -1,0 +1,485 @@
+﻿@font-face {
+    font-family: 'CircularStd-Book';
+    src: url('tipo/CircularStd-Book.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'CircularStd-Black';
+    src: url('tipo/CircularStd-Black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'CircularStd-Bold 2';
+    src: url('tipo/CircularStd-Bold 2.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'CircularStd-Bold';
+    src: url('tipo/CircularStd-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'CircularStd-Book-1';
+    src: url('tipo/CircularStd-Book-1.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('tipo/FontAwesome.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'DIN 2014 Narrow Demi';
+    src: url('tipo/DIN 2014 Narrow Demi.ttf') format('opentype');
+}
+
+@import url("https://p.typekit.net/p.css?s=1&k=ntc4zlh&ht=tk&f=32235.32238&a=24511613&app=typekit&e=css");
+
+@font-face {
+    font-family: "din-2014-narrow";
+    src: url("https://use.typekit.net/af/ca5d39/00000000000000003b9b0ad7/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/ca5d39/00000000000000003b9b0ad7/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/ca5d39/00000000000000003b9b0ad7/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "din-2014-narrow";
+    src: url("https://use.typekit.net/af/e80950/00000000000000003b9b0ad3/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/e80950/00000000000000003b9b0ad3/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/e80950/00000000000000003b9b0ad3/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.tk-din-2014-narrow {
+    font-family: "din-2014-narrow",sans-serif;
+}
+
+html, body {
+    margin: 0px;
+    margin-top: -25px;
+    padding: 0px;
+    align-items: center;
+}
+
+/*DATACOVID-19 HOME PAGE*/
+.full-screen-video-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+    .full-screen-video-container video {
+        z-index: -1;
+        position: fixed;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+.full-screen-video-content {
+    display: flex;
+    top: 40px;
+    left: 30%;
+    width: 488px;
+    height: 231px;
+    color: #ffffff;
+    padding-bottom: 20px;
+    font-size: 64px;
+    margin-top: 100px;
+    font-family: din-2014-narrow;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 63px;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+html, body {
+    margin: 0px;
+    margin-top: -25px;
+    padding: 0px;
+    align-items: center;
+}
+
+/*DATACOVID-19 HOME PAGE*/
+.full-screen-video-container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+    .full-screen-video-container video{
+        z-index: -1;
+        position: fixed;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+.full-screen-video-content{
+    display: flex;
+    top: 40px;
+    left: 30%;
+    width: 488px;
+    height: 231px;
+    color: #ffffff;
+    padding-bottom: 20px;
+    font-size: 64px;
+    margin-top: 100px;
+    font-family: din-2014-narrow;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 63px;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+#pCL{
+ 
+    padding-top: 20%;
+}
+
+.logoCOVID{
+    position: absolute;
+    left: 37%;
+    right: 91.4%;
+    top: 0.55%;
+    bottom: 45.15%;
+}
+
+
+.logopais{
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+
+.logocabeza{
+    position: absolute;
+    left: 20px;
+    top: 10%;
+    z-index: 10;
+}
+
+.logopieCL{
+    position: fixed;
+    z-index: 10;
+    left: 82%;
+    top: 95%;
+}
+
+.btn{
+    position: absolute;
+    left: 46%;
+    top: 470px;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+    font-family: din-2014-narrow;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+}
+
+
+.logoplata div{
+    left: 8%;
+    top: 93%;
+    position: fixed;
+    width: 175px;
+    height: auto;
+    font-size: 8px !important;
+}
+
+.FBcl{
+    position: absolute;
+    left: 50px;
+    top: 500px;
+}
+
+.TWcl{
+    position: absolute;
+    top: 600px;
+    left: 50px;
+}
+
+.IGcl{
+    position: absolute;
+    top: 550px;
+    left: 50px;
+}
+
+.giraDispositivoCL{
+    display: none;
+}
+
+/*CHILE*/
+#CL{
+    width: 180px;
+    margin-left: 135px;
+    font-family: din-2014-narrow;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 33px;
+    /* identical to box height, or 114% */
+    letter-spacing: 0.01em;
+    color: #ffffff;
+}
+
+#CL1{
+    width: 180px;
+    font-family: din-2014-narrow;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 33px;
+    / identical to box height, or 114% / letter-spacing: 0.01em;
+    color: #ffffff;
+    margin-right:2000px;
+
+}
+
+
+/*sección dispositivo movil vertical*/
+
+
+@media(max-width:1200px){
+    .full-screen-video-content{
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+
+
+    .logoCOVID{
+        left: 35%;
+    }
+
+    #CL{
+        margin-left: 120px;
+    }
+
+
+    .full-screen-video-content p{
+        padding-left: 10px;
+        margin-top: 75%
+    }
+
+    .logocabeza{
+        top: 70px;
+    }
+
+    .btnCL{
+        font-size: 28px;
+        top: 800px;
+        left: 42%;
+    }
+
+    .logopieCL{
+        left: 70%;
+    }
+
+    #pCL{
+        padding-top: 0%;
+    }
+}
+
+/*sección dispositivo movil vertical*/
+@media(max-width:768px) {
+    .logopieCL{
+        left: 66%;
+    }
+
+    .btnCL{
+        top: 600px;
+    }
+
+    .full-screen-video-content p{
+        margin-top: 50%
+    }
+
+    #CL{
+        margin-left: 120px;
+    }
+
+    .logoCOVID{
+        left: 28%;
+    }
+
+    #pCL{
+        padding-top: 0%;
+    }
+}
+
+/*sección dispositivo movil vertical*/
+@media(max-width:576px){
+    .full-screen-video-content{
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+
+    #pCL{
+        font-size: 28px !important;
+        padding-left: 10px;
+        margin-top: 25%;
+        line-height: 30px !important;
+    }
+
+    .logocabeza{
+        top: 70px;
+    }
+
+    .btn{
+        font-size: 15px;
+        top: 380px;
+        left: 42%;
+    }
+
+    .logopieCL{
+        left: 60%;
+    }
+
+        .logopieCL img{
+            width: 130px;
+            height: auto;
+        }
+
+    .giraDispositivoCL{
+        position: absolute;
+        top: 75%;
+        display: flex;
+        align-items: center;
+    }
+    
+        .giraDispositivoCL img{
+            float: left;
+            padding-right: 8%;
+        }
+
+        .giraDispositivoCL p{
+            float: right;
+            width: 80px;
+            color: white;
+            font-size: 13px;
+        }
+    .logoCOVID {
+        left: 35%;
+        padding-top: 30%;
+    }
+    .FBcl{
+        position: absolute;
+        left: 5px;
+        top: 450px;
+    }
+
+    .TWcl{
+        position: absolute;
+        top: 550px;
+        left: 5px;
+    }
+
+    .IGcl{
+        position: absolute;
+        top: 500px;
+        left: 5px;
+    }
+    #CL{
+        width: 180px;
+        margin-left: 30px;
+        font-family: din-2014-narrow;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 33px;
+        /* identical to box height, or 114% */
+        letter-spacing: 0.01em;
+        color: #ffffff;
+    }
+}
+
+
+/*sección dispositivo movil Horizontal*/
+@media(max-width:992px) and (orientation: landscape) {
+    .logoCOVID{
+        top: 7%;
+        left: 20%;
+    }
+
+    #CL{
+        font-size: 20px;
+    }
+
+        #CL img{
+            width: 15%;
+        }
+
+    .full-screen-video-content p{
+        font-size: 22px;
+        padding-left: 10px;
+        margin-top: 10%
+    }
+
+    #btnCL{
+        font-size: 22px;
+        position: absolute;
+        top: 250px !important;
+        left: 40%;
+        padding-left: 11px;
+    }
+
+    .logopieCL{
+        left: 65%;
+        top: 290px;
+    }
+
+    .FBcl{
+        position: absolute;
+        left: 5px;
+        top: 250px;
+    }
+
+    .TWcl{
+        position: absolute;
+        top: 290px;
+        left: 5px;
+    }
+
+    .IGcl{
+        position: absolute;
+        top: 320px;
+        left: 5px;
+    }
+
+    .logoplata div{
+        top: 290px !important;
+    }
+
+    #pCL{
+        font-size: 20px !important;
+    }
+}

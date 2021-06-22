@@ -183,6 +183,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\estructuraController.cs" />
     <Compile Include="Controllers\FiltrosController.cs" />
     <Compile Include="Controllers\GlaciaresController.cs" />
     <Compile Include="Controllers\HectorController.cs" />
@@ -214,6 +215,27 @@
     <Content Include="Content\Imagen\Icon\Mapa1.html" />
     <Content Include="Content\Imagen\Icon\marker.png" />
     <Content Include="Content\Imagen\negro-rojo-trans.png" />
+    <Content Include="Content\layout\calendario.png" />
+    <Content Include="Content\layout\chile.png" />
+    <Content Include="Content\layout\dc19.png" />
+    <Content Include="Content\layout\dc19.svg" />
+    <Content Include="Content\layout\Di.png" />
+    <Content Include="Content\layout\Di.svg" />
+    <Content Include="Content\layout\ejemplo.png" />
+    <Content Include="Content\layout\Group2.png" />
+    <Content Include="Content\layout\logo.png" />
+    <Content Include="Content\layout\logo.svg" />
+    <Content Include="Content\layout\PAIS.svg" />
+    <Content Include="Content\layout\PATAFORMA REALIZADA POR DATA INTELLIGENCE INTERNACIONAL.png" />
+    <Content Include="Content\layout\PATAFORMA.png" />
+    <Content Include="Content\layout\VFb.png" />
+    <Content Include="Content\layout\VFb.svg" />
+    <Content Include="Content\layout\VIg.png" />
+    <Content Include="Content\layout\VIg.svg" />
+    <Content Include="Content\layout\VLk.png" />
+    <Content Include="Content\layout\VTw.png" />
+    <Content Include="Content\layout\Vtw.svg" />
+    <Content Include="Content\Sitecl.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -466,6 +488,10 @@
     <Content Include="Views\Filtros\Region.cshtml" />
     <Content Include="Views\Filtros\Comuna.cshtml" />
     <Content Include="Views\Glaciares\Index.cshtml" />
+    <Content Include="Views\Shared\_layaoutmapa.cshtml" />
+    <Content Include="Views\estructura\Index.cshtml" />
+    <Content Include="Views\estructura\mapa1.cshtml" />
+    <Content Include="Views\estructura\mapa2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
