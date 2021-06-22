@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<style type="text/css">
+    #mapid {
+        width: 100%;
+        height: 1000px;
+    }
+</style>
+
+<button type="button" class="btn btn-primary">Primary</button>
+
+<div id="mapid"></div>
+
+
+
+
+
+
+
+
+
+<script>
+
+    var region = '@ViewBag.Region.id';
+    //Creamos el objeto mapa.
+    //var map = L.map('mapid').setView([-33.60, -70.62], 5);
+    var coor = [@ViewBag.Region.lon.ToString().Replace(",", "."), @ViewBag.Region.lat.ToString().Replace(",", ".")];
+    var coor2 = [-33.60, -70.62];
+    //alert(coor);
+    //alert(coor2);
+    //Creamos el objeto mapa.
+    //var map = L.map('mapid').setView([-33.60, -70.62], 5);
+
+    var map = L.map('mapid').setView(coor, 10);
+
+    var Region = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/chile/wms', {
+        layers: 'chile:Regiones',
+        CQL_FILTER: 'REGION = ' + region,
+        format: 'image/png',
+        transparent: true
+    }).addTo(map);
+
+    var Glaciares = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares/wms', {
+        layers: 'glaciares:porcR10_02_glaciar_zona_monitoreada',
+        CQL_FILTER: 'REGION = ' + region,
+        format: 'image/png',
+        transparent: true
+    }).addTo(map);
+
+    var Glac1718q1 = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares1718q1/wms', {
+        layers: 'glaciares1718q1:' + region,
+        CQL_FILTER: 'REGION = ' + region,
+        format: 'image/png',
+        transparent: true
+    }).addTo(map);
+
+    var Glac1718q3 = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares1718q3/wms', {
+        layers: 'glaciares1718q3:' + region,
+        CQL_FILTER: 'REGION = ' + region,
+        format: 'image/png',
+        transparent: true
+    }).addTo(map);
+
+    var Glac1819q1 = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares1819q1/wms', {
+        layers: 'glaciares1819q1:' + region,
+        CQL_FILTER: 'REGION = ' + region,
+        format: 'image/png',
+        transparent: true
+    }).addTo(map);
+
+    var Glac1819q3 = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares1819q3/wms', {
+        layers: 'glaciares1819q3:' + region,
+        CQL_FILTER: 'REGION = ' + region,
+        format: 'image/png',
+        transparent: true
+    }).addTo(map);
+
+    var Glac1920q1 = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares1920q1/wms', {
+        layers: 'glaciares1920q1:' + region,
+        CQL_FILTER: 'REGION = ' + region,
+        format: 'image/png',
+        transparent: true
+    }).addTo(map);
+
+    var Glac1920q3 = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares1920q3/wms', {
+        layers: 'glaciares1920q3:' + region,
+        CQL_FILTER: 'REGION = ' + region,
+        format: 'image/png',
+        transparent: true
+    }).addTo(map);
+
+    var Glac2021q1 = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares2021q1/wms', {
+        layers: 'glaciares2021q1:' + region,
+        CQL_FILTER: 'REGION = ' + region,
+        format: 'image/png',
+        transparent: true
+    }).addTo(map);
+
+
+
+    var mapBox = L.tileLayer.wms('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(map);
+
+    var baseMaps = {
+        "Mapa Base": mapBox
+    };
+
+    var overlayMaps = {
+        "Imagen1 2017-2018": Glac1718q1,
+        "Imagen2 2017-2018": Glac1718q3,
+        "Imagen1 2018-2019": Glac1819q1,
+        "Imagen2 2018-2019": Glac1819q3,
+        "Imagen1 2019-2020": Glac1920q1,
+        "Imagen2 2019-2020": Glac1920q3,
+        "Imagen1 2020-2021": Glac2021q1,
+        "Zona Monitoreada": Glaciares,
+        "Límite": Region
+    };
+
+    L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+    //            Insertando una leyenda en el mapa
+    var legend = L.control({ position: 'bottomright' });
+    legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend');
+        div.innerHTML +=
+            '<img alt="legend" src="https://ide.dataintelligence-group.com/geoserver/chile/wms?REQUEST=GetLegendGraphic& VERSION=1.0.0&FORMAT=image/png&WIDTH=30&HEIGHT=30&LAYER=chile:SubUso_Agricola" width=25% />';
+    };
+    legend.addTo(map);
+
+
+
+</script>
+
