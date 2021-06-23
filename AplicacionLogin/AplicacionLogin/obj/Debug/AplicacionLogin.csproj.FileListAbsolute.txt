@@ -224,6 +224,9 @@ C:\Users\hecto\Documents\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogi
 C:\Users\hecto\Documents\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csproj.CopyComplete
 C:\Users\hecto\Documents\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.dll
 C:\Users\hecto\Documents\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.pdb
+C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\AplicacionLogin.dll.config
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\AplicacionLogin.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\AplicacionLogin.pdb
@@ -233,13 +236,10 @@ C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLo
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\csi.exe
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\csi.rsp
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\roslyn\System.AppContext.dll
@@ -332,7 +332,6 @@ C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLo
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csprojAssemblyReference.cache
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csproj.CoreCompileInputs.cache
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csproj.CopyComplete
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.dll
