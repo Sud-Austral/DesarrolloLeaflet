@@ -90,7 +90,7 @@
                 <input type="checkbox" class="checkbox" id="check" />
                 <label class="botonMenu" for="check">☰</label>
 
-                <div class="menuLateral" style="min-height:848px;top: 0px;background: #EE3600;position: absolute;color: #ffffff;
+                <div class="menuLateral" style="min-height:920px;top: 0px;background: #EE3600;position: absolute;color: #ffffff;
                     font-family: 'din-2014-narrow';
                     font-style: normal;
                     font-weight: 300;
@@ -180,20 +180,23 @@
             <div class="col-12 col-md-11" style="background:#000 !important;">
                 <div class="row" style="margin-top:2%;">
                     <div class="col-12 ">
+                        <div class="row" >
                             <div class="col-12">
                                 <img style="height:120px;" src="~/Content/layout/cabeceraInformeInteractivo_DataAMBIENTAL.jpg" />
-                                <spam>
-                                    <boton class="btn btn-primary" href="~/estructura/mapa1/10">region 10</boton>
-                                    <boton class="btn btn-primary" href="~/estructura/mapa1/9">region 9</boton>
-                                    <boton class="btn btn-primary" href="~/estructura/mapa1/8">region 8</boton>
-                                    <boton class="btn btn-primary" href="~/estructura/mapa1/7">region 7</boton>
-                                </spam>
+                                <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                                    <style>.btn{top:0px !important;} 
+                                    </style>
+                                    <a type="button" class="btn btn-secondary" href="~/estructura/mapa1/10">Reg&iacute;on  10</a>
+                                    <a type="button" class="btn btn-secondary" href="~/estructura/mapa1/9">Reg&iacute;on 9</a>
+                                    <a type="button" class="btn btn-secondary" href="~/estructura/mapa1/8">Reg&iacute;on 8</a>
+                                    <a type="button" class="btn btn-secondary" href="~/estructura/mapa1/7">Reg&iacute;on 7</a>
+                                </div>
                             </div>
+                        </div>
                     </div>
                 </div>
-
                     <!-- YO CREO QUE ES EL IFRAME -->
-                    <div class="row" style="margin-top:5%">
+                    <div class="row" style="margin-top:2%">
                         <div class="col">
                             @RenderBody()
                         </div>
