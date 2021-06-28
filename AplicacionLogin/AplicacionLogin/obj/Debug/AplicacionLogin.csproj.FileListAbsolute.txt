@@ -336,3 +336,4 @@ C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLo
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csproj.CopyComplete
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.dll
 C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.pdb
+C:\Users\edwin\OneDrive\Imágenes\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csprojAssemblyReference.cache

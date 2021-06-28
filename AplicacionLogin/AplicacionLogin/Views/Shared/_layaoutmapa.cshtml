@@ -46,7 +46,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <!--   @RenderSection("scripts", required: false) -->
-  <link href="~/Content/Sitecl.css" rel="stylesheet" />
+    <link href="~/Content/Sitecl.css" rel="stylesheet" />
     <script>
         /*Con esta función al seleccionar un valor en el DropdownList Tema se rellenará automaticamente
          * el DropdownList de subtemas con los subtemas relacionados al Tema seleccionado
@@ -83,29 +83,14 @@
 <body style="padding:0px !important;margin:0px !important">
     @*SEO*@
 
-
-    <a class="btn btn-primary" href="~/estructura/mapa1/10">region 10</a>
-    <a class="btn btn-primary" href="~/estructura/mapa1/9">region 9</a>
-    <a class="btn btn-primary" href="~/estructura/mapa1/8">region 8</a>
-    <a class="btn btn-primary" href="~/estructura/mapa1/7">region 7</a>
-
-
-
-
-
-    <div style="display:none">
-        <h1>Data Intelligence</h1>
-        <h2>Covid-19</h2>
-        <h3>Coronavirus</h3>
-        <h4>Dashboard</h4>
-    </div>
     <div class="container-fluid" style="padding:0px !important;margin:0px !important;">
         <div class="row" style="padding:0px !important;margin:0px !important;">
-            <div class="col-md-1" style="padding:0px !important">
+            <!-- MENU LATERAL -->
+            <div class="col-md-1 d-none d-md-block" style="padding:0px !important">
                 <input type="checkbox" class="checkbox" id="check" />
                 <label class="botonMenu" for="check">☰</label>
 
-                <div class="menuLateral" style="min-height: 1000px;top: 0px;background: #EE3600;position: absolute;color: #ffffff;
+                <div class="menuLateral" style="min-height:900px;top: 0px;background: #2ca8df;position: absolute;color: #ffffff;
                     font-family: 'din-2014-narrow';
                     font-style: normal;
                     font-weight: 300;
@@ -120,6 +105,14 @@
                                 <img src="~/Content/layout/logo.svg" alt="logos" class="logos">
                             </a>
                             <hr class="divisor" />
+                            <style>
+                                ul li::marker {
+                                    color: #2ca8df !important;
+                                    font-size: 0em !important;
+                                }
+                            </style>
+
+
                         </div>
                         <ul>
                             <li class="active">
@@ -175,7 +168,7 @@
                     </nav>
 
                     <!--  REDES SOCIALES  -->
-                   @**@ <nav>
+                    <nav>
                         <div class="pull-imagen" style="text-align:center">
                             <a target="_blank" href="https://www.facebook.com/dataintelligencecl/"><img src="~/Content/layout/VFb.svg" alt="logosf" class="logos">    </a>
                             <br><br>
@@ -190,197 +183,59 @@
                     </nav>
                 </div>
             </div>
-            <div class="col-12 col-md-11" style="margin-top:2%;background:#000 !important;">
+            <!--CIERRE MENU LATERAL -->
+
+            <div class="col-12 col-md-11" style="background:#000 !important;">
                 <div class="row" style="margin-top:2%;">
-                    <div class="col-3 offset-sm-2 offset-md-0 d-block d-lg-none">
-                        <div class="left mv-contenedor-logoa">
-                            @*@<img src="~/Content/layout/dc19.png" alt="Logoa" class="logoa">*@
-
-                        </div>
-                    </div>
-                    <div class="col-9 col-sm-8 col-md-9 mv-contenedor-fecha d-block d-lg-none">
+                    <div class="col-12 ">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="fecha" style="font-size: 15px; color:#FFFFFF; text-align:end;margin-right:10%/*padding-left:50%   600px;*/ ">
-                                    <script>
-                                        var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-                                        var diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
-                                        var f = new Date();
-                                        document.write(" " + diasSemana[f.getDay()] + ", " + f.getDate() + " de <br />" + meses[f.getMonth()] + " de " + f.getFullYear());
-                                    </script>
+                            <div class="col-12"style="margin-left:0px !important;">
+                                <img style="height:120px;" src="~/Content/layout/cabeceraInformeInteractivo_DataAMBIENTAL.jpg" />
+                                <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                                    <style>
+                                        .btn {
+                                            top: 0px !important;
+                                            background-color: #000;
+                                            border: solid #ff0000;
+                                            left: 20px !important;
+                                            
+                                        }
+                                            .btn:hover {background-color:#2ca8df !important;
+                                            }
+                                    </style>
+                                    <!--  BOTONES  -->
+                                    <button type="button" class="btn btn-secondary" href="~/estructura/mapa1/10">Reg&iacute;on 10</button>
+                                    <button type="button" class="btn btn-secondary" href="~/estructura/mapa1/9">Reg&iacute;on 9</button>
+                                    <button type="button" class="btn btn-secondary" href="~/estructura/mapa1/8">Reg&iacute;on 8</button>
+                                    <button type="button" class="btn btn-secondary" href="~/estructura/mapa1/7">Reg&iacute;on 7</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-1 offset-7" style="padding-left:6%;margin-top:3%">
-                                <img class="logopais" src="~/Content/layout/Group2.png" alt="ico pais" />
-                                @*  <img src="~/Content/layout/PAIS.svg" alt="pais" class="pais" style="margin-left:-69%">*@
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-1 col-lg-3  d-none d-lg-block">
-                        <div class="left mv-contenedor-logoa offset-sm-3">
-                            <a class="btn btn-primary" href="~/estructura/mapa1/10">region 10</a>
-                            <a class="btn btn-primary" href="~/estructura/mapa1/9">region 9</a>
-                            <a class="btn btn-primary" href="~/estructura/mapa1/8">region 8</a>
-                            <a class="btn btn-primary" href="~/estructura/mapa1/7">region 7</a>
-
-                            @*@ <img src="~/Content/layout/dc19.svg" alt="Logoa" class="logoa">*@
-                        </div>
-                    </div>
-                   @*@ <div class="col-lg-7 d-none d-lg-block mv-contenedor-fecha">
-                        <div class="row">
-                            <div class="col-3  offset-lg-4 offset-md-7">
-                                <div class="fecha" style="font-size: 15px; color:#FFFFFF; text-align:center/*padding-left:50%   600px;*/ ">
-                                    <script>
-                                        var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-                                        var diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
-                                        var f = new Date();
-                                        document.write(" " + diasSemana[f.getDay()] + ", " + f.getDate() + " de </br>" + meses[f.getMonth()] + " de " + f.getFullYear());
-                                    </script>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-1 offset-lg-4 offset-md-7" style="margin-left:35% !important;margin-top:0.5%;">
-                                <img style="padding:10%;" class="logopais" src="~/Content/layout/Group2.png" alt="ico pais" />
-                                @*  <img src="~/Content/layout/PAIS.svg" alt="pais" class="pais" style="margin-left:-69%">*@
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 d-lg-block d-none" style="margin-left:-3.5% !important;">
-                        <div class="row">
-                            <div class="col-12" style="text-align:right;padding:0% !important;margin:0% !important;margin-top:5% !important;
-                                    font-family: 'din-2014-narrow';
-                                    font-size: 40px;
-                                    font-style: normal;
-                                    font-weight: 300;
-                                    line-height: 33px;
-                                    color:white">
-                                @if (ViewBag.Dashboard == null)
-                                {
-                                    string hola = "Sin dashboard";
-                                    @hola;
-
-                                }
-                                else
-                                {
-                                    @ViewBag.seccion
-                                }
-                            </div>
-                        </div>
-                     @**@   
-                    </div>
-
-                </div>
-                <div class="row">
-
-                    <div class="col-12 d-lg-none d-block" style="margin-left:-3.5% !important;">
-                        <div class="row" style="margin-left:8%">
-                            <div class="col-2" style="text-align:left;padding:0% !important;margin:0% !important;
-                                    font-family: 'din-2014-narrow';
-                                    font-size: 40px;
-                                    font-style: normal;
-                                    font-weight: 300;
-                                    line-height: 33px;
-                                    color:white">
-                                @if (ViewBag.Dashboard == null)
-                                {
-                                    string hola = "Sin dashboard";
-                                    @hola;
-
-                                }
-                                else
-                                {
-                                    @ViewBag.seccion
-                                }
-                            </div>
-                        </div>
-                        <div class="row" style="justify-content:flex-end; margin-top:-6%">
-                            <div class="col-7 offset-4" style="text-align:right;padding:0% !important;margin:0% !important;margin-top:2% !important;margin-bottom:2% !important;">
-                                @*https://platform.sharethis.com/inline-share-buttons  *@
-                                <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e950afc313ffe00134d0c63&product=inline-share-buttons&cms=website' async='async'></script>
-                                <div class="sharethis-inline-share-buttons"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
-
-                <div class="row" style="margin-top:1%">
-
-
-                    <boton class="btn btn-primary" href="~/estructura/mapa1/10">region 10</boton>
-                    <boton class="btn btn-primary" href="~/estructura/mapa1/9">region 9</boton>
-                    <boton class="btn btn-primary" href="~/estructura/mapa1/8">region 8</boton>
-                    <boton class="btn btn-primary" href="~/estructura/mapa1/7">region 7</boton>
-
-
-                </div>
-
-                <div class="row" style="margin-top:1%">
-
-
-                    <a class="btn btn-primary" href="~/estructura/mapa1/10">region 10</a>
-                    <a class="btn btn-primary" href="~/estructura/mapa1/9">region 9</a>
-                    <a class="btn btn-primary" href="~/estructura/mapa1/8">region 8</a>
-                    <a class="btn btn-primary" href="~/estructura/mapa1/7">region 7</a>
-
-
+                <!-- YO CREO QUE ES EL IFRAME -->
+                <div class="row" style="margin-top:2%">
                     <div class="col">
                         @RenderBody()
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        @* Torpedo de Luis, le sirve para mirar detallitos
-                            <style>
-                                .columna {
-                                    background: #2191fb;
-                                    color: #fff;
-                                    padding: 20px;
-                                    margin-bottom: 20px;
-                                }
-                            </style>
-                            <div class="row">
-                                <div class="columna col d-block d-sm-none">XS - Extra Small</div>
-                                <div class="columna col d-none d-sm-block d-md-none">SM - Small</div>
-                                <div class="columna col d-none d-md-block d-lg-none">MD - Medium</div>
-                                <div class="columna col d-none d-lg-block d-xl-none">LG - Large</div>
-                                <div class="columna col d-none d-xl-block">XL - Extra Large</div>
-                            </div>
-                        *@
-                        <div style="position:sticky; height:50px; background-color:#000; right:0px;">
+                <!-- ----- CIERRE YO CREO QUE ES EL IFRAME----  -->
+                <!-- FOOTER -->
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <footer>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12 text-center" style="background-color:transparent">
 
-                            <footer class="page-footer font-small teal pt-4 pb-5">
-                                <div class="container">
-                                    <div class="left">
+                                        <img style="height:31.4px;" src="~/Content/layout/separador_informe_AMBIENTAL.jpg" />
                                     </div>
-
-                                    <div class="right1 float-right">
-                                        <a href="~/" target="_blank">
-                                            <img src="~/Content/layout/Di.svg" alt="Logo" class="logo">
-                                        </a>
-
-                                    </div>
-                                    <div class="right2 float-right mr-5" style="color:#fff;">
-                                        PLATAFORMA REALIZADA POR <br>
-                                        DATA INTELLIGENCE INTERNACIONAL
-
-                                    </div>
-
                                 </div>
-
-                            </footer>
-                        </div>
-
+                            </div>
+                        </footer>
                     </div>
                 </div>
-
-
-                <!-- -----FOOTER----  -->
+                <!-- ----- CIERRE FOOTER----  -->
 
             </div>
         </div>
