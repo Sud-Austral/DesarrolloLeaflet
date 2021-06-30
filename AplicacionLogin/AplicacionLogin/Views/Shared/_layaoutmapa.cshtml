@@ -78,6 +78,26 @@
 
         gtag('config', 'UA-163367570-1');
     </script>
+
+
+
+    <script>
+        function mostrador(seccion) {
+            var arreglo = [
+                '#Mapa10',
+                '#Mapa11'
+
+            ];
+            //arreglo.forEach
+            jQuery.each(arreglo, function (i, val) {
+                $(val).hide();
+            });
+            $(seccion).show();
+
+        }
+    </script>
+
+
 </head>
 <!-- -----SIDEBAR----  -->
 <body style="padding:0px !important;margin:0px !important">
@@ -204,7 +224,7 @@
                                             }
                                     </style>
                                     <!--  BOTONES  -->
-                                    <a class="btn btn-secondary" href="https://analytics.zoho.com/open-view/2395394000007390914">Reg&iacute;on 10</a>
+                                    <a onclick="mostrador('#Mapa10');" href="#" class="nav-link ">Reg&iacute;on 10</a> 
                                     <a class="btn btn-secondary" href="https://analytics.zoho.com/open-view/2395394000006974537">Reg&iacute;on 9</a>
                                     <a class="btn btn-secondary" href="~/estructura/mapa1/8">Reg&iacute;on 8</a>
                                     <a class="btn btn-secondary" href="~/estructura/mapa1/7">Reg&iacute;on 7</a>

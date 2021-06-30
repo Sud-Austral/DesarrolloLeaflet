@@ -25,6 +25,9 @@ namespace AplicacionLogin.Controllers
         {
             return View();
         }
+        public PartialViewResult Mapa10() {
+            return PartialView();
+        }
 
     }
 }

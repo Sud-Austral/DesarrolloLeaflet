@@ -494,6 +494,7 @@
     <Content Include="Views\estructura\Index.cshtml" />
     <Content Include="Views\estructura\mapa1.cshtml" />
     <Content Include="Views\estructura\mapa2.cshtml" />
+    <Content Include="Views\estructura\Mapa10.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
