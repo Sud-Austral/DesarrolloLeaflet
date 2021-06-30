@@ -18,5 +18,10 @@ namespace AplicacionLogin.Controllers
             ViewBag.Region = reg;
             return View();
         }
+
+        public ActionResult heroku()
+        {
+            return View();
+        }
     }
 }
