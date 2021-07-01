@@ -28,6 +28,17 @@ namespace AplicacionLogin.Controllers
         public PartialViewResult Mapa10() {
             return PartialView();
         }
-
+        public PartialViewResult Mapa11()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Mapa12()
+        {
+            return PartialView();
+        }
+        public PartialViewResult Mapa13()
+        {
+            return PartialView();
+        }
     }
 }

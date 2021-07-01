@@ -13,18 +13,11 @@
 
 @{
     //string url = "https://analytics.zoho.com/open-view/2395394000001771263?ZOHO_CRITERIA=%224.6%22.%22C%C3%B3digo_Regi%C3%B3n%22%3D" + ViewBag.id;
-    string url = "https://analytics.zoho.com/open-view/2395394000006800040?ZOHO_CRITERIA=%22Localiza%20CL%22.%22Codreg%22%3D13" + ViewBag.id;
+    string url = "https://servidormapa.azurewebsites.net/glaciares/index/" + ViewBag.id;
 }
 
 
-<div id="Mapa10 contenedorIFrame " class="row w-100 mx-0" style="height:auto; background-color:#161616; overflow:hidden; display:none;">
-    @{ Html.RenderAction("Mapa10", "estructura");}
-</div>
-
-
-
-
-<div id="contenedorIFrame Mapa11" class="row w-100 mx-0 " style="height:auto; background-color:#161616; overflow:hidden; display:none;">
+<div id="Mapa9" class="row w-100 mx-0 " style="height: auto; background-color: #161616; overflow: hidden;">
     <div class="col w-100">
         <div class="row d-flex justify-content-center pt-0" style=" height: 108%; padding-right:2%; padding-left:2%; position: relative;overflow: hidden;">
             <div class="embed-responsive embed-responsive-16by9">

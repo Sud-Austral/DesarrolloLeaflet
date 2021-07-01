@@ -84,8 +84,12 @@
     <script>
         function mostrador(seccion) {
             var arreglo = [
+                '#Mapa9',
                 '#Mapa10',
-                '#Mapa11'
+                '#Mapa11',
+                '#Mapa12',
+                '#Mapa13'
+               
 
             ];
             //arreglo.forEach
@@ -218,16 +222,17 @@
                                             background-color: #000;
                                             border: solid #ff0000;
                                             left: 20px !important;
-                                            
                                         }
-                                            .btn:hover {background-color:#2ca8df !important;
+
+                                            .btn:hover {
+                                                background-color: #2ca8df !important;
                                             }
                                     </style>
                                     <!--  BOTONES  -->
-                                    <a onclick="mostrador('#Mapa10');" href="#" class="nav-link ">Reg&iacute;on 10</a> 
-                                    <a class="btn btn-secondary" href="https://analytics.zoho.com/open-view/2395394000006974537">Reg&iacute;on 9</a>
-                                    <a class="btn btn-secondary" href="~/estructura/mapa1/8">Reg&iacute;on 8</a>
-                                    <a class="btn btn-secondary" href="~/estructura/mapa1/7">Reg&iacute;on 7</a>
+                                    <a class="btn btn-secondary" onclick="mostrador('#Mapa10');" href="#">Reg&iacute;on 10</a>
+                                    <a class="btn btn-secondary" onclick="mostrador('#Mapa11');" href="#">Reg&iacute;on 9</a>
+                                    <a class="btn btn-secondary" onclick="mostrador('#Mapa12');" href="#">Reg&iacute;on 8</a>
+                                    <a class="btn btn-secondary" onclick="mostrador('#Mapa13');" href="#">Reg&iacute;on 7</a>
                                 </div>
                             </div>
                         </div>
@@ -236,6 +241,19 @@
                 <!-- YO CREO QUE ES EL IFRAME -->
                 <div class="row" style="margin-top:2%">
                     <div class="col">
+
+                        <div id="Mapa10" class="row w-100 mx-0" style="height:auto; background-color:#161616; overflow:hidden; display:none;">
+                            @{ Html.RenderAction("Mapa10", "estructura");}
+                        </div>
+                        <div id="Mapa11" class="row w-100 mx-0" style="height:auto; background-color:#161616; overflow:hidden; display:none;">
+                            @{ Html.RenderAction("Mapa11", "estructura");}
+                        </div>
+                        <div id="Mapa12" class="row w-100 mx-0" style="height:auto; background-color:#161616; overflow:hidden; display:none;">
+                            @{ Html.RenderAction("Mapa12", "estructura");}
+                        </div>
+                        <div id="Mapa13" class="row w-100 mx-0" style="height:auto; background-color:#161616; overflow:hidden; display:none;">
+                            @{ Html.RenderAction("Mapa13", "estructura");}
+                        </div>
                         @RenderBody()
                     </div>
                 </div>
