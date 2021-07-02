@@ -235,6 +235,7 @@
     <Content Include="Content\layout\VLk.png" />
     <Content Include="Content\layout\VTw.png" />
     <Content Include="Content\layout\Vtw.svg" />
+    <Content Include="Content\mapahtml\hector1.html" />
     <Content Include="Content\Sitecl.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -493,6 +494,7 @@
     <Content Include="Views\estructura\mapa1.cshtml" />
     <Content Include="Views\estructura\mapa2.cshtml" />
     <Content Include="Views\Glaciares\heroku.cshtml" />
+    <Content Include="Views\Glaciares\SuperficieMaxMin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

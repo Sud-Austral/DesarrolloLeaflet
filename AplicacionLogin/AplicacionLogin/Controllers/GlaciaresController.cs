@@ -23,5 +23,10 @@ namespace AplicacionLogin.Controllers
         {
             return View();
         }
+
+        public ActionResult SuperficieMaxMin()
+        {
+            return View();
+        }
     }
 }
