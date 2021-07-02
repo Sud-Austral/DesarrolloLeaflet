@@ -215,6 +215,7 @@
     <Content Include="Content\Imagen\Icon\Mapa1.html" />
     <Content Include="Content\Imagen\Icon\marker.png" />
     <Content Include="Content\Imagen\negro-rojo-trans.png" />
+    <Content Include="Content\layout\cabeceraInformeInteractivo_DataAMBIENTAL.jpg" />
     <Content Include="Content\layout\calendario.png" />
     <Content Include="Content\layout\chile.png" />
     <Content Include="Content\layout\dc19.png" />
@@ -228,6 +229,7 @@
     <Content Include="Content\layout\PAIS.svg" />
     <Content Include="Content\layout\PATAFORMA REALIZADA POR DATA INTELLIGENCE INTERNACIONAL.png" />
     <Content Include="Content\layout\PATAFORMA.png" />
+    <Content Include="Content\layout\separador_informe_AMBIENTAL.jpg" />
     <Content Include="Content\layout\VFb.png" />
     <Content Include="Content\layout\VFb.svg" />
     <Content Include="Content\layout\VIg.png" />
@@ -495,6 +497,10 @@
     <Content Include="Views\estructura\mapa2.cshtml" />
     <Content Include="Views\Glaciares\heroku.cshtml" />
     <Content Include="Views\Glaciares\SuperficieMaxMin.cshtml" />
+    <Content Include="Views\estructura\Mapa10.cshtml" />
+    <Content Include="Views\estructura\Mapa11.cshtml" />
+    <Content Include="Views\estructura\Mapa12.cshtml" />
+    <Content Include="Views\estructura\Mapa13.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
