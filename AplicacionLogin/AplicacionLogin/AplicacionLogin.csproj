@@ -498,6 +498,7 @@
     <Content Include="Views\estructura\Mapa11.cshtml" />
     <Content Include="Views\estructura\Mapa12.cshtml" />
     <Content Include="Views\estructura\Mapa13.cshtml" />
+    <Content Include="Views\estructura\datos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

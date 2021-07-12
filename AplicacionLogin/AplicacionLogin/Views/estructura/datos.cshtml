@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>datos</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script>
+        $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/Datos_censo_2017_comuna.csv", function (data) {
+            var datos = data;
+            document.getElementById("prueba").innerHTML = datos;
+
+        });
+
+    </script>
+    <div id="prueba">
+
+    </div>
+</body>
+</html>
