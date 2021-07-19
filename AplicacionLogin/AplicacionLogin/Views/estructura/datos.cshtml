@@ -11,15 +11,231 @@
     <title>datos</title>
 </head>
 <body>
+
+    <div style="height:20vh;width:20vw;"><canvas id="myChart"></canvas></div>
+    <div style="height:20vh;width:20vw;margin-left:380px;"margin-top:-200px"><canvas id="myChart2"></canvas></div>
+    <div style="height:30vh;width:30vw;margin-left:750px;"margin-top:-200px;"><canvas id="myChart3"></canvas></div>
+    <canvas id="myChart4" style="height:10vh;width:20vw;"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+    </script>
+
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
     <script>
         $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/Datos_censo_2017_comuna.csv", function (data) {
             var datos = data;
-            document.getElementById("prueba").innerHTML = datos;
+            var fila = datos.split("\n")[8];
+            var registros = {
+                FID: fila.split(",")[0],
+                FID_1: fila.split(",")[1],
+                REGION: fila.split(",")[2],
+                PROVINCIA: fila.split(",")[3],
+                COMUNA: fila.split(",")[4],
+                NOM_REGION: fila.split(",")[5],
+                NOM_COMUNA: fila.split(",")[6],
+                TOTAL_VIVI: fila.split(",")[7],
+                PARTICULAR: fila.split(",")[8],
+                COLECTIVAS: fila.split(",")[9],
+                TOTAL_PERS: fila.split(",")[10],
+                HOMBRES: fila.split(",")[11],
+                MUJERES: fila.split(",")[12],
+                DENSIDAD: fila.split(",")[13],
+                INDICE_MAS: fila.split(",")[14],
+                INDICE_DEP: fila.split(",")[15],
+                IND_DEP_JU: fila.split(",")[16],
+                IND_DEP_VE: fila.split(",")[17],
+                Shape__Are: fila.split(",")[18],
+                Shape__Are: fila.split(",")[19],
+            }
+            var tabla = [];
+            tabla.push(registros)
 
+
+
+
+            for (var i = 0; i < datos.split("\n").length; i++) {
+                var fila = datos.split("\n")[i];
+                var registros = {
+                    FID: fila.split(",")[0],
+                    FID_1: fila.split(",")[1],
+                    REGION: fila.split(",")[2],
+                    PROVINCIA: fila.split(",")[3],
+                    COMUNA: fila.split(",")[4],
+                    NOM_REGION: fila.split(",")[5],
+                    NOM_PROVIN: fila.split(",")[6],
+                    NOM_COMUNA: fila.split(",")[7],
+                    TOTAL_VIVI: fila.split(",")[8],
+                    PARTICULAR: fila.split(",")[9],
+                    COLECTIVAS: fila.split(",")[10],
+                    TOTAL_PERS: fila.split(",")[11],
+                    HOMBRES: fila.split(",")[12],
+                    MUJERES: fila.split(",")[13],
+                    DENSIDAD: fila.split(",")[14],
+                    INDICE_MAS: fila.split(",")[15],
+                    INDICE_DEP: fila.split(",")[16],
+                    IND_DEP_JU: fila.split(",")[17],
+                    IND_DEP_VE: fila.split(",")[18],
+                    Shape__Are: fila.split(",")[19],
+                    Shape__Are: fila.split(",")[20],
+                }
+               //alert(registros.NOM_COMUNA)
+
+                tabla.push(JSON.parse(JSON.stringify(registros)));
+            }
+            var codigo_comuna = "@ViewBag.id";
+            //alert(codigo_comuna);
+
+
+            var salida = tabla.filter(row => row.COMUNA == "@ViewBag.id")[0]
+
+            var texto = "La comuna de " + salida.NOM_COMUNA + " Ubicada en la region de " + salida.NOM_REGION + " según los datos del censo 2017 tiene una población de " + salida.TOTAL_PERS + " habitantes de los cuales el " + salida.HOMBRES + " son Hombres y el " + salida.MUJERES + " Son Mujeres, en una cantidad de viviendas " + salida.TOTAL_VIVI;
+
+            document.getElementById("prueba").innerHTML = texto;
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Hombres", "Mujeres"],
+                    datasets: [{
+                        label: '#DATA INTELINGE',
+                        data: [parseInt(salida.HOMBRES), parseInt(salida.MUJERES)],
+                        backgroundColor: [
+                            //'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            //'rgba(255, 206, 86, 0.2)',
+                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            //'rgba(255, 99, 132, 1)',
+                            //'rgba(54, 162, 235, 1)',
+                            //'rgba(255, 206, 86, 1)',
+                            //'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 5
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+       // });
+
+
+
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var myChart2 = new Chart(ctx2, {
+            type: 'polarArea',
+            data: {
+                labels: ["Hombres", "Mujeres"],
+                datasets: [{
+                    label: '#DATA INTELINGE',
+                    data: [parseInt(salida.HOMBRES), parseInt(salida.MUJERES)],
+                    backgroundColor: [
+                        //'rgba(255, 99, 132, 0.2)',
+                        //'rgba(54, 162, 235, 0.2)',
+                        //'rgba(255, 206, 86, 0.2)',
+                        //'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        //'rgba(255, 99, 132, 1)',
+                        //'rgba(54, 162, 235, 1)',
+                        //'rgba(255, 206, 86, 1)',
+                        //'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 5
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
         });
+            var ctx3 = document.getElementById('myChart3').getContext('2d');
+            var myChart3 = new Chart(ctx3, {
+                type: 'bubble',
+                data: {
+                    labels: ["Hombres", "Mujeres"],
+                    datasets: [{
+                        label: '#DATA INTELINGE',
+                        data: [parseInt(salida.HOMBRES), parseInt(salida.MUJERES)],
+                        backgroundColor: [
+                            //'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            //'rgba(255, 206, 86, 0.2)',
+                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            //'rgba(255, 99, 132, 1)',
+                            //'rgba(54, 162, 235, 1)',
+                            //'rgba(255, 206, 86, 1)',
+                            //'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 5
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+
+     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
     <div id="prueba">
@@ -27,3 +243,12 @@
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
