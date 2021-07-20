@@ -40,5 +40,11 @@ namespace AplicacionLogin.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult datos(int id = 13101)
+        {
+            ViewBag.id = id;
+            return View();
+        }
     }
 }
