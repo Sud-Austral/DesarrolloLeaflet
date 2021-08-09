@@ -42,7 +42,7 @@
                 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
                 crossorigin="anonymous"></script>
         <script>
-            $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/Datos_censo_2017_comuna.csv", function (data) {
+            $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/Datos_Censo_2017_Comuna_MERGE_3.csv", function (data) {
             var datos = data;
 
             var fila = datos.split("\n")[8];
@@ -55,22 +55,23 @@
 
 
 
-
+                //alert (datos)
             for (var i = 0; i < datos.split("\n").length; i++) {
                 var fila = datos.split("\n")[i];
-               // alert(fila)
+                //alert(fila.split(",").length)
                 var registros = {
-                    FID: fila.split(",")[0],
-                    FID_1: fila.split(",")[1],
-                    REGION: fila.split(",")[2],
-                    PROVINCIA: fila.split(",")[3],
-                    COMUNA: fila.split(",")[4],
-                    NOM_REGION: fila.split(",")[5],
-                    NOM_PROVIN: fila.split(",")[6],
-                    NOM_COMUNA: fila.split(",")[7],
-                    TOTAL_VIVI: fila.split(",")[8],
-                    PARTICULAR: fila.split(",")[9],
-                    COLECTIVAS: fila.split(",")[10],
+                    
+                    REGION: fila.split(",")[0],
+                    PROVINCIA: fila.split(",")[1],
+                    COMUNA: fila.split(",")[2],
+                    NOM_REGION: fila.split(",")[3],
+                    NOM_PROVIN: fila.split(",")[4],
+                    NOM_COMUNA: fila.split(",")[5],
+                    TOTAL_VIVI: fila.split(",")[6],
+                    PARTICULAR: fila.split(",")[7],
+                    POR_PART: fila.split(",")[8],
+                    COLECTIVAS: fila.split(",")[9],
+                    POR_COLE: fila.split(",")[10],
                     TOTAL_PERS: fila.split(",")[11],
                     POR_HOMBRES: fila.split(",")[12],
                     HOMBRES: fila.split(",")[13],
@@ -79,13 +80,84 @@
                     DENSIDAD: fila.split(",")[16],
                     MEDIA_MAS: fila.split(",")[17],
                     INDICE_MAS: fila.split(",")[18],
-                    INDICE_DEP: fila.split(",")[19],
+                    INDICE_DEP: fila.split(",")[29],
                     IND_DEP_JU: fila.split(",")[20],
                     IND_DEP_VE: fila.split(",")[21],
-                    Shape__Are: fila.split(",")[22],
-                    Shape__Escudo_Comuna: fila.split(",")[23],
-                    Shape__Are: fila.split(",")[24],
+                    CUT: fila.split(",")[22],
+                    PERSONAS_0: fila.split(",")[23],
+                    Porc_0_5: fila.split(",")[24],
+                    PERSONAS_6: fila.split(",")[25],
+                    Porc_6_14: fila.split(",")[26],
+                    PERSONAS_1: fila.split(",")[27],
+                    Porc_15_64: fila.split(",")[28],
+                    PERSONAS_M: fila.split(",")[29],
+                    Porc_mas_65: fila.split(",")[30],
+                    PERSONAS_E: fila.split(",")[31],
+                    Porc_MIGR: fila.split(",")[32],
+                    PNac_MIG: fila.split(",")[33],
+                    PUEBLOS_IN: fila.split(",")[34],
+                    Porc_IND: fila.split(",")[35],
+                    PNac_IND: fila.split(",")[36],
+                    TOTAL_VIV_: fila.split(",")[37],
+                    TOTAL_VI_1: fila.split(",")[38],
+                    VIV_OCUPA_: fila.split(",")[39],
+                    TOTAL_VI_2: fila.split(",")[40],
+                    CANTIDAD_H: fila.split(",")[41],
+                    VIV_TIPO_C: fila.split(",")[42],
+                    vTip_Casa: fila.split(",")[43],
+                    VIV_TIPO_D: fila.split(",")[44],
+                    vTip_Dep: fila.split(",")[45],
+                    vOtro_Tip: fila.split(",")[46],
+                    VIV_TIPO_T: fila.split(",")[47],
+                    VIV_TIPO_P: fila.split(",")[48],
+                    VIV_TIPO_M: fila.split(",")[49],
+                    VIV_TIPO_1: fila.split(",")[50],
+                    VIV_TIPO_O: fila.split(",")[51],
+                    VIV_PARED_: fila.split(",")[52],
+                    VIV_PARE_1: fila.split(",")[53],
+                    VIV_PARE_2: fila.split(",")[54],
+                    VIV_PARE_3: fila.split(",")[55],
+                    VIV_PARE_4: fila.split(",")[56],
+                    VIV_PARE_5: fila.split(",")[57],
+                    VIV_TECHO_: fila.split(",")[58],
+                    VIV_TECH_1: fila.split(",")[59],
+                    VIV_TECH_2: fila.split(",")[60],
+                    VIV_TECH_3: fila.split(",")[61],
+                    VIV_TECH_4: fila.split(",")[62],
+                    VIV_TECH_5: fila.split(",")[63],
+                    VIV_TECH_6: fila.split(",")[64],
+                    VIV_PISO_P: fila.split(",")[65],
+                    VIV_PISO_R: fila.split(",")[66],
+                    VIV_PISO_B: fila.split(",")[67],
+                    VIV_PISO_C: fila.split(",")[68],
+                    VIV_PISO_T: fila.split(",")[69],
+                    VIV_MATERI: fila.split(",")[70],
+                    Mat_Acep: fila.split(",")[71],
+                    VIV_MATE_1: fila.split(",")[72],
+                    Mat_Recup: fila.split(",")[73],
+                    VIV_MATE_2: fila.split(",")[74],
+                    Mat_Irrecup: fila.split(",")[75],
+                    VIV_AGUA_R: fila.split(",")[76],
+                    vAguRedPUB: fila.split(",")[77],
+                    VIV_AGUA_P: fila.split(",")[78],
+                    vAguPOZO: fila.split(",")[79],
+                    VIV_AGUA_C: fila.split(",")[80],
+                    vAguCAMION: fila.split(",")[81],
+                    VIV_AGUA_1: fila.split(",")[82],
+                    vAguRIO: fila.split(",")[83],
+                    Escudo: fila.split(",")[84],
+                    Latitud: fila.split(",")[85],
+                    Longitud: fila.split(",")[86]
+
+
+
+
+
+
+                   
                 }
+
+                //alert(registros.Longitud)
                //alert(registros.NOM_COMUNA)
 
                 tabla.push(JSON.parse(JSON.stringify(registros)));
@@ -100,16 +172,28 @@
                 var urlifreme = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=comuna," + salida.NOM_COMUNA + "+cl"
 
                 document.getElementById('mapagoogle').src = urlifreme;
-                document.getElementById('logocomuna').src = salida.Shape__Escudo_Comuna;
-                var texto = "La comuna de " + salida.NOM_COMUNA + " Ubicada en la region de " + salida.NOM_REGION + " según los datos del censo 2017 tiene una población de " + salida.TOTAL_PERS + " habitantes de los cuales el " + salida.POR_HOMBRES + "% son Hombres y el " + salida.POR_MUJERES + "%  son mujeres. Esto corresponde a una densidad poblacional de " + salida.DENSIDAD + " habitantes por kilómetro cuadrado.";
+                document.getElementById('logocomuna').src = salida.Escudo;
 
-            var texto2 = "La comuna de " + salida.NOM_COMUNA + " según los datos del censo 2017 tiene un total de " + salida.TOTAL_VIVI + " de las cuales " + salida.PARTICULAR + " son viviendas particulares y " + salida.COLECTIVAS + " corresponden viviendas colectivas. ";
+             var texto = "La comuna de " + salida.NOM_COMUNA + " Ubicada en " + salida.NOM_REGION + " según los datos del censo 2017 tiene una población de " + salida.TOTAL_PERS + " habitantes de los cuales el " + Math.round(Number.parseFloat(salida.POR_HOMBRES) * 100) / 100 + "% son hombres y el " + Math.round(Number.parseFloat(salida.POR_MUJERES) * 100) / 100 + "%   mujeres, lo corresponde a una densidad poblacional de " + salida.DENSIDAD + " habitantes por kilómetro cuadrado." ;
+
+
+            var texto2 = "La comuna de " + salida.NOM_COMUNA + " según los datos del censo 2017 tiene un total de " + salida.TOTAL_VIVI + " viviendas de las cuales " + salida.PARTICULAR + " particulares y " + salida.COLECTIVAS + " colectivas. ";
 
             var texto3 = "La comuna de " + salida.NOM_COMUNA + " tiene un índice de masculinidad de  " + salida.HOMBRES + " el cual es " + salida.MEDIA_MAS + " que el promedio nacional. El índice de dependencia total es de  " + salida.INDICE_DEP + ". El índice de dependencia de jóvenes es  " + salida.IND_DEP_JU + " y el de tercera edad es de " + salida.IND_DEP_VE + ".";
 
+                var texto4 = "Comuna de " + salida.NOM_COMUNA + ".";
+
+                var texto5 = " La Comuna de " + salida.NOM_COMUNA + " esta localizada  en la provincia de " + salida.NOM_PROVIN + ", REGION DE " + salida.NOM_REGION + ".";
+
+                var texto6 = " El " + Math.round(Number.parseFloat(salida.Porc_15_64) * 100) / 100 + " de la población se encuentra en el rango de edad de 15 a 64 años, el " + Math.round(Number.parseFloat(salida.Porc_0_5) * 100) / 100 + " son menores de 6 años, el " + Math.round(Number.parseFloat(salida.Porc_6_14) * 100) / 100 + " de 6 a 14 años y el " + Math.round(Number.parseFloat(salida.Porc_mas_65) * 100) / 100 +  " de 65 y más años."
+
             document.getElementById("prueba").innerHTML = texto;
             document.getElementById("segundotexto").innerHTML = texto2;
-            document.getElementById("tercertexto").innerHTML = texto3;
+                document.getElementById("tercertexto").innerHTML = texto3;
+                document.getElementById("texescudo").innerHTML = texto4;
+                document.getElementById("texmapa").innerHTML = texto5;
+                document.getElementById("tex").innerHTML = texto6;
+
 
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -135,10 +219,18 @@
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 5
+                        borderWidth: 2
                     }]
                 },
                 options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
                     scales: {
                         y: {
                             beginAtZero: true
@@ -154,11 +246,11 @@
 
        var ctx2 = document.getElementById('myChart2').getContext('2d');
         var myChart2 = new Chart(ctx2, {
-            type: 'polarArea',
+            type: 'doughnut',
             data: {
                 labels: ["Particulares", "Colectivas"],
                 datasets: [{
-                    label: '#DATA INTELINGE',
+                    label: 'DATA INTELINGE',
                     data: [parseInt(salida.PARTICULAR), parseInt(salida.COLECTIVAS)],
                     backgroundColor: [
                         //'rgba(255, 99, 132, 0.2)',
@@ -176,10 +268,27 @@
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)'
                     ],
-                    borderWidth: 5
+                    borderWidth: 2
                 }]
             },
             options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Proporción de viviendas particulares y colectivas de la Comuna de MÁRIA ELENA',
+                        position: 'bottom',
+                        color: "#ff0000",
+                        padding: 30,
+                        fontSize:30,
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                    labels: {
+                        fontColor: '#333',
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
@@ -193,7 +302,7 @@
                 data: {
                     labels: ["Jovenes", "Tercera edad"],
                     datasets: [{
-                        label: '#DATA INTELINGE',
+                        label: 'Índices de dependencia de jóvenes y de tercera edad de la Comuna de MÁRIA ELENA',
                         data: [parseInt(salida.IND_DEP_JU), parseInt(salida.IND_DEP_VE)],
                         backgroundColor: [
                             //'rgba(255, 99, 132, 0.2)',
@@ -211,7 +320,7 @@
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 5
+                        borderWidth: 2
                     }]
                 },
                 options: {
@@ -226,7 +335,69 @@
 
 
 
-     });
+            });
+
+
+                var ctx4 = document.getElementById('myChart4').getContext('2d');
+                var myChart4 = new Chart(ctx4, {
+                    type: 'bubble',
+                    data: {
+                        labels: ["##", "##"],
+                        datasets: [{
+                            label: 'DATA INTELINGE',
+                            data: [parseInt(salida.PARTICULAR), parseInt(salida.COLECTIVAS)],
+                            backgroundColor: [
+                                //'rgba(255, 99, 132, 0.2)',
+                                //'rgba(54, 162, 235, 0.2)',
+                                //'rgba(255, 206, 86, 0.2)',
+                                //'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                //'rgba(255, 99, 132, 1)',
+                                //'rgba(54, 162, 235, 1)',
+                                //'rgba(255, 206, 86, 1)',
+                                //'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Proporción de viviendas particulares y colectivas de la Comuna de MÁRIA ELENA',
+                                position: 'bottom',
+                                color: "#ff0000",
+                                padding: 30,
+                                fontSize: 30,
+                            }
+                        },
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                fontColor: '#333',
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+
+
+
+
+
+
+
 
 
 
@@ -263,97 +434,18 @@
 
 
 
-        <div class="container" style="margin-top:10vh;">
+        <div class="container" style="margin-top:0vh;">
             <div class="row">
                 <div class="col-6">
-                    <img style="height:120px;" src="~/Content/layout/cabeceraInformeInteractivo_DataAMBIENTAL.jpg" />
+                    <img style="height:70px;" src="~/Content/Imagen/negro-rojo-trans.png" />
 
                 </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <img style="width:170px;height:170px;margin-top:140px;" id="logocomuna" src="..." class="" alt="...">
-
-                    </div>
-
-
-
-                </div>
-
-
-            </div>
-        </div>
-
-
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-5">
-                    <div style="margin-top:200px; " id="prueba">
-                    </div>
-                </div>
-
-
-                <div class="col-5">
-                    <div style="height:15vh;width:16vw;margin-top:150px;"><canvas id="myChart"></canvas></div>
-
-
-                </div>
-
-                
-
-            </div>
-        </div>
-
-
-
-        <div class="container" style="margin-top:20vh;">
-            <div class="row">
-                <div class="col-6">
-                    <div style="margin-top:100px" id="segundotexto">
-
-                    </div>
-
-                </div>
-
-
-                <div class="col-6">
-                    <div style="height:20vh;width:18vw;margin-top:10px;"><canvas id="myChart2"></canvas></div>
-
-
-                </div>
-
-            </div>
-        </div>
-
-
-
-        <div class="container" style="margin-top:20vh;">
-            <div class="row">
-                <div class="col-6">
-                    <div style="margin-top:85px" id="tercertexto">
-
-                    </div>
-
-                </div>
-
-
-                <div class="col-6">
-                    <div style="height:28vh;width:28vw;margin-top:25px;"><canvas id="myChart3"></canvas></div>
-
-
-                </div>
-
 
                 <div class="col-12">
-                    <iframe id="mapagoogle" style="width:1150px;height:500px;margin-top:80px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=maipu+cl" title="W3Schools Free Online Web Tutorials">
-                    </iframe>
-
-                    @* <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/place/VALPARAÍSO,+REGIÓNDEVALPARAÍSO,+Chile/"></iframe>
-                    <a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibuja un circulo Google Maps</a></div>*@
+                    <hr style="border:15px;"><hr style="border:2px;">
 
                 </div>
+
 
             </div>
         </div>
@@ -362,7 +454,145 @@
 
 
 
-        @*  <div class="container">
+        <div class="container" style="margin-top:5vh;">
+            <div class="row">
+                <div class="row">
+                    <div class="col-6">
+                        <img style="width:130px;height:130px;margin-top:0px;" id="logocomuna" src="..." class="" alt="...">
+
+                    </div>
+
+
+                    <div>
+                        <div style="width:50px;height:50px;margin-left:80px;" id="texescudo">
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+            <hr width="100%" color="blue"; style:size="8px" />
+
+
+           
+
+
+            <div class="container" style="margin-top:5vh;">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>
+                                1. ASPECTOS SOCIO-DEMOGRÁFICOS
+                            </h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            @*PRIMER TEXTO CON GRAFICA*@
+            <div class="container" style="margin-top:5vh;">
+                <div class="row">
+                    <div class="col-6">
+                        <h2 style="margin-top:0px;"> POBLACIÓN </h2>
+                        <div style="margin-top:100px; " id="prueba">
+                        </div>
+
+                        <div style="margin-top:10px; " id="tex">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div style="height:15vh;width:16vw;margin-top:50px;"><canvas id="myChart"></canvas></div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container" style="margin-top:12vh;">
+                <div class="row">
+
+                    <div class="col-6">
+                        <h2 style="margin-left:600px;">
+                            1. VIVIENDA
+                        </h2>
+                        <div style="height:20vh;width:18vw;margin-top:10px;"><canvas id="myChart2"></canvas></div>
+                    </div>
+
+
+                    <div class="col-6">
+                        <div style="margin-top:100px" id="segundotexto">
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="container" style="margin-top:20vh;">
+                <div class="row">
+
+
+
+                    <div class="col-6">
+                        <h2 style="margin-top:10px;">
+                            1. ÍNDICES SOCIODEMOGRÁFICOS
+
+                        </h2>
+                        <div style="margin-top:85px" id="tercertexto">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6">
+                        <div style="height:28vh;width:28vw;margin-top:25px;"><canvas id="myChart3"></canvas></div>
+
+
+                    </div>
+
+
+                    <div class="col-12">
+                        <h2 style="margin-top:10px;">
+                            2. LOCALIZACIÓN
+                        </h2>
+
+                        <div class="col-12">
+                            <div style="margin-top:100px" id="texmapa">
+
+                            </div>
+
+                        </div>
+                        <iframe id="mapagoogle" style="width:1150px;height:500px;margin-top:80px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=maipu+cl" title="W3Schools Free Online Web Tutorials">
+                        </iframe>
+
+                        @* <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/place/VALPARAÍSO,+REGIÓNDEVALPARAÍSO,+Chile/"></iframe>
+                    <a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibuja un circulo Google Maps</a></div>*@
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            @*  <div class="container">
             <div class="row">
                 <div class="col-6">
                     <p id="tercertexto">
@@ -380,18 +610,44 @@
 
 
 
-        <div class="container" style="margin-top:10vh;">
-            <div class="row">
-                <div class="col-6">
-                    <img style="height:50px;" src="~/Content/layout/PATAFORMA.png" />
+            <div class="container" style="margin-top:12vh;">
+                <div class="row">
+                    <div class="col-6">
+                        <img style="height:50px;" src="~/Content/layout/PATAFORMA.png" />
+
+                    </div>
+
+
 
                 </div>
 
+                <div class="row">
+                    <div class="col-6">
 
+
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <footer>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12 text-center" style="background-color:transparent">
+
+                                                <img style="height:31.4px;" src="~/Content/layout/separador_informe_AMBIENTAL.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
 
             </div>
         </div>
-
 
     </body>
 </html>
