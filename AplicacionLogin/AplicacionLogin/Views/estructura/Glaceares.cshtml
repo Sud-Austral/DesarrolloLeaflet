@@ -74,7 +74,7 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
     <script>
-            $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/Datos_Censo_2017_Comuna_MERGE_3.csv", function (data) {
+        $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/Rx_AREA_Glac_ZONA_glac.xls.csv", function (data) {
             var datos = data;
 
             var fila = datos.split("\n")[8];
@@ -141,8 +141,9 @@
                     SC_1819q2: fila.split(",")[45],
                     SN_1920q2: fila.split(",")[46],
                     G_1920q2: fila.split(",")[47],
-                    P_1920q2: fila.split(",")[48],
-                    SC_1920q2: fila.split(",")[49]
+                    NOMBRE: fila.split(",")[48],
+                    P_1920q2: fila.split(",")[49],
+                    SC_1920q2: fila.split(",")[50]
 
 
 
@@ -672,7 +673,9 @@
         <div class="row">
             <div class="row">
                 <div class="col-6">
-                    <img style="width:140px;height:140px;margin-top:0px;" id="logocomuna" src="..." class="" alt="...">
+                    <img style="height:130px;" src="~/Content/layout/Glacear.png" />
+
+                    @*<img style="width:140px;height:140px;margin-top:0px;" id="logocomuna" src="..." class="" alt="...">*@
 
                 </div>
 
