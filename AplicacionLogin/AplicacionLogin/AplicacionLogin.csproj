@@ -224,6 +224,7 @@
     <Content Include="Content\layout\Di.png" />
     <Content Include="Content\layout\Di.svg" />
     <Content Include="Content\layout\ejemplo.png" />
+    <Content Include="Content\layout\Glacear.png" />
     <Content Include="Content\layout\Group2.png" />
     <Content Include="Content\layout\logo.png" />
     <Content Include="Content\layout\logo.svg" />
@@ -505,6 +506,7 @@
     <Content Include="Views\estructura\datos.cshtml" />
     <Content Include="Views\Prueba\Index.cshtml" />
     <Content Include="Views\Prueba\MenuLateral.cshtml" />
+    <Content Include="Views\estructura\Glaceares.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
