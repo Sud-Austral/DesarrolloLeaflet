@@ -47,7 +47,7 @@ namespace AplicacionLogin.Controllers
             return View();
         }
 
-        public ActionResult Glaceares(int id = 13101)
+        public ActionResult Glaceares(int id = 2)
         {
             ViewBag.id = id;
             return View();
