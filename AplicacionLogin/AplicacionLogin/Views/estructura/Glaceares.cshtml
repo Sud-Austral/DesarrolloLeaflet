@@ -25,8 +25,9 @@
 <body>
     <style>
         #tex1 {
-            font-size: 2em;
+            font-size: 1em;
             font-weight: 900;
+            color:blue;
         }
     </style>
     <style>
@@ -69,6 +70,7 @@
         #tex15 {
             font-size: 1em;
             font-weight: 900;
+
         }
     </style>
     <style>
@@ -153,7 +155,7 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
     <script>
-        $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/Rx_AREA_Glac_ZONA_glac.xls1.csv", function (data) {
+        $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/prueba1.xlsx.csv", function (data) {
             var datos = data;
 
             var fila = datos.split("\n")[8];
@@ -221,7 +223,6 @@
                     SC_1819q2: fila.split(",")[46],
                     SN_1920q2: fila.split(",")[47],
                     G_1920q2: fila.split(",")[48],
-                    
                     P_1920q2: fila.split(",")[49],
                     SC_1920q2: fila.split(",")[50]
 
@@ -234,7 +235,7 @@
 
                 }
                 //alert(fila.split(","))
-                //alert(registros.G_1920q2)
+                //alert(registros.Nombre_Gla)
                 //alert(registros.Longitud)
                //alert(registros.NOM_COMUNA)
 
@@ -252,8 +253,8 @@
                // document.getElementById('mapagoogle').src = urlifreme;
 
 
-            var texto1 = " ." + salida.NOMBRE + ".";
-            var texto2 = " El glaciar " + salida.NOMBRE + " tiene una superficie de " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " de las cuales, en el periodo analizado, en la época de menor acumulación (enero – abril), lqa máxima superficie alcanzada por la nieve fue de " + salida.q1_Max_sum + " y la mínima " + salida.q1_Min + " Esto implicó que el " + salida.Porc_SNq1 + " de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado." ;
+            var texto1 = " " + salida.Nombre_Gla + ".";
+            var texto2 = " El glaciar " + salida.Nombre_Gla + " tiene una superficie de " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " de las cuales, en el periodo analizado, en la época de menor acumulación (enero – abril), lqa máxima superficie alcanzada por la nieve fue de " + salida.q1_Max_sum + " y la mínima " + salida.q1_Min + " Esto implicó que el " + salida.Porc_SNq1 + " de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
             var texto3 = " La máxima superficie alcanzada por la nieve se refiere a la sumatoria de todas las zonas que en algún año del periodo analizado estuvo cubierta por nieve, y la mínima, a las zonas que en todos los años estuvieron cubiertas de nieve. Al analizar la superficie de nieve alcanza por año, en la época de menor acumulación, se observa la tendencia mostrada en el siguiente gráfico";
             var texto4 = " De las " + salida.SUM_Shape_ + " _) del complejo glaciar, en el periodo analizado, en la época de mayor acumulación (mayo – diciembre), máxima superficie alcanzada por la nieve fue de " + salida.q2_Max_sum + " y la mínima " + salida.q2_Min + " Esto implicó que el " + salida.Porc_SNq2 + " de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
             var texto5 = " La superficie de nieve alcanza por año, en la época de mayor acumulación, se observa la tendencia mostrada en el siguiente gráfico.";
@@ -340,7 +341,7 @@
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -387,7 +388,7 @@
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -502,32 +503,32 @@
 
 
 
-
+            @* AÑO  2017 - 2018 *@
             var ctx5 = document.getElementById('myChart5').getContext('2d');
             var myChart5 = new Chart(ctx5, {
                 type: 'doughnut',
                 data: {
-                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
                     datasets: [{
                         label: '#',
-                        data: [parseInt(salida.q2_Max_sum), parseInt(salida.q2_SN)],
+                        data: [parseInt(salida.SC_1718q1), parseInt(salida.P_1718q1), parseInt(salida.G_1718q1), parseInt(salida.SN_1718q1)],
                         backgroundColor: [
-                            //'rgba(255, 99, 132, 0.2)',
-                            //'rgba(54, 162, 235, 0.2)',
-                            //'rgba(255, 206, 86, 0.2)',
-                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            //'rgba(255, 0, 54, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
                             'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            //'rgba(181, 14, 14, 0.2)'
                         ],
                         borderColor: [
-                            //'rgba(255, 99, 132, 1)',
-                            //'rgba(54, 162, 235, 1)',
-                            //'rgba(255, 206, 86, 1)',
-                            //'rgba(75, 192, 192, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 0, 54, 0.2)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -554,27 +555,27 @@
             var myChart6 = new Chart(ctx6, {
                 type: 'doughnut',
                 data: {
-                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
                     datasets: [{
                         label: '#',
-                        data: [parseInt(salida.q2_Max_sum), parseInt(salida.q2_SN)],
+                        data: [parseInt(salida.SC_1718q2), parseInt(salida.P_1718q2), parseInt(salida.G_1718q2), parseInt(salida.SN_1718q2)],
                         backgroundColor: [
-                            //'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
                             //'rgba(54, 162, 235, 0.2)',
-                            //'rgba(255, 206, 86, 0.2)',
-                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
                             'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            //'rgba(255, 159, 64, 0.2)'
                         ],
                         borderColor: [
-                            //'rgba(255, 99, 132, 1)',
-                            //'rgba(54, 162, 235, 1)',
-                            //'rgba(255, 206, 86, 1)',
-                            //'rgba(75, 192, 192, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -601,27 +602,27 @@
             var myChart7 = new Chart(ctx7, {
                 type: 'doughnut',
                 data: {
-                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
                     datasets: [{
                         label: '#',
-                        data: [parseInt(salida.SC_1819q1), parseInt(salida.P_1819q1), parseInt(salida.G_1819q1), parseInt(salida.SN_1819q1),],
+                        data: [parseInt(salida.SC_1819q1), parseInt(salida.P_1819q1), parseInt(salida.G_1819q1), parseInt(salida.SN_1819q1)],
                         backgroundColor: [
-                            //'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
                             //'rgba(54, 162, 235, 0.2)',
-                            //'rgba(255, 206, 86, 0.2)',
-                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
                             'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            //'rgba(255, 159, 64, 0.2)'
                         ],
                         borderColor: [
-                            //'rgba(255, 99, 132, 1)',
-                            //'rgba(54, 162, 235, 1)',
-                            //'rgba(255, 206, 86, 1)',
-                            //'rgba(75, 192, 192, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -646,27 +647,27 @@
             var myChart8 = new Chart(ctx8, {
                 type: 'doughnut',
                 data: {
-                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
                     datasets: [{
                         label: '#',
-                        data: [parseInt(salida.q2_Max_sum), parseInt(salida.q2_SN)],
+                        data: [parseInt(salida.SC_1819q2), parseInt(salida.P_1819q2), parseInt(salida.G_1819q2), parseInt(salida.SN_1819q2)],
                         backgroundColor: [
-                            //'rgba(255, 99, 132, 0.2)',
-                            //'rgba(54, 162, 235, 0.2)',
-                            //'rgba(255, 206, 86, 0.2)',
-                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                           // 'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
                             'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            //'rgba(255, 159, 64, 0.2)'
                         ],
                         borderColor: [
-                            //'rgba(255, 99, 132, 1)',
+                            'rgba(255, 99, 132, 1)',
                             //'rgba(54, 162, 235, 1)',
-                            //'rgba(255, 206, 86, 1)',
-                            //'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            //'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -693,27 +694,27 @@
             var myChart9 = new Chart(ctx9, {
                 type: 'doughnut',
                 data: {
-                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
                     datasets: [{
                         label: '#',
-                        data: [parseInt(salida.q2_Max_sum), parseInt(salida.q2_SN)],
+                        data: [parseInt(salida.SC_1920q1), parseInt(salida.P_1920q1), parseInt(salida.G_1920q1), parseInt(salida.SN_1920q1)],
                         backgroundColor: [
-                            //'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
                             //'rgba(54, 162, 235, 0.2)',
-                            //'rgba(255, 206, 86, 0.2)',
-                            //'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            //'rgba(153, 102, 255, 0.2)',
                             'rgba(255, 159, 64, 0.2)'
                         ],
                         borderColor: [
-                            //'rgba(255, 99, 132, 1)',
+                            'rgba(255, 99, 132, 1)',
                             //'rgba(54, 162, 235, 1)',
-                            //'rgba(255, 206, 86, 1)',
-                            //'rgba(75, 192, 192, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
+                            //'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -740,27 +741,27 @@
             var myChart10 = new Chart(ctx10, {
                 type: 'doughnut',
                 data: {
-                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
                     datasets: [{
                         label: '#',
-                        data: [parseInt(salida.q2_Max_sum), parseInt(salida.q2_SN)],
+                        data: [parseInt(salida.SC_1920q2), parseInt(salida.P_1920q2), parseInt(salida.G_1920q2), parseInt(salida.SN_1920q2)],
                         backgroundColor: [
-                            //'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
                             //'rgba(54, 162, 235, 0.2)',
-                            //'rgba(255, 206, 86, 0.2)',
-                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
                             'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            //'rgba(255, 159, 64, 0.2)'
                         ],
                         borderColor: [
-                            //'rgba(255, 99, 132, 1)',
-                            //'rgba(54, 162, 235, 1)',
-                            //'rgba(255, 206, 86, 1)',
-                            //'rgba(75, 192, 192, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -788,27 +789,27 @@
             var myChart11 = new Chart(ctx11, {
                 type: 'doughnut',
                 data: {
-                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
                     datasets: [{
                         label: '#',
-                        data: [parseInt(salida.q2_Max_sum), parseInt(salida.q2_SN)],
+                        data: [parseInt(salida.SC_2021q1), parseInt(salida.P_2021q1), parseInt(salida.G_2021q1), parseInt(salida.SN_2021q1)],
                         backgroundColor: [
-                            //'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
                             //'rgba(54, 162, 235, 0.2)',
-                            //'rgba(255, 206, 86, 0.2)',
-                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
                             'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            //'rgba(255, 159, 64, 0.2)'
                         ],
                         borderColor: [
-                            //'rgba(255, 99, 132, 1)',
-                            //'rgba(54, 162, 235, 1)',
-                            //'rgba(255, 206, 86, 1)',
-                            //'rgba(75, 192, 192, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -835,27 +836,27 @@
             var myChart12 = new Chart(ctx12, {
                 type: 'doughnut',
                 data: {
-                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
                     datasets: [{
                         label: '#',
                         data: [parseInt(salida.q2_Max_sum), parseInt(salida.q2_SN)],
                         backgroundColor: [
-                            //'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
                             //'rgba(54, 162, 235, 0.2)',
-                            //'rgba(255, 206, 86, 0.2)',
-                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
                             'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            //'rgba(255, 159, 64, 0.2)'
                         ],
                         borderColor: [
-                            //'rgba(255, 99, 132, 1)',
-                            //'rgba(54, 162, 235, 1)',
-                            //'rgba(255, 206, 86, 1)',
-                            //'rgba(75, 192, 192, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -1022,14 +1023,14 @@
                 </div>
                 <div class="col-6">
 
-                    <div style="height:5vh;width:78vw;margin-top:70px;"><canvas id="myChart2"></canvas></div>
+                    <div style="height:15vh;width:58vw;margin-top:70px;"><canvas id="myChart2"></canvas></div>
                 </div>
 
             </div>
         </div>
 
 
-        <div class="container" style="margin-top:100vh;">
+        <div class="container" style="margin-top:50vh;">
             <div class="row">
                 <div class="col-6">
                     <h2>
@@ -1066,7 +1067,7 @@
                 </div>
                 <div class="col-6">
 
-                    <div style="height:5vh;width:78vw;margin-top:70px;"><canvas id="myChart4"></canvas></div>
+                    <div style="height:15vh;width:58vw;margin-top:10px;"><canvas id="myChart4"></canvas></div>
                 </div>
 
             </div>
@@ -1079,7 +1080,7 @@
 
     @*AÑO 2017-2018*@
 
-    <div class="container" style="margin-top:0vh;">
+    <div class="container" style="margin-top:-30vh;">
         <div class="row">
 
             <div class="col-6">
