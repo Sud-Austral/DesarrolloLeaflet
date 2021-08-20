@@ -26,5 +26,12 @@ namespace AplicacionLogin.Controllers
 
             return View();
         }
+
+        public ActionResult Hector(string id = "13")
+        {
+            ViewBag.Message = "Your contact page.";
+            ViewBag.Region = id;
+            return View();
+        }
     }
 }

@@ -7,29 +7,29 @@
 
 <html>
 
-    
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>datos</title>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>datos</title>
 
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
 
-    </head>
-    <body>
-        <style>
-            #texescudo {
-                font-size:2em;
-                font-weight:900;
-            }
-        </style>
-        <script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <style>
+        #texescudo {
+            font-size: 2em;
+            font-weight: 900;
+        }
+    </style>
+    <script>
             function number_format(amount, decimals) {
 
                 amount += ''; // por si pasan un numero en vez de un string
@@ -54,27 +54,27 @@
             }
 
             //alert(number_format(9999999999))
-        </script>
+    </script>
 
-        @*<div style="height:20vh;width:20vw;margin-top:20px;"><canvas id="myChart"></canvas></div>*@
-        @**<div style="height:20vh;width:20vw;margin-left:380px;" margin-top:-200px"><canvas id="myChart2"></canvas></div>
+    @*<div style="height:20vh;width:20vw;margin-top:20px;"><canvas id="myChart"></canvas></div>*@
+    @**<div style="height:20vh;width:20vw;margin-left:380px;" margin-top:-200px"><canvas id="myChart2"></canvas></div>
         <div style="height:30vh;width:30vw;margin-left:750px;" margin-top:-200px;"><canvas id="myChart3"></canvas></div>
         <canvas id="myChart4" style="height:10vh;width:20vw;"></canvas>*@
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <script>
+    <script>
 
-        </script>
-
-
+    </script>
 
 
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-                crossorigin="anonymous"></script>
-        <script>
-            $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/Datos_Censo_2017_Comuna_MERGE_3.csv", function (data) {
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script>
+        $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/Rx_AREA_Glac_ZONA_glac.xls.csv", function (data) {
             var datos = data;
 
             var fila = datos.split("\n")[8];
@@ -87,106 +87,71 @@
 
 
 
-                //alert (datos)
+                alert (datos)
             for (var i = 0; i < datos.split("\n").length; i++) {
                 var fila = datos.split("\n")[i];
                 //alert(fila.split(",").length)
                 var registros = {
-                    
-                    REGION: fila.split(",")[0],
-                    PROVINCIA: fila.split(",")[1],
-                    COMUNA: fila.split(",")[2],
-                    NOM_REGION: fila.split(",")[3],
-                    NOM_PROVIN: fila.split(",")[4],
-                    NOM_COMUNA: fila.split(",")[5],
-                    TOTAL_VIVI: fila.split(",")[6],
-                    PARTICULAR: fila.split(",")[7],
-                    POR_PART: fila.split(",")[8],
-                    COLECTIVAS: fila.split(",")[9],
-                    POR_COLE: fila.split(",")[10],
-                    TOTAL_PERS: fila.split(",")[11],
-                    POR_HOMBRES: fila.split(",")[12],
-                    HOMBRES: fila.split(",")[13],
-                    POR_MUJERES: fila.split(",")[14],
-                    MUJERES: fila.split(",")[15],
-                    DENSIDAD: fila.split(",")[16],
-                    MEDIA_MAS: fila.split(",")[17],
-                    INDICE_MAS: fila.split(",")[18],
-                    INDICE_DEP: fila.split(",")[29],
-                    IND_DEP_JU: fila.split(",")[20],
-                    IND_DEP_VE: fila.split(",")[21],
-                    CUT: fila.split(",")[22],
-                    PERSONAS_0: fila.split(",")[23],
-                    Porc_0_5: fila.split(",")[24],
-                    PERSONAS_6: fila.split(",")[25],
-                    Porc_6_14: fila.split(",")[26],
-                    PERSONAS_1: fila.split(",")[27],
-                    Porc_15_64: fila.split(",")[28],
-                    PERSONAS_M: fila.split(",")[29],
-                    Porc_mas_65: fila.split(",")[30],
-                    PERSONAS_E: fila.split(",")[31],
-                    Porc_MIGR: fila.split(",")[32],
-                    PNac_MIG: fila.split(",")[33],
-                    PUEBLOS_IN: fila.split(",")[34],
-                    Porc_IND: fila.split(",")[35],
-                    PNac_IND: fila.split(",")[36],
-                    TOTAL_VIV_: fila.split(",")[37],
-                    TOTAL_VI_1: fila.split(",")[38],
-                    VIV_OCUPA_: fila.split(",")[39],
-                    TOTAL_VI_2: fila.split(",")[40],
-                    CANTIDAD_H: fila.split(",")[41],
-                    VIV_TIPO_C: fila.split(",")[42],
-                    vTip_Casa: fila.split(",")[43],
-                    VIV_TIPO_D: fila.split(",")[44],
-                    vTip_Dep: fila.split(",")[45],
-                    vOtro_Tip: fila.split(",")[46],
-                    VIV_TIPO_T: fila.split(",")[47],
-                    VIV_TIPO_P: fila.split(",")[48],
-                    VIV_TIPO_M: fila.split(",")[49],
-                    VIV_TIPO_1: fila.split(",")[50],
-                    VIV_TIPO_O: fila.split(",")[51],
-                    VIV_PARED_: fila.split(",")[52],
-                    VIV_PARE_1: fila.split(",")[53],
-                    VIV_PARE_2: fila.split(",")[54],
-                    VIV_PARE_3: fila.split(",")[55],
-                    VIV_PARE_4: fila.split(",")[56],
-                    VIV_PARE_5: fila.split(",")[57],
-                    VIV_TECHO_: fila.split(",")[58],
-                    VIV_TECH_1: fila.split(",")[59],
-                    VIV_TECH_2: fila.split(",")[60],
-                    VIV_TECH_3: fila.split(",")[61],
-                    VIV_TECH_4: fila.split(",")[62],
-                    VIV_TECH_5: fila.split(",")[63],
-                    VIV_TECH_6: fila.split(",")[64],
-                    VIV_PISO_P: fila.split(",")[65],
-                    VIV_PISO_R: fila.split(",")[66],
-                    VIV_PISO_B: fila.split(",")[67],
-                    VIV_PISO_C: fila.split(",")[68],
-                    VIV_PISO_T: fila.split(",")[69],
-                    VIV_MATERI: fila.split(",")[70],
-                    Mat_Acep: fila.split(",")[71],
-                    VIV_MATE_1: fila.split(",")[72],
-                    Mat_Recup: fila.split(",")[73],
-                    VIV_MATE_2: fila.split(",")[74],
-                    Mat_Irrecup: fila.split(",")[75],
-                    VIV_AGUA_R: fila.split(",")[76],
-                    vAguRedPUB: fila.split(",")[77],
-                    VIV_AGUA_P: fila.split(",")[78],
-                    vAguPOZO: fila.split(",")[79],
-                    VIV_AGUA_C: fila.split(",")[80],
-                    vAguCAMION: fila.split(",")[81],
-                    VIV_AGUA_1: fila.split(",")[82],
-                    vAguRIO: fila.split(",")[83],
-                    Escudo: fila.split(",")[84],
-                    Latitud: fila.split(",")[85],
-                    Longitud: fila.split(",")[86]
+
+                    FID: fila.split(",")[0],
+                    idZonGlac: fila.split(",")[1],
+                    SUM_Shape_: fila.split(",")[2],
+                    niev_17q1: fila.split(",")[3],
+                    niev_18q1: fila.split(",")[4],
+                    niev_19q1: fila.split(",")[5],
+                    niev_20q1: fila.split(",")[6],
+                    niev_21q1: fila.split(",")[7],
+                    niev_17q2: fila.split(",")[8],
+                    niev_18q2: fila.split(",")[9],
+                    niev_19q2: fila.split(",")[10],
+                    niev_20q2: fila.split(",")[11],
+                    q1_SN: fila.split(",")[12],
+                    Porc_SNq1: fila.split(",")[13],
+                    q1_Max: fila.split(",")[14],
+                    q1_Max_sum: fila.split(",")[15],
+                    q1_Min: fila.split(",")[16],
+                    q2_SN: fila.split(",")[17],
+                    Porc_SNq2: fila.split(",")[18],
+                    q2_Max: fila.split(",")[19],
+                    q2_Max_sum: fila.split(",")[20],
+                    q2_Min: fila.split(",")[21],
+                    SN_1718q1: fila.split(",")[22],
+                    G_1718q1: fila.split(",")[23],
+                    P_1718q1: fila.split(",")[24],
+                    SC_1718q1: fila.split(",")[25],
+                    SN_1819q1: fila.split(",")[26],
+                    G_1819q1: fila.split(",")[27],
+                    P_1819q1: fila.split(",")[28],
+                    SC_1819q1: fila.split(",")[29],
+                    SN_1920q1: fila.split(",")[30],
+                    G_1920q1: fila.split(",")[31],
+                    P_1920q1: fila.split(",")[32],
+                    SC_1920q1: fila.split(",")[33],
+                    SN_2021q1: fila.split(",")[34],
+                    G_2021q1: fila.split(",")[35],
+                    P_2021q1: fila.split(",")[36],
+                    SC_2021q1: fila.split(",")[37],
+                    SN_1718q2: fila.split(",")[38],
+                    G_1718q2: fila.split(",")[39],
+                    P_1718q2: fila.split(",")[40],
+                    SC_1718q2: fila.split(",")[41],
+                    SN_1819q2: fila.split(",")[42],
+                    G_1819q2: fila.split(",")[43],
+                    P_1819q2: fila.split(",")[44],
+                    SC_1819q2: fila.split(",")[45],
+                    SN_1920q2: fila.split(",")[46],
+                    G_1920q2: fila.split(",")[47],
+                    NOMBRE: fila.split(",")[48],
+                    P_1920q2: fila.split(",")[49],
+                    SC_1920q2: fila.split(",")[50]
 
 
 
 
 
 
-                   
+
+
                 }
 
                 //alert(registros.Longitud)
@@ -227,7 +192,7 @@
 
                 var texto10 = " El " + Math.round(Number.parseFloat(salida.Mat_Acep) * 100) / 100 + " de las viviendas de la comuna de MARÍA ELENA presenta materialidad aceptable, el " + Math.round(Number.parseFloat(salida.Mat_Recup) * 100) / 100 + " recuperable y el " + Math.round(Number.parseFloat(salida.Mat_Irrecup) * 100) / 100 + ".";
 
-                var texto11 = " El " + Math.round(Number.parseFloat(salida.vAguRedPUB) * 100) / 100 + " de las viviendas de la comuna de MARÍA ELENA tiene acceso agua por red pública, el " + Math.round(Number.parseFloat(salida.vAguPOZO) * 100) / 100 + " de pozo, el " + Math.round(Number.parseFloat(salida.vAguCAMION) * 100) / 100 + " de camion aljibe, y el " + Math.round(Number.parseFloat(salida.vAguRIO) * 100) / 100 + " de río, vertiente, estero, canal, lago, etc. "; 
+                var texto11 = " El " + Math.round(Number.parseFloat(salida.vAguRedPUB) * 100) / 100 + " de las viviendas de la comuna de MARÍA ELENA tiene acceso agua por red pública, el " + Math.round(Number.parseFloat(salida.vAguPOZO) * 100) / 100 + " de pozo, el " + Math.round(Number.parseFloat(salida.vAguCAMION) * 100) / 100 + " de camion aljibe, y el " + Math.round(Number.parseFloat(salida.vAguRIO) * 100) / 100 + " de río, vertiente, estero, canal, lago, etc. ";
 
 
 
@@ -639,7 +604,6 @@
             });
 
 
-           
 
 
 
@@ -669,36 +633,66 @@
 
 
 
-        </script>
-        <div style="margin-bottom:1vh;" id="primerelemento">
+
+    </script>
+    <div style="margin-bottom:1vh;" id="primerelemento">
+
+
+    </div>
+
+    <div style="margin-bottom:1vh;" id="segundoelemento">
+
+
+    </div>
+
+
+
+
+
+    <div class="container" style="margin-top:0vh;">
+        <div class="row">
+            <div class="col-6">
+                <img style="height:70px;" src="~/Content/Imagen/negro-rojo-trans.png" />
+
+            </div>
+
+            <div class="col-12">
+                <hr style="border:15px;"><hr style="border:2px;">
+
+            </div>
 
 
         </div>
-
-        <div style="margin-bottom:1vh;" id="segundoelemento">
-
-
-        </div>
+    </div>
 
 
 
 
 
-        <div class="container" style="margin-top:0vh;">
+    <div class="container" style="margin-top:5vh;">
+        <div class="row">
             <div class="row">
                 <div class="col-6">
-                    <img style="height:70px;" src="~/Content/Imagen/negro-rojo-trans.png" />
+                    <img style="height:130px;" src="~/Content/layout/Glacear.png" />
+
+                    @*<img style="width:140px;height:140px;margin-top:0px;" id="logocomuna" src="..." class="" alt="...">*@
 
                 </div>
 
-                <div class="col-12">
-                    <hr style="border:15px;"><hr style="border:2px;">
 
+                <div class="col-6">
+                    <div style="width:320px;height:120px;margin-left:150px;margin-top:50px;font:100" id="texescudo">
+                    </div>
                 </div>
+
+
+
 
 
             </div>
         </div>
+
+        <hr width="100%" color="blue" ; style:size="8px" />
 
 
 
@@ -707,231 +701,207 @@
         <div class="container" style="margin-top:5vh;">
             <div class="row">
                 <div class="row">
-                    <div class="col-6">
-                        <img style="width:140px;height:140px;margin-top:0px;" id="logocomuna" src="..." class="" alt="...">
-
-                    </div>
-
-
-                    <div class="col-6">
-                        <div style="width:320px;height:120px;margin-left:150px;margin-top:50px;font:100" id="texescudo">
-                        </div>
-                    </div>
-
-
-
-
-
-                </div>
-            </div>
-
-            <hr width="100%" color="blue" ; style:size="8px" />
-
-
-
-
-
-            <div class="container" style="margin-top:5vh;">
-                <div class="row">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>
-                                1. ASPECTOS SOCIO-DEMOGRÁFICOS
-                            </h2>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            @*PRIMER TEXTO CON GRAFICA*@
-            <div class="container" style="margin-top:5vh;">
-                <div class="row">
-                    <div class="col-6">
-                        <h2 style="margin-top:0px;"> POBLACIÓN </h2>
-                        <div style="margin-top:100px; " id="prueba">
-                        </div>
-
-                        <div style="margin-top:10px; " id="tex">
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-6">
-                        <div style="height:15vh;width:16vw;margin-top:50px;"><canvas id="myChart"></canvas></div>
-
-                    </div>
-
-
-                </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <div style="height:40vh;width:40vw;margin-top:50px;"><canvas id="myChart4"></canvas></div>
-
-                    </div>
-
-                    <div class="col-6">
-                        <div style="margin-top:90px; " id="texsiete">
-                        </div>
-
-                        <div style="margin-top:20px; " id="texocho"> </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="container" style="margin-top:5vh;">
-                <div class="row">
-
-                    <div class="col-6">
-                        <h3 style="margin-left:00px;margin-top:0px;">
-                            1. VIVIENDA
-                        </h3>
-                        <div style="margin-top:0px" id="segundotexto">
-
-                        </div>
-                        <div style="margin-top:5px; " id="texnueve"> </div>
-
-
-
-                    </div>
-                    <div class="col-6">
-
-                        <div style="height:30vh;width:18vw;margin-top:0px;"><canvas id="myChart2"></canvas></div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-            <div class="container" style="margin-top:5vh;">
-                <div class="row">
-
                     <div class="col-12">
-
-                        <div style="height:60vh;width:48vw;margin-top:10px;"><canvas id="myChart5"></canvas></div>
-
-                    </div>
-
-                </div>
-            </div>
-
-
-
-            <div class="container" style="margin-top:0vh;">
-                <div class="row">
-
-                    <div class="col-6">
-
-                        <div style="margin-top:85px" id="texdiez">
-
-                        </div>
-
-                        <div style="height:30vh;width:25vw;margin-top:10px;"><canvas id="myChart6"></canvas></div>
-
-                    </div>
-
-                    <div class="col-6">
-
-                        <div style="margin-top:85px" id="texonce">
-
-                        </div>
-
-                        <div style="height:30vh;width:25vw;margin-top:10px;"><canvas id="myChart7"></canvas></div>
-
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="container" style="margin-top:17vh;">
-                <div class="row">
-
-
-
-                    <div class="col-6">
-                        <h2 style="margin-top:5px;">
-                            1. ÍNDICES SOCIODEMOGRÁFICOS
+                        <h2>
+                            1. Superficies máximas y mínimas de nieve
 
                         </h2>
-                        <div style="margin-top:55px" id="tercertexto">
 
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+
+
+
+
+        @*PRIMER TEXTO CON GRAFICA*@
+        <div class="container" style="margin-top:5vh;">
+            <div class="row">
+                <div class="col-6">
+                    <h2 style="margin-top:0px;">
+                        Superficie de nieve en la época MENOR Acumulación
+                    </h2>
+                    <div style="margin-top:100px; " id="prueba">
+                    </div>
+
+                    <div style="margin-top:10px; " id="tex">
                     </div>
 
 
-                    <div class="col-6">
-                        <div style="height:28vh;width:28vw;margin-top:25px;"><canvas id="myChart3"></canvas></div>
+                </div>
 
+                <div class="col-6">
+                    <div style="height:15vh;width:16vw;margin-top:50px;"><canvas id="myChart"></canvas></div>
+
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div style="height:40vh;width:40vw;margin-top:50px;"><canvas id="myChart4"></canvas></div>
+
+                </div>
+
+                <div class="col-6">
+                    <div style="margin-top:90px; " id="texsiete">
+                    </div>
+
+                    <div style="margin-top:20px; " id="texocho"> </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container" style="margin-top:5vh;">
+            <div class="row">
+
+                <div class="col-6">
+                    <h3 style="margin-left:00px;margin-top:0px;">
+                        1. VIVIENDA
+                    </h3>
+                    <div style="margin-top:0px" id="segundotexto">
+
+                    </div>
+                    <div style="margin-top:5px; " id="texnueve"> </div>
+
+
+
+                </div>
+                <div class="col-6">
+
+                    <div style="height:30vh;width:18vw;margin-top:0px;"><canvas id="myChart2"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="container" style="margin-top:5vh;">
+            <div class="row">
+
+                <div class="col-12">
+
+                    <div style="height:60vh;width:48vw;margin-top:10px;"><canvas id="myChart5"></canvas></div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="container" style="margin-top:0vh;">
+            <div class="row">
+
+                <div class="col-6">
+
+                    <div style="margin-top:85px" id="texdiez">
 
                     </div>
 
+                    <div style="height:30vh;width:25vw;margin-top:10px;"><canvas id="myChart6"></canvas></div>
 
-                    <div class="col-12">
-                       
+                </div>
 
-                        <div class="col-12">
-                            <h2 style="margin-top:50px;">
-                                2. LOCALIZACIÓN
-                            </h2>
-                            <div style="margin-top:10px" id="texmapa">
+                <div class="col-6">
 
-                            </div>
+                    <div style="margin-top:85px" id="texonce">
 
-                        </div>
-                        <iframe id="mapagoogle" style="width:1150px;height:500px;margin-top:40px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=maipu+cl" title="W3Schools Free Online Web Tutorials">
-                        </iframe>
+                    </div>
 
-                        @* <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/place/VALPARAÍSO,+REGIÓNDEVALPARAÍSO,+Chile/"></iframe>
-                    <a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibuja un circulo Google Maps</a></div>*@
+                    <div style="height:30vh;width:25vw;margin-top:10px;"><canvas id="myChart7"></canvas></div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="container" style="margin-top:17vh;">
+            <div class="row">
+
+
+
+                <div class="col-6">
+                    <h2 style="margin-top:5px;">
+                        1. ÍNDICES SOCIODEMOGRÁFICOS
+
+                    </h2>
+                    <div style="margin-top:55px" id="tercertexto">
 
                     </div>
 
                 </div>
+
+
+                <div class="col-6">
+                    <div style="height:28vh;width:28vw;margin-top:25px;"><canvas id="myChart3"></canvas></div>
+
+
+                </div>
+
+
+                <div class="col-12">
+
+
+                    <div class="col-12">
+                        <h2 style="margin-top:50px;">
+                            2. LOCALIZACIÓN
+                        </h2>
+                        <div style="margin-top:10px" id="texmapa">
+
+                        </div>
+
+                    </div>
+                    <iframe id="mapagoogle" style="width:1150px;height:500px;margin-top:40px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=maipu+cl" title="W3Schools Free Online Web Tutorials">
+                    </iframe>
+
+                    @* <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/place/VALPARAÍSO,+REGIÓNDEVALPARAÍSO,+Chile/"></iframe>
+                        <a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibuja un circulo Google Maps</a></div>*@
+
+                </div>
+
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
         </div>
 
-    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
 </html>
 
 

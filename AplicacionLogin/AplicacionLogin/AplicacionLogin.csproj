@@ -507,6 +507,7 @@
     <Content Include="Views\Prueba\Index.cshtml" />
     <Content Include="Views\Prueba\MenuLateral.cshtml" />
     <Content Include="Views\estructura\Glaceares.cshtml" />
+    <Content Include="Views\Home\Hector.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
