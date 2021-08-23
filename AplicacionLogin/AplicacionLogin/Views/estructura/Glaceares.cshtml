@@ -281,10 +281,8 @@
             var texto22 = "2a. Dinámica de cambio 2020-2021";
             var texto23 = " Dinámica de cambio en la época MENOR Acumulación";
             var texto24 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " del complejo glaciar, en la época menor acumulación, en el periodo 2019-2020, " + Math.round(Number.parseFloat(salida.SC_2021q1) * 100) / 100 + " se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_2021q1) * 100) / 100 + " y se ganaron " + Math.round(Number.parseFloat(salida.G_2021q1) * 100) / 100 + " La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_2021q1) * 100) / 100 + ".";
-            var texto25 = " Dinámica de cambio en la época MAYOR Acumulación";
-            var texto26 = "En la época mayor acumulación," + Math.round(Number.parseFloat(salida.SC_2021q2) * 100) / 100 + " se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_2021q2) * 100) / 100 + " y se ganaron " + Math.round(Number.parseFloat(salida.G_2021q2) * 100) / 100 + " . La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_2021q2) * 100) / 100 + ".";
 
-
+           
 
             document.getElementById("tex1").innerHTML = texto1;
             document.getElementById("tex2").innerHTML = texto2;
@@ -312,8 +310,7 @@
             document.getElementById("tex22").innerHTML = texto22;
             document.getElementById("tex23").innerHTML = texto23;
             document.getElementById("tex24").innerHTML = texto24;
-            document.getElementById("tex25").innerHTML = texto25;
-            document.getElementById("tex26").innerHTML = texto26;
+            
 
 
 
@@ -438,7 +435,7 @@
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 2
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -838,50 +835,7 @@
 
 
             @* AÑO 2020 - 21 *@
-            var ctx12 = document.getElementById('myChart12').getContext('2d');
-            var myChart12 = new Chart(ctx12, {
-                type: 'doughnut',
-                data: {
-                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
-                    datasets: [{
-                        label: '#',
-                        data: [parseInt(salida.q2_Max_sum), parseInt(salida.q2_SN)],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            //'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            //'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    plugins: {
-                        legend: {
-                            display: true,
-                            labels: {
-                                color: 'rgb(255, 99, 132)'
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-
+            
 
 
 
@@ -1229,14 +1183,9 @@
 
             <div class="col-6">
 
-                <div style="margin-top:15px" id="tex25">   </div>
-                <div style="margin-top:15px" id="tex26">   </div>
+                
 
-                <div class="col-6">
-
-                    <div style="height:5vh;width:18vw;margin-top:119px;"><canvas id="myChart12"></canvas></div>
-                </div>
-
+                
             </div>
 
         </div>
