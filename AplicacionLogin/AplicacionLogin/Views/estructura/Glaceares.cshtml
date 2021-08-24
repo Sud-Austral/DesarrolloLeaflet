@@ -25,7 +25,7 @@
 <body>
     <style>
         #tex1 {
-            font-size: 1.5em;
+            font-size: 1em;
             font-weight: 900;
             color:blue;
         }
@@ -254,33 +254,35 @@
 
 
             var texto1 = " " + salida.Nombre_Gla + ".";
-            var texto2 = " El glaciar " + salida.Nombre_Gla + " tiene una superficie de " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " de las cuales, en el periodo analizado, en la época de menor acumulación (enero – abril), lqa máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q1_Max_sum) * 100) / 100 + " y la mínima " + Math.round(Number.parseFloat(salida.q1_Min) * 100) / 100 + " Esto implicó que el " + Math.round(Number.parseFloat(salida.Porc_SNq1) * 100) / 100 +  " de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
+            var texto2 = " El glaciar " + salida.Nombre_Gla + " tiene una superficie de " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha de las cuales, en el periodo analizado, en la época de menor acumulación (enero – abril), la máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q1_Max_sum) * 100) / 100 + " ha y la mínima " + Math.round(Number.parseFloat(salida.q1_Min) * 100) / 100 + " ha Esto implicó que el " + Math.round(Number.parseFloat(salida.Porc_SNq1) * 100) / 100 +  " ha de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
             var texto3 = " La máxima superficie alcanzada por la nieve se refiere a la sumatoria de todas las zonas que en algún año del periodo analizado estuvo cubierta por nieve, y la mínima, a las zonas que en todos los años estuvieron cubiertas de nieve. Al analizar la superficie de nieve alcanza por año, en la época de menor acumulación, se observa la tendencia mostrada en el siguiente gráfico";
-            var texto4 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " del complejo glaciar, en el periodo analizado, en la época de mayor acumulación (mayo – diciembre), máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q2_Max_sum) * 100) / 100 + " y la mínima " + Math.round(Number.parseFloat(salida.q2_Min) * 100) / 100 + " Esto implicó que el " + Math.round(Number.parseFloat(salida.Porc_SNq2) * 100) / 100 + " de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
+            var texto4 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en el periodo analizado, en la época de mayor acumulación (mayo – diciembre), máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q2_Max_sum) * 100) / 100 + " ha y la mínima " + Math.round(Number.parseFloat(salida.q2_Min) * 100) / 100 + " ha Esto implicó que el " + Math.round(Number.parseFloat(salida.Porc_SNq2) * 100) / 100 + " ha de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
             var texto5 = " La superficie de nieve alcanza por año, en la época de mayor acumulación, se observa la tendencia mostrada en el siguiente gráfico.";
             var texto6 = " 2. Dinámica de cambio";
+
             var texto7 = "2a. Dinámica de cambio 2017-2018";
             var texto8 = " Dinámica de cambio en la época MENOR Acumulación";
-            var texto9 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " del complejo glaciar, en la época menor acumulación, en el periodo 2017-2018, " + Math.round(Number.parseFloat(salida.SC_1718q1) * 100) / 100 + " se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1718q1) * 100) / 100 + " y se ganaron " + Math.round(Number.parseFloat(salida.G_1718q1) * 100) / 100 + " La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1718q1) * 100) / 100 +  ".";
+            var texto9 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en la época menor acumulación, en el periodo 2017-2018, " + Math.round(Number.parseFloat(salida.SC_1718q1) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1718q1) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1718q1) * 100) / 100 + " ha La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1718q1) * 100) / 100 +  " ha.";
             var texto10 = " Dinámica de cambio en la época MAYOR Acumulación";
-            var texto11 = "En la época mayor acumulación," + Math.round(Number.parseFloat(salida.SC_1718q2) * 100) / 100 + " se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1718q2) * 100) / 100 + " y se ganaron " + Math.round(Number.parseFloat(salida.G_1718q2) * 100) / 100 + " . La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1718q2) * 100) / 100 +  ".";
+            var texto11 = "En la época mayor acumulación," + Math.round(Number.parseFloat(salida.SC_1718q2) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1718q2) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1718q2) * 100) / 100 + " ha . La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1718q2) * 100) / 100 +  " ha.";
 
-            @*
-            var texto12 = "2a. Dinámica de cambio 2017-2018";
+            
+            var texto12 = "2a. Dinámica de cambio 2018-2019";
             var texto13 = " Dinámica de cambio en la época MENOR Acumulación";
-            var texto14 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 +  " del complejo glaciar, en la época menor acumulación, en el periodo 2017-2018," + salida.SC_1819q1 + " se mantuvo sin cambio, se perdieron " + salida.P_1819q1 + " y se ganaron " + salida.G_1819q1 + " La superficie que se mantuvo sin nieve fue de " + salida.SN_1819q1 + ".";
+            var texto14 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en la época menor acumulación, en el periodo 2017-2018," + Math.round(Number.parseFloat(salida.SC_1819q1) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1819q1) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1819q1) * 100) / 100 + " ha La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1819q1) * 100) / 100 +  " ha.";
             var texto15 = " Dinámica de cambio en la época MAYOR Acumulación";
-            var texto16 = "En la época mayor acumulación," + salida.SC_1819q2 + " se mantuvo sin cambio, se perdieron " + salida.P_1819q2 + " y se ganaron " + salida.G_1819q2 + " . La superficie que se mantuvo sin nieve fue de " + salida.SN_1819q2 + ".";
-                *@
+            var texto16 = "En la época mayor acumulación," + Math.round(Number.parseFloat(salida.SC_1819q2) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1819q2) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1819q2) * 100) / 100 + " ha . La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1819q2) * 100) / 100 + " ha.";
+
+
             var texto17 = "2a. Dinámica de cambio 2019-2020";
             var texto18 = " Dinámica de cambio en la época MENOR Acumulación";
-            var texto19 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " del complejo glaciar, en la época menor acumulación, en el periodo 2019-2020, " + Math.round(Number.parseFloat(salida.SC_1920q1) * 100) / 100 + " se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1920q1) * 100) / 100 + " y se ganaron " + Math.round(Number.parseFloat(salida.G_1920q1) * 100) / 100 + " La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1920q1) * 100) / 100 + ".";
+            var texto19 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en la época menor acumulación, en el periodo 2019-2020, " + Math.round(Number.parseFloat(salida.SC_1920q1) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1920q1) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1920q1) * 100) / 100 + " ha La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1920q1) * 100) / 100 + " ha.";
             var texto20 = " Dinámica de cambio en la época MAYOR Acumulación";
-            var texto21 = "En la época mayor acumulación," + Math.round(Number.parseFloat(salida.SC_1920q2) * 100) / 100 + " se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1920q2) * 100) / 100 + " y se ganaron " + Math.round(Number.parseFloat(salida.G_1920q2) * 100) / 100 + " . La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1920q2) * 100) / 100 + ".";
+            var texto21 = "En la época mayor acumulación," + Math.round(Number.parseFloat(salida.SC_1920q2) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1920q2) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1920q2) * 100) / 100 + " ha. La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1920q2) * 100) / 100 + " ha.";
 
             var texto22 = "2a. Dinámica de cambio 2020-2021";
             var texto23 = " Dinámica de cambio en la época MENOR Acumulación";
-            var texto24 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " del complejo glaciar, en la época menor acumulación, en el periodo 2019-2020, " + Math.round(Number.parseFloat(salida.SC_2021q1) * 100) / 100 + " se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_2021q1) * 100) / 100 + " y se ganaron " + Math.round(Number.parseFloat(salida.G_2021q1) * 100) / 100 + " La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_2021q1) * 100) / 100 + ".";
+            var texto24 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en la época menor acumulación, en el periodo 2019-2020, " + Math.round(Number.parseFloat(salida.SC_2021q1) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_2021q1) * 100) / 100 + "  ha y se ganaron " + Math.round(Number.parseFloat(salida.G_2021q1) * 100) / 100 + " ha La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_2021q1) * 100) / 100 + " ha.";
 
            
 
@@ -295,13 +297,13 @@
             document.getElementById("tex9").innerHTML = texto9;
             document.getElementById("tex10").innerHTML = texto10;
             document.getElementById("tex11").innerHTML = texto11;
-            @*
+            
             document.getElementById("tex12").innerHTML = texto12;
             document.getElementById("tex13").innerHTML = texto13;
             document.getElementById("tex14").innerHTML = texto14;
             document.getElementById("tex15").innerHTML = texto15;
             document.getElementById("tex16").innerHTML = texto16;
-                *@
+                
             document.getElementById("tex17").innerHTML = texto17;
             document.getElementById("tex18").innerHTML = texto18;
             document.getElementById("tex19").innerHTML = texto19;
@@ -370,7 +372,7 @@
                 data: {
                     labels: ["2017", "2018", "2019", "2020", "2021"],
                     datasets: [{
-                        label: '#DATA INTELINGE',
+                        label: '',
                         data: [parseInt(salida.niev_17q1), parseInt(salida.niev_18q1), parseInt(salida.niev_19q1), parseInt(salida.niev_20q1), parseInt(salida.niev_21q1)],
                         backgroundColor: [
                             //'rgba(255, 99, 132, 0.2)',
@@ -463,7 +465,7 @@
                 data: {
                     labels: ["2017", "2018", "2019", "2020", "2021"],
                     datasets: [{
-                        label: '#DATA INTELINGE',
+                        label: '',
                         data: [parseInt(salida.niev_17q2), parseInt(salida.niev_18q2), parseInt(salida.niev_19q2), parseInt(salida.niev_20q2), parseInt(salida.niev_21q2)],
                         backgroundColor: [
                             //'rgba(255, 99, 132, 0.2)',
@@ -598,7 +600,7 @@
 
 
             @* AÑO 2018 - 2019 *@
-            @*
+            
             var ctx7 = document.getElementById('myChart7').getContext('2d');
             var myChart7 = new Chart(ctx7, {
                 type: 'doughnut',
@@ -642,10 +644,10 @@
                     }
                 }
             });
-                *@
+                
             
             @* AÑO 2018 - 2019 *@
-            @*
+            
             var ctx8 = document.getElementById('myChart8').getContext('2d');
             var myChart8 = new Chart(ctx8, {
                 type: 'doughnut',
@@ -689,7 +691,7 @@
                     }
                 }
             });
-            *@
+            
 
 
             @* AÑO 2019- 2020 *@
@@ -1080,7 +1082,7 @@
 
 
     @*AÑO 2018-2019*@
-    @*
+    
     <div class="container" style="margin-top:38vh;">
         <div class="row">
 
@@ -1116,7 +1118,7 @@
         </div>
     </div>
 
-    *@
+    
 
 
 
