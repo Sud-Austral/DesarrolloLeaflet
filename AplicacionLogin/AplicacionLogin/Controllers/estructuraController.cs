@@ -53,5 +53,10 @@ namespace AplicacionLogin.Controllers
             return View();
         }
 
+        public ActionResult movil()
+        {
+            return View();
+        }
+
     }
 }
