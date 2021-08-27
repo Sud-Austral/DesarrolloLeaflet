@@ -5,8 +5,8 @@ var wmsLayer = L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
 }).addTo(myMap);
 
 var basemaps = {
-    Topography: L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/chile/wms?', {
-        layers:'chile:Datos_Censo_2017__Comuna,RASTER_DIST_EDUB,chile:SIEDU_EB'
+    Topography: L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares_r10/wms', {
+        layers: 'glaciares_r10_1718q1'
     }),
 
     Places: L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
@@ -17,9 +17,10 @@ var basemaps = {
         layers: 'TOPO-WMS,OSM-Overlay-WMS'
     }),
 
-    'Places, then topography': L.tileLayer.wms('http://ide.dataintelligence-group.com/geoserver/chile/wms?', {
-        layers: 'chile:ISMT'
+    'Places, then topography': L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares_r10/wms', {
+        layers: 'glaciares_r10_1718q1'
     })
+    
 
     
 };
