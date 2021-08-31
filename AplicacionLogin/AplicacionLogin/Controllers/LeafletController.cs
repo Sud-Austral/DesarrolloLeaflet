@@ -14,5 +14,11 @@ namespace AplicacionLogin.Controllers
             ViewBag.region = id;
             return View();
         }
+
+        public ActionResult MaxMin(int id = 2)
+        {
+            ViewBag.glaciar = id;
+            return View();
+        }
     }
 }

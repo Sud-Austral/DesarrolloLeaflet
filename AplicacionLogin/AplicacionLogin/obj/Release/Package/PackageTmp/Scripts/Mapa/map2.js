@@ -17,8 +17,8 @@ var basemaps = {
         layers: 'TOPO-WMS,OSM-Overlay-WMS'
     }),
 
-    'Places, then topography': L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
-        layers: 'OSM-Overlay-WMS,TOPO-WMS'
+    'Glaciar': L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares_r10/wms', {
+        layers: 'glaciares_r10:prueba_glac_r10'
     })
 };
 
