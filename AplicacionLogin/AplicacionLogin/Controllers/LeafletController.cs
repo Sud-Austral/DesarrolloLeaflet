@@ -15,10 +15,17 @@ namespace AplicacionLogin.Controllers
             return View();
         }
 
-        public ActionResult MaxMin(int idGlaciar = 0, int idGlaciar2 = 0)
+        public ActionResult MaxMin(int idGlaciar = 0)
         {
             ViewBag.glaciar = idGlaciar;
-            ViewBag.prueba = idGlaciar2;
+            return View();
+        }
+
+        public ActionResult Dinamica(int idGlaciar = 0, string q = "", string p = "")
+        {
+            ViewBag.glaciar = idGlaciar;
+            ViewBag.q = q;
+            ViewBag.p = p;
             return View();
         }
     }
