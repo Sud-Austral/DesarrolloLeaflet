@@ -139,7 +139,7 @@
             collapsed: false // true
         }).addTo(map);
 
-        map.removeLayer(subdivision)
+        map.removeLayer(subdivision);
 
         // specify popup options
         var customOptions =
@@ -152,7 +152,6 @@
             if (feature.properties && feature.properties.idZonGlac) {
                 layer.bindPopup("<img class='bannerTop' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/Glaciares.jpg' alt='Data Intelligence'/><br><br>" +
                     "<b><center>" + feature.properties.Nombre_Gla + "</center></b>" +
-                    "<h1>" + @ViewBag.prueba + "</h1>" +
                     "<br><b>Región: </b>" + feature.properties.NOM_REGION +
                     "<br><b>Provincia: </b>" + feature.properties.NOM_PROVIN +
                     "<br><b>Comuna: </b>" + feature.properties.NOM_COMUNA + "<br>" +

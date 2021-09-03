@@ -188,10 +188,11 @@
     <Compile Include="Controllers\GlaciaresController.cs" />
     <Compile Include="Controllers\HectorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LeafletController.cs" />
+    <Compile Include="Controllers\GR10Controller.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MapaController.cs" />
     <Compile Include="Controllers\MapBoxController.cs" />
+    <Compile Include="Controllers\MunicipiosController.cs" />
     <Compile Include="Controllers\PruebaController.cs" />
     <Compile Include="Controllers\RMapasController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1226,7 +1227,7 @@
     <Content Include="Views\Hector\ViewPage2.cshtml" />
     <Content Include="Views\Hector\test4.cshtml" />
     <Content Include="Views\RMapas\Index.cshtml" />
-    <Content Include="Views\Leaflet\Index.cshtml" />
+    <Content Include="Views\GR10\Index.cshtml" />
     <Content Include="Views\Filtros\Region.cshtml" />
     <Content Include="Views\Filtros\Comuna.cshtml" />
     <Content Include="Views\Glaciares\Index.cshtml" />
@@ -1247,7 +1248,9 @@
     <Content Include="Views\Home\Hector.cshtml" />
     <Content Include="Views\estructura\movil.cshtml" />
     <Content Include="Views\MapBox\Ejemplo1.cshtml" />
-    <Content Include="Views\Leaflet\MaxMin.cshtml" />
+    <Content Include="Views\GR10\MaxMin.cshtml" />
+    <Content Include="Views\GR10\Dinamica.cshtml" />
+    <Content Include="Views\Municipios\Municipios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
