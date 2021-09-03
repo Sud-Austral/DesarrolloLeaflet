@@ -265,9 +265,7 @@
 
         // CAPAS
         var capas = {
-            "Complejo glaciar": complejo,
-            "Sectores del complejo glaciar": subdivision,
-            "Período inexistente": glac,
+            "Q1 (Ene-Abr) 2017-2018": glac,
         };
 
         if ('@ViewBag.p' == "17-18" && '@ViewBag.q' == "Q1") {
@@ -275,7 +273,6 @@
             var overlayMaps = {
                 "Mapa del complejo glaciar": complejo,
                 "Sectores del complejo glaciar": subdivision,
-                "Q1 (Ene-Abr) 2017-2018": glac,
             };
         }
         else if ('@ViewBag.p' == "18-19" && '@ViewBag.q' == "Q1") {
@@ -335,7 +332,7 @@
         }).addTo(map);
 
         map.removeLayer(subdivision);
-        map.removeLayer(glac);
+        //map.removeLayer(glac);
 
         // specify popup options
         var customOptions =
