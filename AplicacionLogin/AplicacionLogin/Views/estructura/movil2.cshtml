@@ -23,7 +23,7 @@
 
     </head>
     <body>
-       
+        
         <style>
             #texescudo {
                 font-size:2em;
@@ -207,16 +207,16 @@
                 document.getElementById('mapagoogle').src = urlifreme;
                 document.getElementById('logocomuna').src = salida.Escudo;
 
-                var texto = "La comuna de " + salida.NOM_COMUNA + " Ubicada en " + salida.NOM_REGION + " según los datos del censo 2017 tiene una población de " + number_format(salida.TOTAL_PERS) + " habitantes de los cuales el " + Math.round(Number.parseFloat(salida.POR_HOMBRES) * 100) / 100 + "% son hombres y el " + Math.round(Number.parseFloat(salida.POR_MUJERES) * 100) / 100 + "%   mujeres, lo corresponde a una densidad poblacional de " + Math.round(Number.parseFloat(salida.DENSIDAD) * 100) / 100 + " habitantes por kilómetro cuadrado." ;
+                var texto = "La comuna de " + salida.NOM_COMUNA + " Ubicada en " + salida.NOM_REGION + " según los datos del censo 2017 tiene una población de " + number_format(salida.TOTAL_PERS) + " habitantes de los cuales el " + Math.round(Number.parseFloat(salida.POR_HOMBRES) * 100) / 100 + "% son hombres y el " + Math.round(Number.parseFloat(salida.POR_MUJERES) * 100) / 100 + "%   mujeres, lo corresponde a una densidad poblacional de " + salida.DENSIDAD + " habitantes por kilómetro cuadrado." ;
 
 
                 var texto2 = "La comuna de " + salida.NOM_COMUNA + " según los datos del censo 2017 tiene un total de " + number_format(salida.TOTAL_VIVI) + " viviendas de las cuales " + number_format(salida.PARTICULAR) + " particulares y " + number_format(salida.COLECTIVAS) + " colectivas. ";
 
-            var texto3 = "La comuna de " + salida.NOM_COMUNA + " tiene un índice de masculinidad de  " + salida.HOMBRES + " el cual es " + salida.MEDIA_MAS + " que el promedio nacional. El índice de dependencia total es de  " + salida.INDICE_DEP + ". El índice de dependencia de jóvenes es  " + salida.IND_DEP_JU + " y el de tercera edad es de " + salida.IND_DEP_VE + ".";
+                var texto3 = "La comuna de " + salida.NOM_COMUNA + " tiene un índice de masculinidad de  " + salida.HOMBRES + " el cual es " + salida.MEDIA_MAS + " que el promedio nacional. El índice de dependencia total es de  " + salida.INDICE_DEP + ". El índice de dependencia de jóvenes es  " + salida.IND_DEP_JU + " y el de tercera edad es de " + salida.IND_DEP_VE + ".";
 
                 var texto4 = "Comuna de " + salida.NOM_COMUNA + ".";
 
-                var texto5 = " La Comuna de " + salida.NOM_COMUNA + " esta localizada  en la provincia de " + salida.NOM_PROVIN + ", REGION DE " + salida.NOM_REGION + " Latitud " + salida.Latitud + " y  longitud " + salida.Longitud+ ".";
+                var texto5 = " La Comuna de " + salida.NOM_COMUNA + " esta localizada  en la provincia de " + salida.NOM_PROVIN + ", REGION DE " + salida.NOM_REGION + " Latitud " + salida.Latitud + " y  longitud " + salida.Longitud + ".";;
 
                 var texto6 = " El " + Math.round(Number.parseFloat(salida.Porc_15_64) * 100) / 100 + " de la población se encuentra en el rango de edad de 15 a 64 años, el " + Math.round(Number.parseFloat(salida.Porc_0_5) * 100) / 100 + " son menores de 6 años, el " + Math.round(Number.parseFloat(salida.Porc_6_14) * 100) / 100 + " de 6 a 14 años y el " + Math.round(Number.parseFloat(salida.Porc_mas_65) * 100) / 100 +  " de 65 y más años."
 
@@ -513,7 +513,7 @@
                     data: {
                         labels: ["Casa", "Departamento en edificio", "Tradicional indigena"],
                         datasets: [{
-                            label: '#',
+                            label: 'DATA INTELINGE',
                             data: [parseInt(salida.VIV_TIPO_C), parseInt(salida.VIV_TIPO_D), parseInt(salida.VIV_TIPO_T)],
                             backgroundColor: [
                                 //'rgba(255, 99, 132, 0.2)',
@@ -569,7 +569,7 @@
                     data: {
                         labels: ["Casa", "Departamento en edificio", "Tradicional indigena"],
                         datasets: [{
-                            label: '#',
+                            label: 'DATA INTELINGE',
                             data: [parseInt(salida.VIV_TIPO_C), parseInt(salida.VIV_TIPO_D), parseInt(salida.VIV_TIPO_T)],
                             backgroundColor: [
                                 //'rgba(255, 99, 132, 0.2)',
@@ -687,7 +687,7 @@
 
         <div class="container" style="margin-top:0vh;">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
                     <img style="height:70px;" src="~/Content/Imagen/negro-rojo-trans.png" />
 
                 </div>
@@ -705,17 +705,17 @@
 
 
 
-        <div class="container" style="margin-top:5vh;">
+        <div class="container" style="margin-top:0vh;">
             <div class="row">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                         <img style="width:140px;height:140px;margin-top:0px;" id="logocomuna" src="..." class="" alt="...">
 
                     </div>
 
 
-                    <div class="col-6">
-                        <div style="width:320px;height:120px;margin-left:150px;margin-top:50px;font:100" id="texescudo">
+                    <div class="col-12">
+                        <div style="width:320px;height:120px;margin-left:150px;margin-top:0px;font:100" id="texescudo">
                         </div>
                     </div>
 
@@ -732,7 +732,7 @@
 
 
 
-            <div class="container" style="margin-top:5vh;">
+            <div class="container" style="margin-top:0vh;">
                 <div class="row">
                     <div class="row">
                         <div class="col-12">
@@ -750,51 +750,45 @@
 
 
             @*PRIMER TEXTO CON GRAFICA*@
-            <div class="container" style="margin-top:5vh;">
+            <div class="container" style="margin-top:0vh;">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                         <h2 style="margin-top:0px;"> POBLACIÓN </h2>
-                        <div style="margin-top:100px; " id="prueba">
+                        <div style="margin-top:10px; " id="prueba">
                         </div>
 
-                        <div style="margin-top:10px; " id="tex">
+                        <div style="height:15vh;width:58vw;margin-top:25px;"><canvas id="myChart"></canvas></div>
+
+                        <div style="margin-top:155px; " id="tex">
                         </div>
 
 
-                    </div>
-
-                    <div class="col-6">
-                        <div style="height:15vh;width:16vw;margin-top:50px;"><canvas id="myChart"></canvas></div>
-
-                    </div>
-
+                    </div>         
 
                 </div>
 
                 <div class="row">
-                    <div class="col-6">
-                        <div style="height:40vh;width:40vw;margin-top:50px;"><canvas id="myChart4"></canvas></div>
+                    <div class="col-12">
+                        <div style="height:200vh;width:90vw;margin-top:10px;"><canvas id="myChart4"></canvas></div>
 
-                    </div>
-
-                    <div class="col-6">
-                        <div style="margin-top:90px; " id="texsiete">
+                        <div style="margin-top:0px; " id="texsiete">
                         </div>
 
-                        <div style="margin-top:20px; " id="texocho"> </div>
-
+                        <div style="margin-top:0px; " id="texocho"> </div>
 
                     </div>
+
+                    
                 </div>
             </div>
 
 
 
-            <div class="container" style="margin-top:5vh;">
+            <div class="container" style="margin-top:0vh;">
                 <div class="row">
 
-                    <div class="col-6">
-                        <h3 style="margin-left:00px;margin-top:0px;">
+                    <div class="col-12">
+                        <h3 style="margin-left:0px;margin-top:0px;">
                             1. VIVIENDA
                         </h3>
                         <div style="margin-top:0px" id="segundotexto">
@@ -802,13 +796,10 @@
                         </div>
                         <div style="margin-top:5px; " id="texnueve"> </div>
 
-
+                        <div style="height:30vh;width:58vw;margin-top:0px;"><canvas id="myChart2"></canvas></div>
 
                     </div>
-                    <div class="col-6">
-
-                        <div style="height:30vh;width:18vw;margin-top:0px;"><canvas id="myChart2"></canvas></div>
-                    </div>
+                    
                 </div>
             </div>
 
@@ -822,12 +813,12 @@
 
 
 
-            <div class="container" style="margin-top:5vh;">
+            <div class="container" style="margin-top:0vh;">
                 <div class="row">
 
                     <div class="col-12">
 
-                        <div style="height:60vh;width:48vw;margin-top:10px;"><canvas id="myChart5"></canvas></div>
+                        <div style="height:100vh;width:100vw;margin-top:10px;"><canvas id="myChart5"></canvas></div>
 
                     </div>
 
@@ -839,23 +830,23 @@
             <div class="container" style="margin-top:0vh;">
                 <div class="row">
 
-                    <div class="col-6">
+                    <div class="col-12">
 
                         <div style="margin-top:85px" id="texdiez">
 
                         </div>
 
-                        <div style="height:30vh;width:25vw;margin-top:10px;"><canvas id="myChart6"></canvas></div>
+                        <div style="height:35vh;width:78vw;margin-top:10px;"><canvas id="myChart6"></canvas></div>
 
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-12">
 
                         <div style="margin-top:85px" id="texonce">
 
                         </div>
 
-                        <div style="height:30vh;width:25vw;margin-top:10px;"><canvas id="myChart7"></canvas></div>
+                        <div style="height:35vh;width:78vw;margin-top:10px;"><canvas id="myChart7"></canvas></div>
 
                     </div>
 
@@ -868,12 +859,12 @@
 
 
 
-            <div class="container" style="margin-top:17vh;">
+            <div class="container" style="margin-top:5vh;">
                 <div class="row">
 
 
 
-                    <div class="col-6">
+                    <div class="col-12">
                         <h2 style="margin-top:5px;">
                             1. ÍNDICES SOCIODEMOGRÁFICOS
 
@@ -885,18 +876,14 @@
                     </div>
 
 
-                    <div class="col-6">
-                        <div style="height:28vh;width:28vw;margin-top:25px;"><canvas id="myChart3"></canvas></div>
+                   
 
+                    
 
-                    </div>
-
-
-                    <div class="col-12">
-                       
-
+                        
                         <div class="col-12">
-                            <h2 style="margin-top:50px;">
+                            <div style="height:100vh;width:100vw;margin-top:5px;"><canvas id="myChart3"></canvas></div>
+                            <h2 style="margin-top:0px;">
                                 2. LOCALIZACIÓN
                             </h2>
                             <div style="margin-top:10px" id="texmapa">
@@ -904,13 +891,13 @@
                             </div>
 
                         </div>
-                        <iframe id="mapagoogle" style="width:1150px;height:500px;margin-top:40px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=maipu+cl" title="W3Schools Free Online Web Tutorials">
+                        <iframe id="mapagoogle" style="width:400px;height:250px;margin-top:00px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=maipu+cl" title="W3Schools Free Online Web Tutorials">
                         </iframe>
 
                         @* <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/place/VALPARAÍSO,+REGIÓNDEVALPARAÍSO,+Chile/"></iframe>
-                    <a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibuja un circulo Google Maps</a></div>*@
+        <a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibuja un circulo Google Maps</a></div>*@
 
-                    </div>
+                    
 
                 </div>
             </div>

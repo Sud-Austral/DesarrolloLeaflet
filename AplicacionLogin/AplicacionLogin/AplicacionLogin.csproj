@@ -509,6 +509,7 @@
     <Content Include="Views\estructura\Glaceares.cshtml" />
     <Content Include="Views\Home\Hector.cshtml" />
     <Content Include="Views\estructura\movil.cshtml" />
+    <Content Include="Views\estructura\movil2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

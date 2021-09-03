@@ -59,5 +59,14 @@ namespace AplicacionLogin.Controllers
             return View();
         }
 
+        public ActionResult movil2(int id = 13101)
+        {
+            ViewBag.id = id;
+            return View();
+        }
+
+
+
+
     }
 }
