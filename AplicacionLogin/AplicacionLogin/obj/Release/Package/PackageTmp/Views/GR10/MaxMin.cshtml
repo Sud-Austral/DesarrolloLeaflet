@@ -1,0 +1,209 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Glaciares</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet-src.js'></script>
+    <link href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' rel='stylesheet' />
+
+    @{ 
+        string json = "/Scripts/Limites/json/json/" + @ViewBag.glaciar + ".js";
+        string divJson = "/Scripts/Limites/json/json_div/" + @ViewBag.glaciar + ".js";
+    }
+
+
+    <script src="@json"></script>
+    <script src="@divJson"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, #mapid {
+            height: 100%;
+        }
+
+        .bannerTop {
+            width: 100%;
+            height: auto;
+        }
+
+        .banner {
+            width: 50%;
+            height: auto;
+        }
+
+        /* css to customize Leaflet default styles  */
+        .custom .leaflet-popup-tip {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="mapid"></div>
+    <script>
+        // CREACIÓN Y AGREAGACION DEL MAPA AL DIV
+        var map = L.map('mapid').setView([-33.458725187656356, -70.66008634501547], 4);
+
+        // MAPA BASE
+        var base = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(map);
+
+        // ASIGNANDO COLOR A SECTORES POR Shape_Leng
+        function getSector(d) {
+            return d > 10000 ? '#e67e22' :
+                d > 9000 ? '#196f3d' :
+                    d > 8000 ? '#21618c' :
+                        d > 7000 ? '#154360' :
+                            d > 6000 ? '#641e16' :
+                                d > 5000 ? '#eb984e' :
+                                    d > 4000 ? '#f39c12' :
+                                        d > 3000 ? '#f1c40f' :
+                                            d > 2000 ? '#28b463' :
+                                                d > 1000 ? '#229954' :
+                                                    d > 900 ? '#16a085' :
+                                                        d > 800 ? '#17a589' :
+                                                            d > 700 ? '#2e86c1' :
+                                                                d > 600 ? '#2471a3' :
+                                                                    d > 500 ? '#6c3483' :
+                                                                        d > 400 ? '#884ea0' :
+                                                                            d > 300 ? '#cb4335' :
+                                                                                d > 200 ? '#a93226' :
+                                                                                    d > 100 ? '#34495e' :
+                                                                                        '#FFEDA0';
+        }
+
+        // ESTILO DE LOS POLÍGONOS / COMPLEJO
+        function stylePComplejo(feature) {
+            return {
+                weight: 3, // Grosor de línea
+                color: '#197ab4', // Color de línea
+                opacity: 1.0, // Transparencia de línea
+                fillColor: '#88c8ee', // Color de relleno
+                fillOpacity: 0.2 // Transparencia de relleno
+            };
+        };
+
+        // ESTILO DE LOS POLÍGONOS / SUBDIVISIÓN
+        function styleSectores(feature) {
+            return {
+                weight: 3, // Grosor de línea
+                color: '#197ab4', // Color de línea
+                opacity: 1.0, // Transparencia de línea
+                fillColor: getSector(
+                    feature.properties.Shape_Leng), // Color de relleno
+                fillOpacity: 0.2 // Transparencia de relleno
+            };
+        };
+
+        // POLÍGONOS
+        var complejo = L.geoJson(glaciar, { style: stylePComplejo }).addTo(map);
+        var subdivision = L.geoJson(division, { style: styleSectores }).addTo(map);
+
+        map.fitBounds(complejo.getBounds());
+
+        var capas = {
+            "Complejo glaciar": complejo,
+            "Sectores del complejo glaciar": subdivision
+        };
+
+        var overlayMaps = {
+            "Mapa del complejo glaciar": complejo,
+            "Sectores del complejo glaciar": subdivision
+        };
+
+        L.control.layers(capas, overlayMaps, {
+            position: 'topright', // 'topleft', 'bottomleft', 'bottomright'
+            collapsed: false // true
+        }).addTo(map);
+
+        map.removeLayer(subdivision);
+
+        // specify popup options
+        var customOptions =
+        {
+            'className': 'custom'
+        }
+
+        // POPUP COMPLEJO GLACIAR
+        function popupComplejo(feature, layer) {
+            if (feature.properties && feature.properties.idZonGlac) {
+                layer.bindPopup("<img class='bannerTop' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/Glaciares.jpg' alt='Data Intelligence'/><br><br>" +
+                    "<b><center>" + feature.properties.Nombre_Gla + "</center></b>" +
+                    "<br><b>Región: </b>" + feature.properties.NOM_REGION +
+                    "<br><b>Provincia: </b>" + feature.properties.NOM_PROVIN +
+                    "<br><b>Comuna: </b>" + feature.properties.NOM_COMUNA + "<br>" +
+
+                    "<br><b>Q1 (Ene-Abr) Mínima (ha): </b>" + feature.properties.q1_Min +
+                    "<br><b>Q1 (Ene-Abr) Máxima (ha): </b>" + feature.properties.q1_Max +
+                    "<br><b>Q2 (May-Dic) Mínima (ha): </b>" + feature.properties.q2_Min +
+                    "<br><b>Q2 (May-Dic) Máxima (ha): </b>" + feature.properties.q2_Max + "<br><br>" +
+                    "<center><img class='banner' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/logo_DataIntelligence_normal.png' alt='Data Intelligence'/></center>", customOptions);
+
+            }
+        }
+
+        // .toFixed(2) - Cantidad de decimales
+
+        L.geoJson(glaciar, {
+            style: stylePComplejo, onEachFeature: popupComplejo
+        }).addTo(complejo);
+
+        // POPUP SECTOR COMPLEJO GLACIAR
+        function popupSector(feature, layer) {
+            if (feature.properties && feature.properties.idZonGlac) {
+                var codGla = ""
+                if (feature.properties.COD_GLA == "") {
+                    codGla = "No definido"
+                } else {
+                    codGla = feature.properties.COD_GLA
+                }
+                layer.bindPopup("<img class='bannerTop' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/Glaciares.jpg' alt='Data Intelligence'/><br><br>" +
+                    "<b><center>" + feature.properties.Nombre_GLA + "</center></b>" +
+                    "<br><b>Región: </b>" + feature.properties.NOM_REGION +
+                    "<br><b>Provincia: </b>" + feature.properties.NOM_PROVIN +
+                    "<br><b>Comuna: </b>" + feature.properties.NOM_COMUNA + "<br>" +
+
+                    "<br><b>Código del glaciar: </b>" + codGla +
+                    "<br><b>Nombre del glaciar: </b>" + feature.properties.NOMBRE +
+                    "<br><b>Subsubcuenca: </b>" + feature.properties.NOM_SSUBC + "<br>" +
+
+                    "<br><b>Q1 (Ene-Abr) Mínima (ha): </b>" + feature.properties.q1_Min +
+                    "<br><b>Q1 (Ene-Abr) Máxima (ha): </b>" + feature.properties.q1_Max +
+                    "<br><b>Q2 (May-Dic) Mínima (ha): </b>" + feature.properties.q2_Min +
+                    "<br><b>Q2 (May-Dic) Máxima (ha): </b>" + feature.properties.q2_Max + "<br><br>" +
+                    "<center><img class='banner' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/logo_DataIntelligence_normal.png' alt='Data Intelligence'/></center>", customOptions);
+
+            }
+        }
+
+        L.geoJson(division, {
+            style: styleSectores, onEachFeature: popupSector
+        }).addTo(subdivision);
+
+    </script>
+
+</body>
+</html>
