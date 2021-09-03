@@ -6,13 +6,1211 @@
 <!DOCTYPE html>
 
 <html>
+
+
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>movil</title>
+    <title>datos</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
 </head>
 <body>
-    <div> 
-        <h1>Hola</h1>
+    
+    <style>
+        #tex1 {
+            font-size: 1em;
+            font-weight: 900;
+            color: blue;
+        }
+    </style>
+    <style>
+        #tex6 {
+            font-size: 2em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex7 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex8 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex10 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex12 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex13 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex15 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex17 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex18 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex20 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex22 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex23 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        #tex25 {
+            font-size: 1em;
+            font-weight: 900;
+        }
+    </style>
+
+    <script>
+        function number_format(amount, decimals) {
+
+            amount += ''; // por si pasan un numero en vez de un string
+            amount = parseFloat(amount.replace(/[^0-9\.]/g, '')); // elimino cualquier cosa que no sea numero o punto
+
+            decimals = decimals || 0; // por si la variable no fue fue pasada
+
+            // si no es un numero o es igual a cero retorno el mismo cero
+            if (isNaN(amount) || amount === 0)
+                return parseFloat(0).toFixed(decimals);
+
+            // si es mayor o menor que cero retorno el valor formateado como numero
+            amount = '' + amount.toFixed(decimals);
+
+            var amount_parts = amount.split('.'),
+                regexp = /(\d+)(\d{3})/;
+
+            while (regexp.test(amount_parts[0]))
+                amount_parts[0] = amount_parts[0].replace(regexp, '$1' + ',' + '$2');
+
+            return amount_parts.join('.');
+        }
+
+        //alert(number_format(9999999999))
+    </script>
+
+    @*<div style="height:20vh;width:20vw;margin-top:20px;"><canvas id="myChart"></canvas></div>*@
+    @**<div style="height:20vh;width:20vw;margin-left:380px;" margin-top:-200px"><canvas id="myChart2"></canvas></div>
+        <div style="height:30vh;width:30vw;margin-left:750px;" margin-top:-200px;"><canvas id="myChart3"></canvas></div>
+        <canvas id="myChart4" style="height:10vh;width:20vw;"></canvas>*@
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script>
+        $.get("https://raw.githubusercontent.com/Sud-Austral/datos_por_parametro/main/prueba1.xlsx.csv", function (data) {
+            var datos = data;
+
+            var fila = datos.split("\n")[8];
+
+
+            var tabla = [];
+            tabla.push(registros)
+
+
+
+
+
+                //alert (datos)
+            for (var i = 0; i < datos.split("\n").length; i++) {
+                var fila = datos.split("\n")[i];
+                //alert(fila.split(",").length)
+                var registros = {
+
+                    FID: fila.split(",")[0],
+                    idZonGlac: fila.split(",")[1],
+                    Nombre_Gla: fila.split(",")[2],
+                    SUM_Shape_: fila.split(",")[3],
+                    niev_17q1: fila.split(",")[4],
+                    niev_18q1: fila.split(",")[5],
+                    niev_19q1: fila.split(",")[6],
+                    niev_20q1: fila.split(",")[7],
+                    niev_21q1: fila.split(",")[8],
+                    niev_17q2: fila.split(",")[9],
+                    niev_18q2: fila.split(",")[10],
+                    niev_19q2: fila.split(",")[11],
+                    niev_20q2: fila.split(",")[12],
+                    q1_SN: fila.split(",")[13],
+                    Porc_SNq1: fila.split(",")[14],
+                    q1_Max: fila.split(",")[15],
+                    q1_Max_sum: fila.split(",")[16],
+                    q1_Min: fila.split(",")[17],
+                    q2_SN: fila.split(",")[18],
+                    Porc_SNq2: fila.split(",")[19],
+                    q2_Max: fila.split(",")[20],
+                    q2_Max_sum: fila.split(",")[21],
+                    q2_Min: fila.split(",")[22],
+                    SN_1718q1: fila.split(",")[23],
+                    G_1718q1: fila.split(",")[24],
+                    P_1718q1: fila.split(",")[25],
+                    SC_1718q1: fila.split(",")[26],
+                    SN_1819q1: fila.split(",")[27],
+                    G_1819q1: fila.split(",")[28],
+                    P_1819q1: fila.split(",")[29],
+                    SC_1819q1: fila.split(",")[30],
+                    SN_1920q1: fila.split(",")[31],
+                    G_1920q1: fila.split(",")[32],
+                    P_1920q1: fila.split(",")[33],
+                    SC_1920q1: fila.split(",")[34],
+                    SN_2021q1: fila.split(",")[35],
+                    G_2021q1: fila.split(",")[36],
+                    P_2021q1: fila.split(",")[37],
+                    SC_2021q1: fila.split(",")[38],
+                    SN_1718q2: fila.split(",")[39],
+                    G_1718q2: fila.split(",")[40],
+                    P_1718q2: fila.split(",")[41],
+                    SC_1718q2: fila.split(",")[42],
+                    SN_1819q2: fila.split(",")[43],
+                    G_1819q2: fila.split(",")[44],
+                    P_1819q2: fila.split(",")[45],
+                    SC_1819q2: fila.split(",")[46],
+                    SN_1920q2: fila.split(",")[47],
+                    G_1920q2: fila.split(",")[48],
+                    P_1920q2: fila.split(",")[49],
+                    SC_1920q2: fila.split(",")[50]
+
+
+
+
+
+
+
+
+                }
+                //alert(fila.split(","))
+                //alert(registros.Nombre_Gla)
+                //alert(registros.Longitud)
+               //alert(registros.NOM_COMUNA)
+
+                tabla.push(JSON.parse(JSON.stringify(registros)));
+            }
+            var codigo_comuna = "@ViewBag.id";
+            //alert(codigo_comuna);
+            tabla = tabla.filter(function (dato) {
+                return dato != undefined
+            });
+
+            var salida = tabla.filter(row => row.idZonGlac == "@ViewBag.id")[0]
+            //var urlifreme = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=comuna," + salida.idZonGlac + "+cl"
+
+               // document.getElementById('mapagoogle').src = urlifreme;
+
+
+            var texto1 = " " + salida.Nombre_Gla + ".";
+            var texto2 = " El glaciar " + salida.Nombre_Gla + " tiene una superficie de " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha de las cuales, en el periodo analizado, en la época de menor acumulación (enero – abril), la máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q1_Max_sum) * 100) / 100 + " ha y la mínima " + Math.round(Number.parseFloat(salida.q1_Min) * 100) / 100 + " ha Esto implicó que el " + Math.round(Number.parseFloat(salida.Porc_SNq1) * 100) / 100 +  " ha de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
+            var texto3 = " La máxima superficie alcanzada por la nieve se refiere a la sumatoria de todas las zonas que en algún año del periodo analizado estuvo cubierta por nieve, y la mínima, a las zonas que en todos los años estuvieron cubiertas de nieve. Al analizar la superficie de nieve alcanza por año, en la época de menor acumulación, se observa la tendencia mostrada en el siguiente gráfico";
+            var texto4 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en el periodo analizado, en la época de mayor acumulación (mayo – diciembre), máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q2_Max_sum) * 100) / 100 + " ha y la mínima " + Math.round(Number.parseFloat(salida.q2_Min) * 100) / 100 + " ha Esto implicó que el " + Math.round(Number.parseFloat(salida.Porc_SNq2) * 100) / 100 + " ha de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
+            var texto5 = " La superficie de nieve alcanza por año, en la época de mayor acumulación, se observa la tendencia mostrada en el siguiente gráfico.";
+            var texto6 = " 2. Dinámica de cambio";
+
+            var texto7 = "2a. Dinámica de cambio 2017-2018";
+            var texto8 = " Dinámica de cambio en la época MENOR Acumulación";
+            var texto9 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en la época menor acumulación, en el periodo 2017-2018, " + Math.round(Number.parseFloat(salida.SC_1718q1) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1718q1) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1718q1) * 100) / 100 + " ha La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1718q1) * 100) / 100 +  " ha.";
+            var texto10 = " Dinámica de cambio en la época MAYOR Acumulación";
+            var texto11 = "En la época mayor acumulación," + Math.round(Number.parseFloat(salida.SC_1718q2) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1718q2) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1718q2) * 100) / 100 + " ha . La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1718q2) * 100) / 100 +  " ha.";
+
+
+            var texto12 = "2a. Dinámica de cambio 2018-2019";
+            var texto13 = " Dinámica de cambio en la época MENOR Acumulación";
+            var texto14 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en la época menor acumulación, en el periodo 2017-2018," + Math.round(Number.parseFloat(salida.SC_1819q1) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1819q1) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1819q1) * 100) / 100 + " ha La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1819q1) * 100) / 100 +  " ha.";
+            var texto15 = " Dinámica de cambio en la época MAYOR Acumulación";
+            var texto16 = "En la época mayor acumulación," + Math.round(Number.parseFloat(salida.SC_1819q2) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1819q2) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1819q2) * 100) / 100 + " ha . La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1819q2) * 100) / 100 + " ha.";
+
+
+            var texto17 = "2a. Dinámica de cambio 2019-2020";
+            var texto18 = " Dinámica de cambio en la época MENOR Acumulación";
+            var texto19 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en la época menor acumulación, en el periodo 2019-2020, " + Math.round(Number.parseFloat(salida.SC_1920q1) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1920q1) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1920q1) * 100) / 100 + " ha La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1920q1) * 100) / 100 + " ha.";
+            var texto20 = " Dinámica de cambio en la época MAYOR Acumulación";
+            var texto21 = "En la época mayor acumulación," + Math.round(Number.parseFloat(salida.SC_1920q2) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_1920q2) * 100) / 100 + " ha y se ganaron " + Math.round(Number.parseFloat(salida.G_1920q2) * 100) / 100 + " ha. La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_1920q2) * 100) / 100 + " ha.";
+
+            var texto22 = "2a. Dinámica de cambio 2020-2021";
+            var texto23 = " Dinámica de cambio en la época MENOR Acumulación";
+            var texto24 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en la época menor acumulación, en el periodo 2019-2020, " + Math.round(Number.parseFloat(salida.SC_2021q1) * 100) / 100 + " ha se mantuvo sin cambio, se perdieron " + Math.round(Number.parseFloat(salida.P_2021q1) * 100) / 100 + "  ha y se ganaron " + Math.round(Number.parseFloat(salida.G_2021q1) * 100) / 100 + " ha La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_2021q1) * 100) / 100 + " ha.";
+
+
+
+            document.getElementById("tex1").innerHTML = texto1;
+            document.getElementById("tex2").innerHTML = texto2;
+            document.getElementById("tex3").innerHTML = texto3;
+            document.getElementById("tex4").innerHTML = texto4;
+            document.getElementById("tex5").innerHTML = texto5;
+            document.getElementById("tex6").innerHTML = texto6;
+            document.getElementById("tex7").innerHTML = texto7;
+            document.getElementById("tex8").innerHTML = texto8;
+            document.getElementById("tex9").innerHTML = texto9;
+            document.getElementById("tex10").innerHTML = texto10;
+            document.getElementById("tex11").innerHTML = texto11;
+
+            document.getElementById("tex12").innerHTML = texto12;
+            document.getElementById("tex13").innerHTML = texto13;
+            document.getElementById("tex14").innerHTML = texto14;
+            document.getElementById("tex15").innerHTML = texto15;
+            document.getElementById("tex16").innerHTML = texto16;
+
+            document.getElementById("tex17").innerHTML = texto17;
+            document.getElementById("tex18").innerHTML = texto18;
+            document.getElementById("tex19").innerHTML = texto19;
+            document.getElementById("tex20").innerHTML = texto20;
+            document.getElementById("tex21").innerHTML = texto21;
+            document.getElementById("tex22").innerHTML = texto22;
+            document.getElementById("tex23").innerHTML = texto23;
+            document.getElementById("tex24").innerHTML = texto24;
+
+
+
+
+            @* graficas *@
+
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    datasets: [{
+                        label: '#DATA INTELINGE',
+                        data: [parseInt(salida.q1_Max_sum), parseInt(salida.q1_SN)],
+                        backgroundColor: [
+                            //'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            //'rgba(255, 206, 86, 0.2)',
+                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            //'rgba(255, 99, 132, 1)',
+                            //'rgba(54, 162, 235, 1)',
+                            //'rgba(255, 206, 86, 1)',
+                            //'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+       // });
+
+            var ctx2 = document.getElementById('myChart2').getContext('2d');
+            var myChart2 = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ["2017", "2018", "2019", "2020", "2021"],
+                    datasets: [{
+                        label: '',
+                        data: [parseInt(salida.niev_17q1), parseInt(salida.niev_18q1), parseInt(salida.niev_19q1), parseInt(salida.niev_20q1), parseInt(salida.niev_21q1)],
+                        backgroundColor: [
+                            //'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            //'rgba(255, 206, 86, 0.2)',
+                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            //'rgba(255, 99, 132, 1)',
+                            //'rgba(54, 162, 235, 1)',
+                            //'rgba(255, 206, 86, 1)',
+                            //'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+
+            var ctx3 = document.getElementById('myChart3').getContext('2d');
+            var myChart3 = new Chart(ctx3, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Superficie maxima de nieve", "Superficie sin nieve"],
+                    datasets: [{
+                        label: '#DATA INTELINGE',
+                        data: [parseInt(salida.q2_Max_sum), parseInt(salida.q2_SN)],
+                        backgroundColor: [
+                            //'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            //'rgba(255, 206, 86, 0.2)',
+                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            //'rgba(255, 99, 132, 1)',
+                            //'rgba(54, 162, 235, 1)',
+                            //'rgba(255, 206, 86, 1)',
+                            //'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+            var ctx4 = document.getElementById('myChart4').getContext('2d');
+            var myChart4 = new Chart(ctx4, {
+                type: 'line',
+                data: {
+                    labels: ["2017", "2018", "2019", "2020", "2021"],
+                    datasets: [{
+                        label: '',
+                        data: [parseInt(salida.niev_17q2), parseInt(salida.niev_18q2), parseInt(salida.niev_19q2), parseInt(salida.niev_20q2), parseInt(salida.niev_21q2)],
+                        backgroundColor: [
+                            //'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            //'rgba(255, 206, 86, 0.2)',
+                            //'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            //'rgba(255, 99, 132, 1)',
+                            //'rgba(54, 162, 235, 1)',
+                            //'rgba(255, 206, 86, 1)',
+                            //'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+            @* AÑO  2017 - 2018 *@
+            var ctx5 = document.getElementById('myChart5').getContext('2d');
+            var myChart5 = new Chart(ctx5, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
+                    datasets: [{
+                        label: '#',
+                        data: [parseInt(salida.SC_1718q1), parseInt(salida.P_1718q1), parseInt(salida.G_1718q1), parseInt(salida.SN_1718q1)],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            //'rgba(255, 0, 54, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            //'rgba(181, 14, 14, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 0, 54, 0.2)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+
+            var ctx6 = document.getElementById('myChart6').getContext('2d');
+            var myChart6 = new Chart(ctx6, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
+                    datasets: [{
+                        label: '#',
+                        data: [parseInt(salida.SC_1718q2), parseInt(salida.P_1718q2), parseInt(salida.G_1718q2), parseInt(salida.SN_1718q2)],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            //'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+            @* AÑO 2018 - 2019 *@
+
+            var ctx7 = document.getElementById('myChart7').getContext('2d');
+            var myChart7 = new Chart(ctx7, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
+                    datasets: [{
+                        label: '#',
+                        data: [parseInt(salida.SC_1819q1), parseInt(salida.P_1819q1), parseInt(salida.G_1819q1), parseInt(salida.SN_1819q1)],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            //'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+            @* AÑO 2018 - 2019 *@
+
+            var ctx8 = document.getElementById('myChart8').getContext('2d');
+            var myChart8 = new Chart(ctx8, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
+                    datasets: [{
+                        label: '#',
+                        data: [parseInt(salida.SC_1819q2), parseInt(salida.P_1819q2), parseInt(salida.G_1819q2), parseInt(salida.SN_1819q2)],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                           // 'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            //'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            //'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            //'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+            @* AÑO 2019- 2020 *@
+            var ctx9= document.getElementById('myChart9').getContext('2d');
+            var myChart9 = new Chart(ctx9, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
+                    datasets: [{
+                        label: '#',
+                        data: [parseInt(salida.SC_1920q1), parseInt(salida.P_1920q1), parseInt(salida.G_1920q1), parseInt(salida.SN_1920q1)],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            //'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            //'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            //'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+            @* AÑO 2019 - 2020 *@
+            var ctx10 = document.getElementById('myChart10').getContext('2d');
+            var myChart10 = new Chart(ctx10, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
+                    datasets: [{
+                        label: '#',
+                        data: [parseInt(salida.SC_1920q2), parseInt(salida.P_1920q2), parseInt(salida.G_1920q2), parseInt(salida.SN_1920q2)],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            //'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+
+            @* AÑO 2020-21 *@
+            var ctx11 = document.getElementById('myChart11').getContext('2d');
+            var myChart11 = new Chart(ctx11, {
+                type: 'doughnut',
+                data: {
+                    labels: ["Ganancia", "Perdida", "Sin Cambio", "Sin Nieve "],
+                    datasets: [{
+                        label: '#',
+                        data: [parseInt(salida.SC_2021q1), parseInt(salida.P_2021q1), parseInt(salida.G_2021q1), parseInt(salida.SN_2021q1)],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            //'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            //'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+            @* AÑO 2020 - 21 *@
+
+
+
+
+
+
+
+
+
+
+
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    <div style="margin-bottom:1vh;" id="primerelemento">
+
+
     </div>
+
+    <div style="margin-bottom:1vh;" id="segundoelemento">
+
+
+    </div>
+
+
+
+    @*CONTENEDORES*@
+
+    <div class="container" style="margin-top:0vh;">
+        <div class="row">
+            <div class="col-12">
+                <img style="height:70px;" src="~/Content/Imagen/negro-rojo-trans.png" />
+
+            </div>
+
+            <div class="col-12">
+                <hr style="border:15px;"><hr style="border:2px;">
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container" style="margin-top:5vh;">
+        <div class="row">
+            <div class="row">
+                <div class="col-12">
+                    <img style="height:130px;" src="~/Content/layout/Glacear.png" />
+
+                    @*<img style="width:140px;height:140px;margin-top:0px;" id="logocomuna" src="..." class="" alt="...">*@
+
+                </div>
+
+
+                <div class="col-12">
+                    <div style="width:320px;height:120px;margin-left:150px;margin-top:50px;font:100" id="tex1">
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+        <hr width="100%" color="blue" ; style:size="100px" />
+
+        <div class="container" style="margin-top:0vh;">
+            <div class="row">
+                <div class="col-12">
+                    <h2>
+                        1. Superficies máximas y mínimas de nieve
+                    </h2>
+
+                    <h4 style="margin-top:20px;">
+                        Superficie de nieve en la época MENOR Acumulación
+                    </h4>
+
+                    <div style="margin-top:20px; " id="tex2">
+                    </div>
+
+                </div>
+                <div class="col-12 col-12">
+
+                    <div style="height:15vh;width:58vw;margin-top:0px;"><canvas id="myChart"></canvas></div>
+                </div>
+
+
+                <div class="col-12">
+                    <hr style="border:15px;"><hr style="border:2px;">
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="container" style="margin-top:0vh;">
+            <div class="row">
+
+                <div class="col-12">
+                    <div style="margin-top:130px; " id="tex3">
+                    </div>
+
+                </div>
+                <div class="col-12">
+
+                    <div style="height:35vh;width:98vw;margin-top:70px;"><canvas id="myChart2"></canvas></div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container" style="margin-top:0vh;">
+            <div class="row">
+                <div class="col-12">
+                    <h2>
+                        Superficie de nieve en la época MAYOR Acumulación
+                    </h2>
+                    <div style="margin-top:0px; " id="tex4">
+                    </div>
+
+                </div>
+                <div class="col-12">
+
+                    <div style="height:15vh;width:58vw;margin-top:15px;"><canvas id="myChart3"></canvas></div>
+                </div>
+
+
+                <div class="col-12">
+                    <hr style="border:15px;"><hr style="border:2px;">
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="container" style="margin-top:0vh;">
+            <div class="row">
+
+                <div class="col-12">
+                    <div style="margin-top:120px; " id="tex5">
+                    </div>
+
+                </div>
+                <div class="col-12">
+
+                    <div style="height:35vh;width:98vw;margin-top:10px;"><canvas id="myChart4"></canvas></div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    @*AÑO 2017-2018*@
+
+    <div class="container" style="margin-top:-0vh;">
+        <div class="row">
+
+            <div class="col-12">
+
+                <div style="margin-top:15px" id="tex6">  </div>
+                <div style="margin-top:15px" id="tex7">   </div>
+                <div style="margin-top:15px" id="tex8">   </div>
+                <div style="margin-top:15px" id="tex9">   </div>
+
+
+                <div class="col-12">
+
+                    <div style="height:15vh;width:58vw;margin-top:15px;"><canvas id="myChart5"></canvas></div>
+                </div>
+
+            </div>
+
+
+            <div class="col-12">
+
+                <div style="margin-top:200px" id="tex10">  </div>
+                <div style="margin-top:35px" id="tex11">  </div>
+
+
+                <div class="col-12">
+
+                    <div style="height:15vh;width:58vw;margin-top:15px;"><canvas id="myChart6"></canvas></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    @*AÑO 2018-2019*@
+
+    <div class="container" style="margin-top:0vh;">
+        <div class="row">
+
+            <div class="col-12">
+
+
+                <div style="margin-top:125px" id="tex12">   </div>
+                <div style="margin-top:15px" id="tex13">   </div>
+                <div style="margin-top:15px" id="tex14">   </div>
+
+                <div class="col-12">
+
+                    <div style="height:15vh;width:58vw;margin-top:15px;"><canvas id="myChart7"></canvas></div>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-12">
+
+                <div style="margin-top:150px" id="tex15">   </div>
+                <div style="margin-top:15px" id="tex16">   </div>
+
+
+                <div class="col-12">
+
+                    <div style="height:15vh;width:58vw;margin-top:15px;"><canvas id="myChart8"></canvas></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    @*AÑO 2019-2020*@
+
+    <div class="container" style="margin-top:0vh;">
+        <div class="row">
+
+            <div class="col-12">
+
+
+                <div style="margin-top:150px" id="tex17">   </div>
+                <div style="margin-top:15px" id="tex18">   </div>
+                <div style="margin-top:15px" id="tex19">   </div>
+
+                <div class="col-12">
+
+                    <div style="height:15vh;width:58vw;margin-top:15px;"><canvas id="myChart9"></canvas></div>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-12">
+
+
+                <div style="margin-top:150px" id="tex20">   </div>
+                <div style="margin-top:15px" id="tex21">   </div>
+
+                <div class="col-12">
+
+                    <div style="height:15vh;width:58vw;margin-top:15px;"><canvas id="myChart10"></canvas></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    @*AÑO-2020-2021*@
+
+    <div class="container" style="margin-top:0vh;">
+        <div class="row">
+
+            <div class="col-12">
+
+
+                <div style="margin-top:150px" id="tex22">   </div>
+                <div style="margin-top:15px" id="tex23">   </div>
+                <div style="margin-top:15px" id="tex24">   </div>
+
+                <div class="col-6">
+
+                    <div style="height:15vh;width:58vw;margin-top:15px;"><canvas id="myChart11"></canvas></div>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-6">
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+

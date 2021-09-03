@@ -23,6 +23,7 @@
 
     </head>
     <body>
+       
         <style>
             #texescudo {
                 font-size:2em;
@@ -206,7 +207,7 @@
                 document.getElementById('mapagoogle').src = urlifreme;
                 document.getElementById('logocomuna').src = salida.Escudo;
 
-                var texto = "La comuna de " + salida.NOM_COMUNA + " Ubicada en " + salida.NOM_REGION + " según los datos del censo 2017 tiene una población de " + number_format(salida.TOTAL_PERS) + " habitantes de los cuales el " + Math.round(Number.parseFloat(salida.POR_HOMBRES) * 100) / 100 + "% son hombres y el " + Math.round(Number.parseFloat(salida.POR_MUJERES) * 100) / 100 + "%   mujeres, lo corresponde a una densidad poblacional de " + salida.DENSIDAD + " habitantes por kilómetro cuadrado." ;
+                var texto = "La comuna de " + salida.NOM_COMUNA + " Ubicada en " + salida.NOM_REGION + " según los datos del censo 2017 tiene una población de " + number_format(salida.TOTAL_PERS) + " habitantes de los cuales el " + Math.round(Number.parseFloat(salida.POR_HOMBRES) * 100) / 100 + "% son hombres y el " + Math.round(Number.parseFloat(salida.POR_MUJERES) * 100) / 100 + "%   mujeres, lo corresponde a una densidad poblacional de " + Math.round(Number.parseFloat(salida.DENSIDAD) * 100) / 100 + " habitantes por kilómetro cuadrado." ;
 
 
                 var texto2 = "La comuna de " + salida.NOM_COMUNA + " según los datos del censo 2017 tiene un total de " + number_format(salida.TOTAL_VIVI) + " viviendas de las cuales " + number_format(salida.PARTICULAR) + " particulares y " + number_format(salida.COLECTIVAS) + " colectivas. ";
@@ -215,7 +216,7 @@
 
                 var texto4 = "Comuna de " + salida.NOM_COMUNA + ".";
 
-                var texto5 = " La Comuna de " + salida.NOM_COMUNA + " esta localizada  en la provincia de " + salida.NOM_PROVIN + ", REGION DE " + salida.NOM_REGION + ".";
+                var texto5 = " La Comuna de " + salida.NOM_COMUNA + " esta localizada  en la provincia de " + salida.NOM_PROVIN + ", REGION DE " + salida.NOM_REGION + " Latitud " + salida.Latitud + " y  longitud " + salida.Longitud+ ".";
 
                 var texto6 = " El " + Math.round(Number.parseFloat(salida.Porc_15_64) * 100) / 100 + " de la población se encuentra en el rango de edad de 15 a 64 años, el " + Math.round(Number.parseFloat(salida.Porc_0_5) * 100) / 100 + " son menores de 6 años, el " + Math.round(Number.parseFloat(salida.Porc_6_14) * 100) / 100 + " de 6 a 14 años y el " + Math.round(Number.parseFloat(salida.Porc_mas_65) * 100) / 100 +  " de 65 y más años."
 
@@ -239,8 +240,8 @@
 
 
 
-            document.getElementById("prueba").innerHTML = texto;
-            document.getElementById("segundotexto").innerHTML = texto2;
+                document.getElementById("prueba").innerHTML = texto;
+                document.getElementById("segundotexto").innerHTML = texto2;
                 document.getElementById("tercertexto").innerHTML = texto3;
                 document.getElementById("texescudo").innerHTML = texto4;
                 document.getElementById("texmapa").innerHTML = texto5;
@@ -260,7 +261,7 @@
                 data: {
                     labels: ["Hombres", "Mujeres"],
                     datasets: [{
-                        label: '#DATA INTELINGE',
+                        label: '#',
                         data: [parseInt(salida.HOMBRES), parseInt(salida.MUJERES)],
                         backgroundColor: [
                             //'rgba(255, 99, 132, 0.2)',
@@ -309,7 +310,7 @@
             data: {
                 labels: ["Particulares", "Colectivas"],
                 datasets: [{
-                    label: 'DATA INTELINGE',
+                    label: 'HOLA',
                     data: [parseInt(salida.PARTICULAR), parseInt(salida.COLECTIVAS)],
                     backgroundColor: [
                         //'rgba(255, 99, 132, 0.2)',
@@ -334,7 +335,7 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Proporción de viviendas particulares y colectivas de la Comuna de MÁRIA ELENA',
+                        text: 'PruebAa',
                         position: 'bottom',
                         color: "#ff0000",
                         padding: 30,
@@ -397,7 +398,7 @@
                     data: {
                         labels: ["##", "##"],
                         datasets: [{
-                            label: 'DATA INTELINGE',
+                            label: '#',
                             data: [parseInt(salida.Porc_0_5), parseInt(salida.Porc_15_64), parseInt(salida.Porc_6_14), parseInt(salida.Porc_mas_65)],
                             backgroundColor: [
                                 //'rgba(255, 99, 132, 0.2)',
@@ -452,7 +453,7 @@
                     data: {
                         labels: ["Casa", "Departamento en edificio", "Tradicional indigena", "Casa antigua", "Mediagua-mejora-rancho o choza", "Movil(carpa-casa rodante o similar)", "Otro tipo de vivienda particular"],
                         datasets: [{
-                            label: 'DATA INTELINGE',
+                            label: '#',
                             data: [parseInt(salida.VIV_TIPO_C), parseInt(salida.VIV_TIPO_D), parseInt(salida.VIV_TIPO_T)],
                             backgroundColor: [
                                 //'rgba(255, 99, 132, 0.2)',
@@ -512,7 +513,7 @@
                     data: {
                         labels: ["Casa", "Departamento en edificio", "Tradicional indigena"],
                         datasets: [{
-                            label: 'DATA INTELINGE',
+                            label: '#',
                             data: [parseInt(salida.VIV_TIPO_C), parseInt(salida.VIV_TIPO_D), parseInt(salida.VIV_TIPO_T)],
                             backgroundColor: [
                                 //'rgba(255, 99, 132, 0.2)',
@@ -568,7 +569,7 @@
                     data: {
                         labels: ["Casa", "Departamento en edificio", "Tradicional indigena"],
                         datasets: [{
-                            label: 'DATA INTELINGE',
+                            label: '#',
                             data: [parseInt(salida.VIV_TIPO_C), parseInt(salida.VIV_TIPO_D), parseInt(salida.VIV_TIPO_T)],
                             backgroundColor: [
                                 //'rgba(255, 99, 132, 0.2)',

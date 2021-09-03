@@ -1251,6 +1251,7 @@
     <Content Include="Views\GR10\MaxMin.cshtml" />
     <Content Include="Views\GR10\Dinamica.cshtml" />
     <Content Include="Views\Municipios\Municipios.cshtml" />
+     <Content Include="Views\estructura\movil2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
