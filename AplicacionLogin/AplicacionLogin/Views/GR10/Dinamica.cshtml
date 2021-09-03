@@ -47,9 +47,54 @@
             height: auto;
         }
 
+
         /* css to customize Leaflet default styles  */
         .custom .leaflet-popup-tip {
             display: none;
+        }
+
+        .legend {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 5px 10px;
+        }
+
+        .titleLegend {
+            text-align: center;
+        }
+
+        /* PÉRDIDA */
+        .desc1 {
+            background: #BF9000;
+            margin-right: 5%;
+            border: 1px solid #909090;
+        }
+
+        /* GANANCIA */
+        .desc2 {
+            background: #47C0F8;
+            margin-right: 5%;
+            border: 1px solid #909090;
+        }
+
+        /* SIN CAMBIO */
+        .desc3 {
+            background: #FFFFFF;
+            margin-right: 5%;
+            border: 1px solid #909090;
+        }
+
+        /* COMPLEJO */
+        .desc4 {
+            color: #b2ff00;
+            margin-right: 5%;
+            font-weight: 900;
+        }
+
+        /* SECTORES */
+        .desc5 {
+            color: #edff37;
+            margin-right: 5%;
+            font-weight: 900;
         }
     </style>
 
@@ -353,6 +398,43 @@
             style: styleSectores, onEachFeature: popupSector
         }).addTo(subdivision);
 
+        var legendP = L.control({ position: 'bottomright' });
+        legendP.onAdd = function (map) {
+
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [14000, 800000, 2000000, 6800000, 680000],
+                labels = [],
+                from, to;
+
+            for (var i = 0; i < grades.length; i++) {
+                div.innerHTML +=
+                    '<i style="background:' + getColorP(grades[i] + 1) + '"></i> ' +
+                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+            };
+            return div;
+        };
+
+        // AGREGANDO LEYENDA
+        var legend = L.control({ position: 'bottomright' });
+
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'legend');
+
+            div.innerHTML +=
+                '<div>' +
+                    '<p class="titleLegend"><b>LEYENDA - GLACIARES</b></p>' +
+                    '<p><span class="desc1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>PÉRDIDA<br>' +
+                    '<span class="desc2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>GANANCIA<br>' +
+                    '<span class="desc3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SIN CAMBIO<br>' +
+                    '<span class="desc4">--------</span>COMPLEJO GLACIAR<br>' +
+                    '<span class="desc5">--------</span>SECTOR DEL COMPLEJO GLACIAR<br>' +
+                    '</p>' +
+                '</div>';
+
+            return div;
+        };
+
+        legend.addTo(map);
     </script>
 
 </body>
