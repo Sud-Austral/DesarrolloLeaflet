@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace AplicacionLogin.Controllers
 {
-    public class LeafletController : Controller
+    public class GR10Controller : Controller
     {
         // GET: Leaflet
         public ActionResult Index(int id = 13)

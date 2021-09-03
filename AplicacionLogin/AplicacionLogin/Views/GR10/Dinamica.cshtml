@@ -61,6 +61,85 @@
 
         // alert('@ViewBag.q');
         // alert('@ViewBag.p');
+        var sn = "";
+
+        if ('@ViewBag.p' == "17-18" && '@ViewBag.q' == "Q1") {
+
+            var epoca = "Q1 (Ene-Abr)"
+            var per = "2017 - 2018";
+            var sn = "SN_1718q1";
+            var g = "G_1718q1";
+            var p = "P_1718q1";
+            var sc = "SC_1718q1";
+            var capa = "glaciares_r10:1718q1";
+            var nombre = "Q1 (Ene-Abr) 2017-2018";
+
+        }
+        else if ('@ViewBag.p' == "18-19" && '@ViewBag.q' == "Q1") {
+            var epoca = "Q1 (Ene-Abr)";
+            var per = "P2018 - 2019";
+            var sn = "SN_1819q1";
+            var g = "G_1819q1";
+            var p = "P_1819q1";
+            var sc = "SC_1819q1";
+            var capa = "glaciares_r10:1819q1";
+            var nombre = "Q1 (Ene-Abr) 2018-2019";
+
+        }
+        else if ('@ViewBag.p' == "19-20" && '@ViewBag.q' == "Q1") {
+            var epoca = "Q1 (Ene-Abr)";
+            var per = "2019 - 2020";
+            var sn = "SN_1920q1";
+            var g = "G_1920q1";
+            var p = "P_1920q1";
+            var sc = "SC_1920q1";
+            var capa = "glaciares_r10:1920q1";
+            var nombre = "Q1 (Ene-Abr) 2019-2020";
+        }
+        else if ('@ViewBag.p' == "20-21" && '@ViewBag.q' == "Q1") {
+            var epoca = "Q1 (Ene-Abr)";
+            var per = "2020 - 2021";
+            var sn = "SN_2021q1";
+            var g = "G_2021q1";
+            var p = "P_2021q1";
+            var sc = "SC_2021q1";
+            var capa = "glaciares_r10:2021q1";
+            var nombre = "Q1 (Ene-Abr) 2020-2021";
+        }
+        else if ('@ViewBag.p' == "17-18" && '@ViewBag.q' == "Q2") {
+            var epoca = "Q1 (May-Dic)";
+            var per = "2017 - 2018";
+            var sn = "SN_1718q2";
+            var g = "G_1718q2";
+            var p = "P_1718q2";
+            var sc = "SC_1718q2";
+            var capa = "glaciares_r10:1718q2";
+            var nombre = "Q2 (May-Dic) 2017-2018";
+        }
+        else if ('@ViewBag.p' == "18-19" && '@ViewBag.q' == "Q2") {
+            var epoca = "Q1 (May-Dic)";
+            var per = "2018 - 2019";
+            var sn = "SN_1819q2";
+            var g = "G_1819q2";
+            var p = "P_1819q2";
+            var sc = "SC_1819q2";
+            var capa = "glaciares_r10:1819q2";
+            var nombre = "Q2 (May-Dic) 2018-2019";
+        }
+        else if ('@ViewBag.p' == "19-20" && '@ViewBag.q' == "Q2") {
+            var epoca = "Q1 (May-Dic)";
+            var per = "2019 - 2020";
+            var sn = "SN_1920q2";
+            var g = "G_1920q2";
+            var p = "P_1920q2";
+            var sc = "SC_1920q2";
+            var capa = "glaciares_r10:1920q2";
+            var nombre = "Q2 (May-Dic) 2020-2021";
+        }
+        else {
+            null;
+        }
+
 
         // CREACIÓN Y AGREAGACION DEL MAPA AL DIV
         var map = L.map('mapid').setView([-33.458725187656356, -70.66008634501547], 4);
@@ -129,22 +208,76 @@
 
         // GEOSERVICIO WMS
         var glac = L.tileLayer.wms('https://ide.dataintelligence-group.com/geoserver/glaciares_r10/wms', {
-            layers: 'glaciares_r10:prueba_glac_r10',
+            layers: capa,
             format: 'image/png',
             transparent: true
         }).addTo(map);
 
+        // CAPAS
         var capas = {
             "Complejo glaciar": complejo,
             "Sectores del complejo glaciar": subdivision,
-            "Q1 (Ene-Abr) 2017-2018": glac,
+            "Período inexistente": glac,
         };
 
-        var overlayMaps = {
-            "Mapa del complejo glaciar": complejo,
-            "Sectores del complejo glaciar": subdivision,
-            "Q1 (Ene-Abr) 2017-2018": glac,
-        };
+        if ('@ViewBag.p' == "17-18" && '@ViewBag.q' == "Q1") {
+
+            var overlayMaps = {
+                "Mapa del complejo glaciar": complejo,
+                "Sectores del complejo glaciar": subdivision,
+                "Q1 (Ene-Abr) 2017-2018": glac,
+            };
+        }
+        else if ('@ViewBag.p' == "18-19" && '@ViewBag.q' == "Q1") {
+
+            var overlayMaps = {
+                "Mapa del complejo glaciar": complejo,
+                "Sectores del complejo glaciar": subdivision,
+                "Q1 (Ene-Abr) 2018-2019": glac,
+            };
+        }
+        else if ('@ViewBag.p' == "19-20" && '@ViewBag.q' == "Q1") {
+
+            var overlayMaps = {
+                "Mapa del complejo glaciar": complejo,
+                "Sectores del complejo glaciar": subdivision,
+                "Q1 (Ene-Abr) 2019-2020": glac,
+            };
+        }
+        else if ('@ViewBag.p' == "20-21" && '@ViewBag.q' == "Q1") {
+            var overlayMaps = {
+                "Mapa del complejo glaciar": complejo,
+                "Sectores del complejo glaciar": subdivision,
+                "Q1 (Ene-Abr) 2020-2021": glac,
+            };
+        }
+        else if ('@ViewBag.p' == "17-18" && '@ViewBag.q' == "Q2") {
+            var overlayMaps = {
+                "Mapa del complejo glaciar": complejo,
+                "Sectores del complejo glaciar": subdivision,
+                "Q2 (May-Dic) 2017-2018": glac,
+            };
+        }
+        else if ('@ViewBag.p' == "18-19" && '@ViewBag.q' == "Q2") {
+            
+            var overlayMaps = {
+                "Mapa del complejo glaciar": complejo,
+                "Sectores del complejo glaciar": subdivision,
+                "Q2 (May-Dic) 2018-2019": glac,
+            };
+        }
+        else if ('@ViewBag.p' == "19-20" && '@ViewBag.q' == "Q2") {
+
+            var overlayMaps = {
+                "Mapa del complejo glaciar": complejo,
+                "Sectores del complejo glaciar": subdivision,
+                "Q2 (May-Dic) 2019-2020": glac,
+            };
+        }
+
+        else {
+            null;
+        }
 
         L.control.layers(capas, overlayMaps, {
             position: 'topright', // 'topleft', 'bottomleft', 'bottomright'
@@ -162,6 +295,7 @@
 
         // POPUP COMPLEJO GLACIAR
         function popupComplejo(feature, layer) {
+
             if (feature.properties && feature.properties.idZonGlac) {
                 layer.bindPopup("<img class='bannerTop' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/Glaciares.jpg' alt='Data Intelligence'/><br><br>" +
                     "<b><center>" + feature.properties.Nombre_Gla + "</center></b>" +
@@ -169,12 +303,12 @@
                     "<br><b>Provincia: </b>" + feature.properties.NOM_PROVIN +
                     "<br><b>Comuna: </b>" + feature.properties.NOM_COMUNA + "<br>" +
 
-                    "<br><b>Época: </b>" + feature.properties.q1_Min +
-                    "<br><b>Período: </b>" + feature.properties.q1_Min +
-                    "<br><b>Superficie sin nieve (ha): </b>" + feature.properties.q1_Min +
-                    "<br><b>Superficie ganancia (ha): </b>" + feature.properties.q1_Max +
-                    "<br><b>Superficie pérdida (ha): </b>" + feature.properties.q2_Min +
-                    "<br><b>Superficie sin cambio (ha): </b>" + feature.properties.q2_Max + "<br><br>" +
+                    "<br><b>Época: </b>" + epoca +
+                    "<br><b>Período: </b>" + per +
+                    "<br><b>Superficie sin nieve (ha): </b>" + feature.properties[sn] + //SN_1718q1
+                    "<br><b>Superficie ganancia (ha): </b>" + feature.properties[g] +
+                    "<br><b>Superficie pérdida (ha): </b>" + feature.properties[p] +
+                    "<br><b>Superficie sin cambio (ha): </b>" + feature.properties[sc] + "<br><br>" +
                     "<center><img class='banner' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/logo_DataIntelligence_normal.png' alt='Data Intelligence'/></center>", customOptions);
 
             }
@@ -204,13 +338,12 @@
                     "<br><b>Código del glaciar: </b>" + codGla +
                     "<br><b>Nombre del glaciar: </b>" + feature.properties.NOMBRE +
                     "<br><b>Subsubcuenca: </b>" + feature.properties.NOM_SSUBC + "<br>" +
-
-                    "<br><b>Época: </b>" + feature.properties.q1_Min +
-                    "<br><b>Período: </b>" + feature.properties.q1_Max +
-                    "<br><b>Superficie sin nieve (ha): </b>" + feature.properties.q1_Min +
-                    "<br><b>Superficie ganancia (ha): </b>" + feature.properties.q1_Max +
-                    "<br><b>Superficie pérdida (ha): </b>" + feature.properties.q2_Min +
-                    "<br><b>Superficie sin cambio (ha): </b>" + feature.properties.q2_Max + "<br><br>" +
+                    "<br><b>Época: </b>" + epoca +
+                    "<br><b>Período: </b>" + per +
+                    "<br><b>Superficie sin nieve (ha): </b>" + feature.properties[sn] + //SN_1718q1
+                    "<br><b>Superficie ganancia (ha): </b>" + feature.properties[g] +
+                    "<br><b>Superficie pérdida (ha): </b>" + feature.properties[p] +
+                    "<br><b>Superficie sin cambio (ha): </b>" + feature.properties[sc] + "<br><br>" +
                     "<center><img class='banner' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/logo_DataIntelligence_normal.png' alt='Data Intelligence'/></center>", customOptions);
 
             }
