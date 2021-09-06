@@ -14,8 +14,9 @@ namespace AplicacionLogin.Controllers
             return View();
         }
 
-        public ActionResult Municipios()
+        public ActionResult Municipios(int codCom = 0)
         {
+            ViewBag.codCom = codCom;
             return View();
         }
     }

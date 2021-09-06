@@ -6,7 +6,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        .leaflet-control-layers-base {
+            display: none;
+        }
 
+        .leaflet-control-layers-separator {
+            display: none;
+        }
+    </style>
     <title>Glaciares</title>
 
     <meta charset="UTF-8" />
@@ -101,6 +109,7 @@
             margin-right: 5%;
             font-weight: 900;
         }
+
     </style>
 
 </head>
@@ -265,7 +274,9 @@
 
         // CAPAS
         var capas = {
-            "Q1 (Ene-Abr) 2017-2018": glac,
+            "Complejo glaciar": complejo,
+            "Sectores del complejo glaciar": subdivision,
+            "Glaciar": glac,
         };
 
         if ('@ViewBag.p' == "17-18" && '@ViewBag.q' == "Q1") {
@@ -273,6 +284,7 @@
             var overlayMaps = {
                 "Mapa del complejo glaciar": complejo,
                 "Sectores del complejo glaciar": subdivision,
+                "Q1 (Ene-Abr) 2017-2018": glac,
             };
         }
         else if ('@ViewBag.p' == "18-19" && '@ViewBag.q' == "Q1") {
@@ -332,7 +344,7 @@
         }).addTo(map);
 
         map.removeLayer(subdivision);
-        //map.removeLayer(glac);
+        map.removeLayer(glac);
 
         // specify popup options
         var customOptions =

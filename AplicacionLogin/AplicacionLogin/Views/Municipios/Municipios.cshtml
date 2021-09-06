@@ -19,13 +19,11 @@
     <link href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' rel='stylesheet' />
 
     @{
-        string json = "/Scripts/Limites/json/json/" + @ViewBag.glaciar + ".js";
-        string divJson = "/Scripts/Limites/json/json_div/" + @ViewBag.glaciar + ".js";
+        string json = "/Scripts/Municipios/json/" + @ViewBag.codCom + ".js";
     }
 
 
     <script src="@json"></script>
-    <script src="@divJson"></script>
 
     <style>
         body {
@@ -42,11 +40,11 @@
 </head>
 <body>
 
-    <div id="mapid"></div>
+    <div id="map"></div>
     <script>
 
         // CREACIÓN Y AGREAGACION DEL MAPA AL DIV
-        var map = L.map('mapid').setView([-33.458725187656356, -70.66008634501547], 4);
+        var map = L.map('map').setView([-33.458725187656356, -70.66008634501547], 4);
 
         var base = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
             maxZoom: 18,
@@ -57,6 +55,10 @@
             zoomOffset: -1
         }).addTo(map);
 
+        // POLÍGONOS
+        var comuna = L.geoJson(comuna, { style: stylePComplejo }).addTo(map);
+
+        map.fitBounds(comuna.getBounds());
     </script>
 
 </body>
