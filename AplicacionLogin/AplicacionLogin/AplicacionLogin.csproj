@@ -192,7 +192,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MapaController.cs" />
     <Compile Include="Controllers\MapBoxController.cs" />
-    <Compile Include="Controllers\MunicipiosController.cs" />
     <Compile Include="Controllers\PruebaController.cs" />
     <Compile Include="Controllers\RMapasController.cs" />
     <Compile Include="Global.asax.cs">
