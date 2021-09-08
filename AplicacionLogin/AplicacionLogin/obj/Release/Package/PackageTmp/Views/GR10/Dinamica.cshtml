@@ -6,7 +6,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        .leaflet-control-layers-base {
+            display: none;
+        }
 
+        .leaflet-control-layers-separator {
+            display: none;
+        }
+    </style>
     <title>Glaciares</title>
 
     <meta charset="UTF-8" />
@@ -101,6 +109,7 @@
             margin-right: 5%;
             font-weight: 900;
         }
+
     </style>
 
 </head>
@@ -267,7 +276,7 @@
         var capas = {
             "Complejo glaciar": complejo,
             "Sectores del complejo glaciar": subdivision,
-            "Período inexistente": glac,
+            "Glaciar": glac,
         };
 
         if ('@ViewBag.p' == "17-18" && '@ViewBag.q' == "Q1") {
