@@ -92,7 +92,7 @@
                 var fila = datos.split("\n")[i];
                 //alert(fila.split(",").length)
                 var registros = {
-                    
+
                     REGION: fila.split(",")[0],
                     PROVINCIA: fila.split(",")[1],
                     COMUNA: fila.split(",")[2],
@@ -186,7 +186,7 @@
 
 
 
-                   
+
                 }
 
                 //alert(registros.Longitud)
@@ -201,12 +201,16 @@
             });
 
                 var salida = tabla.filter(row => row.COMUNA == "@ViewBag.id")[0]
-                var urlifreme = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=comuna," + salida.NOM_COMUNA + "+cl"
+                //var urlifreme = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=comuna," + salida.NOM_COMUNA + "+cl"
 
-                document.getElementById('mapagoogle').src = urlifreme;
+                document.getElementById('mapagoogle').src ="https://analytics.zoho.com/open-view/2395394000009409485?ZOHO_CRITERIA=%2213%22.%22COD_COMUNA%22%3D"+"@ViewBag.id";
                 document.getElementById('logocomuna').src = salida.Escudo;
+                
 
-                var texto = "La comuna de " + salida.NOM_COMUNA + " Ubicada en " + salida.NOM_REGION + " según los datos del censo 2017 tiene una población de " + number_format(salida.TOTAL_PERS) + " habitantes de los cuales el " + Math.round(Number.parseFloat(salida.POR_HOMBRES) * 100) / 100 + "% son hombres y el " + Math.round(Number.parseFloat(salida.POR_MUJERES) * 100) / 100 + "%   mujeres, lo corresponde a una densidad poblacional de " + salida.DENSIDAD + " habitantes por kilómetro cuadrado." ;
+                document.getElementById('mapagoogle2').src = "https://analytics.zoho.com/open-view/2395394000009468019?ZOHO_CRITERIA=%2213%22.%22COD_COMUNA%22%3D" + "@ViewBag.id";
+
+
+                var texto = "La comuna de " + salida.NOM_COMUNA + " Ubicada en " + salida.NOM_REGION + " según los datos del censo 2017 tiene una población de " + number_format(salida.TOTAL_PERS) + " habitantes de los cuales el " + Math.round(Number.parseFloat(salida.POR_HOMBRES) * 100) / 100 + "% son hombres y el " + Math.round(Number.parseFloat(salida.POR_MUJERES) * 100) / 100 + "%   mujeres, lo corresponde a una densidad poblacional de " + salida.DENSIDAD + " habitantes por kilómetro cuadrado.";
 
 
                 var texto2 = "La comuna de " + salida.NOM_COMUNA + " según los datos del censo 2017 tiene un total de " + number_format(salida.TOTAL_VIVI) + " viviendas de las cuales " + number_format(salida.PARTICULAR) + " particulares y " + number_format(salida.COLECTIVAS) + " colectivas. ";
@@ -227,7 +231,7 @@
 
                 var texto10 = " El " + Math.round(Number.parseFloat(salida.Mat_Acep) * 100) / 100 + " de las viviendas de la comuna de MARÍA ELENA presenta materialidad aceptable, el " + Math.round(Number.parseFloat(salida.Mat_Recup) * 100) / 100 + " recuperable y el " + Math.round(Number.parseFloat(salida.Mat_Irrecup) * 100) / 100 + ".";
 
-                var texto11 = " El " + Math.round(Number.parseFloat(salida.vAguRedPUB) * 100) / 100 + " de las viviendas de la comuna de MARÍA ELENA tiene acceso agua por red pública, el " + Math.round(Number.parseFloat(salida.vAguPOZO) * 100) / 100 + " de pozo, el " + Math.round(Number.parseFloat(salida.vAguCAMION) * 100) / 100 + " de camion aljibe, y el " + Math.round(Number.parseFloat(salida.vAguRIO) * 100) / 100 + " de río, vertiente, estero, canal, lago, etc. "; 
+                var texto11 = " El " + Math.round(Number.parseFloat(salida.vAguRedPUB) * 100) / 100 + " de las viviendas de la comuna de MARÍA ELENA tiene acceso agua por red pública, el " + Math.round(Number.parseFloat(salida.vAguPOZO) * 100) / 100 + " de pozo, el " + Math.round(Number.parseFloat(salida.vAguCAMION) * 100) / 100 + " de camion aljibe, y el " + Math.round(Number.parseFloat(salida.vAguRIO) * 100) / 100 + " de río, vertiente, estero, canal, lago, etc. ";
 
 
 
@@ -639,7 +643,7 @@
             });
 
 
-           
+
 
 
 
@@ -892,7 +896,7 @@
 
 
                     <div class="col-12">
-                       
+
 
                         <div class="col-12">
                             <h2 style="margin-top:50px;">
@@ -903,11 +907,38 @@
                             </div>
 
                         </div>
-                        <iframe id="mapagoogle" style="width:1150px;height:500px;margin-top:40px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBDk5yAAfq3xb6iZcJ7_yXrr1CDXuKib1k&q=maipu+cl" title="W3Schools Free Online Web Tutorials">
+                        <iframe id="mapagoogle" style="width:1150px;height:500px;margin-top:40px;" src="https://analytics.zoho.com/open-view/2395394000009409485?ZOHO_CRITERIA=%2213%22.%22COD_COMUNA%22%3D@ViewBag.id" title="W3Schools Free Online Web Tutorials">
                         </iframe>
 
+
+
+
+
+                        <div class="col-12">
+                            <h2 style="margin-top:50px;">
+                                2. LOCALIZACIÓN
+                            </h2>
+                            <div style="margin-top:10px" id="texmapa2">
+
+                            </div>
+
+                        </div>
+                        <iframe id="mapagoogle2" style="width:1150px;height:500px;margin-top:40px;" src="https://analytics.zoho.com/open-view/2395394000009409485?ZOHO_CRITERIA=%2213%22.%22COD_COMUNA%22%3D@ViewBag.id" title="W3Schools Free Online Web Tutorials">
+                        </iframe>
+
+
+
+
+
+
+
+
+
+
+
+
                         @* <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/place/VALPARAÍSO,+REGIÓNDEVALPARAÍSO,+Chile/"></iframe>
-                    <a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibuja un circulo Google Maps</a></div>*@
+        <a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibuja un circulo Google Maps</a></div>*@
 
                     </div>
 
