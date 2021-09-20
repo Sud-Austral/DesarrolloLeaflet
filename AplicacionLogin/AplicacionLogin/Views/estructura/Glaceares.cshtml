@@ -277,9 +277,9 @@
 
 
             var texto1 = " " + salida.Nombre_Gla + ".";
-            var texto2 = " El glaciar " + salida.Nombre_Gla + " tiene una superficie de " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha. Durante el periodo 2217-2021, en la temporada seca, época de menor acumulación (enero – abril), la máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q1_Max_sum) * 100) / 100 + " y la mínima " + Math.round(Number.parseFloat(salida.q1_Min) * 100) / 100 + "ha Esto implica que " + Math.round(Number.parseFloat(salida.Porc_SNq1) * 100) / 100 +  " de los límites del complejo glaciar se mantuvo sin nieve durante todo el periodo analizado."; 
+            var texto2 = " El glaciar " + salida.Nombre_Gla + " tiene una superficie de " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha. Durante el periodo 2217-2021, en la temporada seca, época de menor acumulación (enero – abril), la máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q1_Max_sum) * 100) / 100 + " ha y la mínima " + Math.round(Number.parseFloat(salida.q1_Min) * 100) / 100 + " ha Esto implica que " + Math.round(Number.parseFloat(salida.Porc_SNq1) * 100) / 100 +  "% de los límites del complejo glaciar se mantuvo sin nieve durante todo el periodo analizado."; 
             var texto3 = " La máxima y mínima superficie alcanzada por la nieve se refiere a la suma de cada una de las superficies de las diferentes zonas del complejo glaciar, que estuvieron cubiertas con nieve, al menos un año del periodo considerado, en la temporada específica. La superficie máxima se obtiene de la suma de las máximas superficies de cada zona cubierta de nieve en el periodo. La superficie mínima se obtiene de la suma de las mínimas superficies de cada zona cubierta de nieve en el periodo.";
-            var texto4 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en el periodo analizado, en la época de mayor acumulación (mayo – diciembre), máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q2_Max_sum) * 100) / 100 + " ha y la mínima " + Math.round(Number.parseFloat(salida.q2_Min) * 100) / 100 + " ha Esto implicó que el " + Math.round(Number.parseFloat(salida.Porc_SNq2) * 100) / 100 + " ha de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
+            var texto4 = " De las " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha del complejo glaciar, en el periodo analizado, en la época de mayor acumulación (mayo – diciembre), máxima superficie alcanzada por la nieve fue de " + Math.round(Number.parseFloat(salida.q2_Max_sum) * 100) / 100 + " ha y la mínima " + Math.round(Number.parseFloat(salida.q2_Min) * 100) / 100 + " ha Esto implicó que el " + Math.round(Number.parseFloat(salida.Porc_SNq2) * 100) / 100 + " % de los límites del complejo glaciar se mantuvo si nieve durante todo el periodo analizado.";
             var texto5 = " Para el " + salida.Nombre_Gla + ", en la temporada fría, la superficie mínima de nieve fue de " + Math.round(Number.parseFloat(salida.niev_17q2) * 100) / 100 + " 2017 y la superficie máxima de nieve fue de " + Math.round(Number.parseFloat(salida.niev_18q1) * 100) / 100 + "." ;
             var texto6 = " 2. Dinámica de cambio";
 
@@ -307,7 +307,7 @@
             var texto23 = " Dinámica de cambio en la temporada seca ";
             var texto24 = " Durante la época de menor acumulación de nieve (enero – abril), en el periodo 2020-2021, de las  " + Math.round(Number.parseFloat(salida.SUM_Shape_) * 100) / 100 + " ha ha del complejo glaciar, " + Math.round(Number.parseFloat(salida.SC_2021q1) * 100) / 100 + " ha se mantuvieron sin cambio (es decir se mantuvieron cubiertas de nieve), " + Math.round(Number.parseFloat(salida.P_2021q1) * 100) / 100 + " ha se perdieron y  " + Math.round(Number.parseFloat(salida.G_2021q1) * 100) / 100 + " ha se ganaron. La superficie que se mantuvo sin nieve fue de " + Math.round(Number.parseFloat(salida.SN_2021q1) * 100) / 100 + " ha.";
 
-            var texto26 = " Para el Complejo Glaciar " + salida.Nombre_Gla + ", en la temporada seca, la superficie mínima de nieve fue de " + Math.round(Number.parseFloat(salida.q1_Min) * 100) / 100 + "ha el año 2017 y la superficie máxima de nieve fue de " + Math.round(Number.parseFloat(salida.niev_18q1) * 100) / 100 + " ) ha en el 2018. El año 2021 la superficie cubierta de nieve registrada es de " + Math.round(Number.parseFloat(salida.niev_21q1) * 100) / 100 + " hectárias."
+            var texto26 = " Para el Complejo Glaciar " + salida.Nombre_Gla + ", en la temporada seca, la superficie mínima de nieve fue de " + Math.round(Number.parseFloat(salida.q1_Min) * 100) / 100 + " ha el año 2017 y la superficie máxima de nieve fue de " + Math.round(Number.parseFloat(salida.niev_17q1) * 100) / 100 + " ha en el 2018. El año 2021 la superficie cubierta de nieve registrada es de " + Math.round(Number.parseFloat(salida.niev_21q1) * 100) / 100 + " hectárias."
 
 
             document.getElementById("tex1").innerHTML = texto1;
@@ -446,18 +446,18 @@
             </div>
        
 
-        <hr width="100%" color="blue" ; style:size="100px" />
+        <hr width="100%" color="blue" ; style:size="10000px" />
 
         <div class="container" style="margin-top:0vh;">
             <div class="row">
                 <div class="col-6">
-                    <h2>
+                    <h4>
                         1. Superficies máximas y mínimas de nieve
-                    </h2>
-
-                    <h4 style="margin-top:20px;">
-                        Superficies máximas y mínimas de nieve en temporada Seca
                     </h4>
+
+                    <h5 style="margin-top:10px;">
+                        Superficies máximas y mínimas de nieve en temporada Seca
+                    </h5>
 
                     <div style="margin-top:90px; " id="tex2">
                     </div>
@@ -523,9 +523,9 @@
         <div class="container" style="margin-top:5vh;">
             <div class="row">
                 <div class="col-6">
-                    <h2>
+                    <h4>
                         Superficies máximas y mínimas de nieve en temporada Fría
-                    </h2>
+                    </h4>
                     <div style="margin-top:90px; " id="tex4">
                     </div>
 
