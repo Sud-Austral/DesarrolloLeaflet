@@ -445,7 +445,6 @@ C:\Github\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owi
 C:\Github\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Github\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Github\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Github\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csprojAssemblyReference.cache
 C:\Github\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csproj.CoreCompileInputs.cache
 C:\Github\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csproj.CopyComplete
 C:\Github\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.dll
@@ -676,3 +675,4 @@ C:\Users\Hector\Documents\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLog
 C:\Users\Hector\Documents\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csproj.CopyComplete
 C:\Users\Hector\Documents\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.dll
 C:\Users\Hector\Documents\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.pdb
+C:\Github\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Debug\AplicacionLogin.csproj.AssemblyReference.cache
