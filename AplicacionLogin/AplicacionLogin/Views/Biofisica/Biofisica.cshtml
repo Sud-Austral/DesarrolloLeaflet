@@ -91,6 +91,7 @@
 
     <div id="mapid"></div>
     <script>
+
         var getVar = [];
         var title = "";
         var medida = "";
@@ -102,8 +103,113 @@
         }
         else if ('@ViewBag.variable' == 'COS') {
             getVar = ["v159", "v167", "v163", "v165", "v169", "v161"]
-            title = "CARBONO ORGÁNICO DEL SUELO, MEDIA<br>(SOC) kg/ha";
+            title = "CARBONO ORGÁNICO DEL SUELO, MEDIA (SOC)<br>kg/ha";
             medida = "Kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'NT') {
+            getVar = ["v105", "v113", "v109", "v111", "v115", "v107"]
+            title = "NITRÓGENO TOTAL, MEDIA (NITROGEN) kg/ha";
+            medida = "Kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'COSP') {
+            getVar = ["v160", "v168", "v164", "v166", "v170", "v162"]
+            title = "CARBONO ORGÁNICO DEL SUELO, MEDIA (SOC)";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'COSDK') {
+            getVar = ["v075", "v079", "v077", "v078", "v080", "v076"]
+            title = "CARBONO ORGÁNICO DEL SUELO, MEDIA (SOC)";
+            medida = "dg/kg";
+        }
+        else if ('@ViewBag.variable' == 'CA') {
+            getVar = ["v094", "v102", "v098", "v100", "v104", "v096"]
+            title = "CONTENIDO DE ARCILLA, MEDIO (CLAY)";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'CAGK') {
+            getVar = ["v038", "v042", "v040", "v041", "v043", "v039"]
+            title = "CONTENIDO DE ARCILLA, MEDIO (CLAY)";
+            medida = "g/kg";
+        }
+        else if ('@ViewBag.variable' == 'CAKH') {
+            getVar = ["v093", "v101", "v097", "v099", "v103", "v095"]
+            title = "CONTENIDO DE ARCILLA, MEDIO (CLAY)";
+            medida = "Kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'CARP') {
+            getVar = ["v136", "v144", "v140", "v142", "v146", "v138"]
+            title = "CONTENIDO DE ARENA, MEDIO (SAND)";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'CARGK') {
+            getVar = ["v063", "v067", "v065", "v066", "v068", "v064"]
+            title = "CONTENIDO DE ARENA, MEDIO (SAND)";
+            medida = "g/kg";
+        }
+        else if ('@ViewBag.variable' == 'CARKH') {
+            getVar = ["v135", "v143", "v139", "v141", "v145", "v137"]
+            title = "CONTENIDO DE ARENA, MEDIO (SAND)";
+            medida = "kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'DCOSGD') {
+            getVar = ["v050", "v054", "v052", "v053", "v055", "v051"]
+            title = "DENSIDAD DE CORBONO ORGÁNICO DEL SUELO,<br>MEDIA (OCD)";
+            medida = "g/dm3";
+        }
+        else if ('@ViewBag.variable' == 'DCOSGC') {
+            getVar = ["v117", "v125", "v121", "v123", "v127", "v119"]
+            title = "DENSIDAD DE CORBONO ORGÁNICO DEL SUELO,<br>MEDIA (OCD)";
+            medida = "g/cm3";
+        }
+        else if ('@ViewBag.variable' == 'DCOSKM') {
+            getVar = ["v118", "v126", "v122", "v124", "v128", "v120"]
+            title = "DENSIDAD DE CORBONO ORGÁNICO DEL SUELO,<br>MEDIA (OCD)";
+            medida = "kg/m3";
+        }
+        else if ('@ViewBag.variable' == 'CLP') {
+            getVar = ["v148", "v156", "v152", "v154", "v158", "v150"]
+            title = "CONTENIDO DE LIMO, MEDIA (SILT)";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'CLGK') {
+            getVar = ["v069", "v073", "v071", "v072", "v074", "v070"]
+            title = "CONTENIDO DE LIMO, MEDIA (SILT)";
+            medida = "g/kg";
+        }
+        else if ('@ViewBag.variable' == 'CLKH') {
+            getVar = ["v147", "v155", "v151", "v153", "v157", "v149"]
+            title = "CONTENIDO DE LIMO, MEDIA (SILT)";
+            medida = "kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'DPCM') {
+            getVar = ["v020", "v024", "v022", "v023", "v025", "v021"]
+            title = "DENSIDAD PARENTE, MEDIA (BDOD)";
+            medida = "cg/cm3";
+        }
+        else if ('@ViewBag.variable' == 'DPGC') {
+            getVar = ["v081", "v089", "v085", "v087", "v091", "v083"]
+            title = "DENSIDAD PARENTE, MEDIA (BDOD)";
+            medida = "g/cm3";
+        }
+        else if ('@ViewBag.variable' == 'DPKM') {
+            getVar = ["v082", "v092", "v086", "v088", "v092", "v084"]
+            title = "DENSIDAD PARENTE, MEDIA (BDOD)";
+            medida = "kg/m3";
+        }
+        else if ('@ViewBag.variable' == 'FG') {
+            getVar = ["v032", "v036", "v034", "v035", "v037", "v033"]
+            title = "FRAGMENTOS GRUESOS (VOLUMÉTRICOS), MEDIA (CFVO)";
+            medida = "cm3/dm3";
+        }
+        else if ('@ViewBag.variable' == 'NTP') {
+            getVar = ["v106", "v114", "v110", "v112", "v116", "v108"]
+            title = "NITRÓGENO TOTAL, MEDIA (NITROGEN) kg/ha";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'NTCK') {
+            getVar = ["v044", "v048", "v046", "v047", "v049", "v045"]
+            title = "NITRÓGENO TOTAL, MEDIA (NITROGEN) kg/ha";
+            medida = "cg/kg";
         }
         else {}
 
@@ -165,13 +271,28 @@
 
         // POPUP COMPLEJO GLACIAR
         function popup(feature, layer) {
-            if (feature.properties.v026 != -999) {
-                textDepth1 = feature.properties[depth1];
-                textDepth2 = feature.properties[depth2];
-                textDepth3 = feature.properties[depth3];
-                textDepth4 = feature.properties[depth4];
-                textDepth5 = feature.properties[depth5];
-                textDepth6 = feature.properties[depth6];
+            if (feature.properties[depth1] != -999) {
+                textDepth1 = feature.properties[depth1] + " " + medida;
+                textDepth2 = feature.properties[depth2] + " " + medida;
+                textDepth3 = feature.properties[depth3] + " " + medida;
+                textDepth4 = feature.properties[depth4] + " " + medida;
+                textDepth5 = feature.properties[depth5] + " " + medida;
+                textDepth6 = feature.properties[depth6] + " " + medida;
+
+                layer.bindPopup(
+                    "<b><center>" + title + "</center></b>" +
+                    "<br><b>Región: </b>" + feature.properties.NOM_REGION +
+                    "<br><b>Provincia: </b>" + feature.properties.NOM_PROVIN +
+                    "<br><b>Comuna: </b>" + feature.properties.NOM_COMUNA + "<br>" +
+                    "<b>Unidad de medida: </b>" + medida + "<br>" +
+                    "<br><b>Profundidad (0 - 5 cm): </b>" + textDepth1 + " " + medida +
+                    "<br><b>Profundidad (5 - 15 cm): </b>" + textDepth2 + " " + medida +
+                    "<br><b>Profundidad (15 - 30 cm): </b>" + textDepth3 + " " + medida +
+                    "<br><b>Profundidad (30 - 60 cm): </b>" + textDepth4 + " " + medida +
+                    "<br><b>Profundidad (60 - 100 cm): </b>" + textDepth5 + " " + medida +
+                    "<br><b>Profundidad (100 - 200 cm): </b>" + textDepth6 + " " + medida + "<br>" +
+                    "<center><img class='bannerBottom' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/logo_DataIntelligence_normal.png' alt='Data Intelligence'/></center>", customOptions
+                );
             }
             else {
                 textDepth1 = "Sin información";
@@ -180,23 +301,25 @@
                 textDepth4 = "Sin información";
                 textDepth5 = "Sin información";
                 textDepth6 = "Sin información";
-            }
-            layer.bindPopup(
-                "<b><center>" + title + "</center></b>" +
-                "<br><b>Región: </b>" + feature.properties.NOM_REGION +
-                "<br><b>Provincia: </b>" + feature.properties.NOM_PROVIN +
-                "<br><b>Comuna: </b>" + feature.properties.NOM_COMUNA + "<br>" +
-                "<b>Unidad de medida: </b>" + medida + "<br>" +
-                "<br><b>Profundidad (0 - 5 cm): </b>" + format(textDepth1) + " " + medida +
-                "<br><b>Profundidad (5 - 15 cm): </b>" + format(textDepth2) + " " + medida +
-                "<br><b>Profundidad (15 - 30 cm): </b>" + format(textDepth3) +
-                "<br><b>Profundidad (30 - 60 cm): </b>" + format(textDepth4) +
-                "<br><b>Profundidad (60 - 100 cm): </b>" + format(textDepth5) +
-                "<br><b>Profundidad (100 - 200 cm): </b>" + format(textDepth6) + "<br>" +
-                "<center><img class='bannerBottom' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/logo_DataIntelligence_normal.png' alt='Data Intelligence'/></center>", customOptions
-            );
-        }
 
+                layer.bindPopup(
+                    "<b><center>" + title + "</center></b>" +
+                    "<br><b>Región: </b>" + feature.properties.NOM_REGION +
+                    "<br><b>Provincia: </b>" + feature.properties.NOM_PROVIN +
+                    "<br><b>Comuna: </b>" + feature.properties.NOM_COMUNA + "<br>" +
+                    "<b>Unidad de medida: </b>" + medida + "<br>" +
+                    "<br><b>Profundidad (0 - 5 cm): </b>" + textDepth1 +
+                    "<br><b>Profundidad (5 - 15 cm): </b>" + textDepth2 +
+                    "<br><b>Profundidad (15 - 30 cm): </b>" + textDepth3 +
+                    "<br><b>Profundidad (30 - 60 cm): </b>" + textDepth4 +
+                    "<br><b>Profundidad (60 - 100 cm): </b>" + textDepth5 +
+                    "<br><b>Profundidad (100 - 200 cm): </b>" + textDepth6 + "<br>" +
+                    "<center><img class='bannerBottom' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/logo_DataIntelligence_normal.png' alt='Data Intelligence'/></center>", customOptions
+                );
+            }
+            
+        }
+        parseFloat(rangon1).toFixed(2)
 
         // CCS TO CUSTIMIZE LEAFLET DEFAULT STYLES
         var customOptions =
@@ -537,11 +660,11 @@
             div.innerHTML +=
             '<div>' +
             '<p class="titleLegend"><b>' + title + '</b></p>' +
-            '<p><span class="desc1" style="background: #' + colorn1 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Menor a ' + format(Math.round(rangon1)) + " " + medida + '<br>' +
-            '<span class="desc2" style="background: #' + colorn2 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' + format(Math.round(rangon1)) + " " + medida + ' - ' + format(Math.round(rangon2)) + " " + medida +'<br>' +
-            '<span class="desc3" style="background: #' + colorn3 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' + format(Math.round(rangon2)) + ' - ' + format(Math.round(rangon3)) + '<br>' +
-            '<span class="desc4" style="background: #' + colorn4 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' + format(Math.round(rangon3)) + ' - ' + format(Math.round(rangon4)) + '<br>' +
-            '<span class="desc5" style="background: #' + colorn5 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Mayor a ' + format(Math.round(rangon4)) + '<br>' +
+            '<p><span class="desc1" style="background: #' + colorn1 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Menor a ' + rangon1 + " " + medida + '<br>' +
+            '<span class="desc2" style="background: #' + colorn2 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' + rangon1 + " " + medida + ' - ' + rangon2 + " " + medida +'<br>' +
+            '<span class="desc3" style="background: #' + colorn3 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' + rangon2 + " " + medida + ' - ' + rangon3 + " " + medida + '<br>' +
+            '<span class="desc4" style="background: #' + colorn4 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' + rangon3 + " " + medida + ' - ' + rangon4 + " " + medida + '<br>' +
+            '<span class="desc5" style="background: #' + colorn5 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Mayor a ' + rangon4 + " " + medida + '<br>' +
             '<span class="desc6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sin información<br>' +
             '</p>' +
             '</div>';
