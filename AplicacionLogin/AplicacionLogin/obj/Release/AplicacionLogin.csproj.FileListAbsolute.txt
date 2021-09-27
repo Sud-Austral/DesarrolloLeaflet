@@ -106,7 +106,6 @@ D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owi
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owin.Security.Google.resources.dll
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.csprojAssemblyReference.cache
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.csproj.CoreCompileInputs.cache
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.csproj.CopyComplete
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.dll
