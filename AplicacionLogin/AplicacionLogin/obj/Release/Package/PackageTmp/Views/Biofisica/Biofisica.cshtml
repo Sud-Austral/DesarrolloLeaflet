@@ -1,0 +1,709 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caracterización Biofísica</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet-src.js'></script>
+    <link href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' rel='stylesheet' />
+    <script src="~/Scripts/Biofisica/TileLayer.Grayscale.js"></script>
+
+    @{
+        string json = "/Scripts/Biofisica/" + @ViewBag.variable + "/" + @ViewBag.codCom + ".js";
+    }
+
+    <script src="@json"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, #mapid {
+            height: 100%;
+        }
+
+        /* CCS TO CUSTIMIZE LEAFLET DEFAULT STYLES */
+        .custom .leaflet-popup-tip {
+            display: none;
+        }
+
+        .bannerBottom {
+            width: 50%;
+            height: auto;
+        }
+
+        .legend {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #A9A9A9;
+            box-shadow: 13px 10px 30px -3px rgba(0,0,0,0.47);
+            -webkit-box-shadow: 13px 10px 30px -3px rgba(0,0,0,0.47);
+            -moz-box-shadow: 13px 10px 30px -3px rgba(0,0,0,0.47);
+        }
+
+        .desc1 {
+            margin-right: 5%;
+            border: 1px solid #909090;
+        }
+
+        .desc2 {
+            margin-right: 5%;
+            border: 1px solid #909090;
+        }
+
+        .desc3 {
+            margin-right: 5%;
+            border: 1px solid #909090;
+        }
+
+        .desc4 {
+            margin-right: 5%;
+            border: 1px solid #909090;
+        }
+
+        .desc5 {
+            margin-right: 5%;
+            border: 1px solid #909090;
+        }
+
+        .desc6 {
+            background: #606060;
+            margin-right: 5%;
+            border: 1px solid #909090;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="mapid"></div>
+    <script>
+
+        var getVar = [];
+        var title = "";
+        var medida = "";
+        // VERIFICACIÓN DE VARIABLE ENTRANTE
+        if ('@ViewBag.variable' == 'CIC') {
+            getVar = ["v026", "v030", "v028", "v029", "v031", "v027"]
+            title = "CAPACIDAD DE INTERCAMBIO<br>CATIÓNICO AMORTIGUADA A ph7, MEDIA(CEC)";
+            medida = "mmol(c)/kg";
+        }
+        else if ('@ViewBag.variable' == 'COS') {
+            getVar = ["v159", "v167", "v163", "v165", "v169", "v161"]
+            title = "CARBONO ORGÁNICO DEL SUELO, MEDIA (SOC)<br>kg/ha";
+            medida = "Kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'NT') {
+            getVar = ["v105", "v113", "v109", "v111", "v115", "v107"]
+            title = "NITRÓGENO TOTAL, MEDIA (NITROGEN) kg/ha";
+            medida = "Kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'COSP') {
+            getVar = ["v160", "v168", "v164", "v166", "v170", "v162"]
+            title = "CARBONO ORGÁNICO DEL SUELO, MEDIA (SOC)";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'COSDK') {
+            getVar = ["v075", "v079", "v077", "v078", "v080", "v076"]
+            title = "CARBONO ORGÁNICO DEL SUELO, MEDIA (SOC)";
+            medida = "dg/kg";
+        }
+        else if ('@ViewBag.variable' == 'CA') {
+            getVar = ["v094", "v102", "v098", "v100", "v104", "v096"]
+            title = "CONTENIDO DE ARCILLA, MEDIO (CLAY)";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'CAGK') {
+            getVar = ["v038", "v042", "v040", "v041", "v043", "v039"]
+            title = "CONTENIDO DE ARCILLA, MEDIO (CLAY)";
+            medida = "g/kg";
+        }
+        else if ('@ViewBag.variable' == 'CAKH') {
+            getVar = ["v093", "v101", "v097", "v099", "v103", "v095"]
+            title = "CONTENIDO DE ARCILLA, MEDIO (CLAY)";
+            medida = "Kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'CARP') {
+            getVar = ["v136", "v144", "v140", "v142", "v146", "v138"]
+            title = "CONTENIDO DE ARENA, MEDIO (SAND)";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'CARGK') {
+            getVar = ["v063", "v067", "v065", "v066", "v068", "v064"]
+            title = "CONTENIDO DE ARENA, MEDIO (SAND)";
+            medida = "g/kg";
+        }
+        else if ('@ViewBag.variable' == 'CARKH') {
+            getVar = ["v135", "v143", "v139", "v141", "v145", "v137"]
+            title = "CONTENIDO DE ARENA, MEDIO (SAND)";
+            medida = "kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'DCOSGD') {
+            getVar = ["v050", "v054", "v052", "v053", "v055", "v051"]
+            title = "DENSIDAD DE CORBONO ORGÁNICO DEL SUELO,<br>MEDIA (OCD)";
+            medida = "g/dm3";
+        }
+        else if ('@ViewBag.variable' == 'DCOSGC') {
+            getVar = ["v117", "v125", "v121", "v123", "v127", "v119"]
+            title = "DENSIDAD DE CORBONO ORGÁNICO DEL SUELO,<br>MEDIA (OCD)";
+            medida = "g/cm3";
+        }
+        else if ('@ViewBag.variable' == 'DCOSKM') {
+            getVar = ["v118", "v126", "v122", "v124", "v128", "v120"]
+            title = "DENSIDAD DE CORBONO ORGÁNICO DEL SUELO,<br>MEDIA (OCD)";
+            medida = "kg/m3";
+        }
+        else if ('@ViewBag.variable' == 'CLP') {
+            getVar = ["v148", "v156", "v152", "v154", "v158", "v150"]
+            title = "CONTENIDO DE LIMO, MEDIA (SILT)";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'CLGK') {
+            getVar = ["v069", "v073", "v071", "v072", "v074", "v070"]
+            title = "CONTENIDO DE LIMO, MEDIA (SILT)";
+            medida = "g/kg";
+        }
+        else if ('@ViewBag.variable' == 'CLKH') {
+            getVar = ["v147", "v155", "v151", "v153", "v157", "v149"]
+            title = "CONTENIDO DE LIMO, MEDIA (SILT)";
+            medida = "kg/ha";
+        }
+        else if ('@ViewBag.variable' == 'DPCM') {
+            getVar = ["v020", "v024", "v022", "v023", "v025", "v021"]
+            title = "DENSIDAD PARENTE, MEDIA (BDOD)";
+            medida = "cg/cm3";
+        }
+        else if ('@ViewBag.variable' == 'DPGC') {
+            getVar = ["v081", "v089", "v085", "v087", "v091", "v083"]
+            title = "DENSIDAD PARENTE, MEDIA (BDOD)";
+            medida = "g/cm3";
+        }
+        else if ('@ViewBag.variable' == 'DPKM') {
+            getVar = ["v082", "v092", "v086", "v088", "v092", "v084"]
+            title = "DENSIDAD PARENTE, MEDIA (BDOD)";
+            medida = "kg/m3";
+        }
+        else if ('@ViewBag.variable' == 'FG') {
+            getVar = ["v032", "v036", "v034", "v035", "v037", "v033"]
+            title = "FRAGMENTOS GRUESOS (VOLUMÉTRICOS), MEDIA (CFVO)";
+            medida = "cm3/dm3";
+        }
+        else if ('@ViewBag.variable' == 'NTP') {
+            getVar = ["v106", "v114", "v110", "v112", "v116", "v108"]
+            title = "NITRÓGENO TOTAL, MEDIA (NITROGEN) kg/ha";
+            medida = "%";
+        }
+        else if ('@ViewBag.variable' == 'NTCK') {
+            getVar = ["v044", "v048", "v046", "v047", "v049", "v045"]
+            title = "NITRÓGENO TOTAL, MEDIA (NITROGEN) kg/ha";
+            medida = "cg/kg";
+        }
+        else {}
+
+        // CREACIÓN DE VARIABLES AUTOMATIZADAS
+        var depth1 = getVar[0];
+        var depth2 = getVar[1];
+        var depth3 = getVar[2];
+        var depth4 = getVar[3];
+        var depth5 = getVar[4];
+        var depth6 = getVar[5];
+
+        // VARIABLES LEYENDA
+        var rangon1 = "";
+        var rangon2 = "";
+        var rangon3 = "";
+        var rangon4 = "";
+        var rangon5 = "";
+
+        var colorn1 = "";
+        var colorn2 = "";
+        var colorn3 = "";
+        var colorn4 = "";
+        var colorn5 = "";
+
+        // VARIABLES POPUP
+        var textDepth1 = "";
+        var textDepth2 = "";
+        var textDepth3 = "";
+        var textDepth4 = "";
+        var textDepth5 = "";
+        var textDepth6 = "";
+
+        // FORMATO DECIMALES
+        const format = num => {
+            const n = String(num),
+                p = n.indexOf('.')
+            return n.replace(
+                /\d(?=(?:\d{3})+(?:\.|$))/g,
+                (m, i) => p < 0 || i < p ? `${m}.` : m
+            )
+        }
+
+        // CREACIÓN Y AGREAGACION DEL MAPA AL DIV
+        var map = L.map('mapid').setView([-33.458725187656356, -70.66008634501547], 4);
+
+        // MAPA BASE
+        var base = L.tileLayer.grayscale('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            // id: 'mapbox/satellite-v9',
+            id: 'mapbox/light-v10',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(map);
+
+        /*var base = L.tileLayer.grayscale('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);*/
+
+
+        // POPUP COMPLEJO GLACIAR
+        function popup(feature, layer) {
+            if (feature.properties[depth1] != -999) {
+                textDepth1 = feature.properties[depth1] + " " + medida;
+                textDepth2 = feature.properties[depth2] + " " + medida;
+                textDepth3 = feature.properties[depth3] + " " + medida;
+                textDepth4 = feature.properties[depth4] + " " + medida;
+                textDepth5 = feature.properties[depth5] + " " + medida;
+                textDepth6 = feature.properties[depth6] + " " + medida;
+
+                layer.bindPopup(
+                    "<b><center>" + title + "</center></b>" +
+                    "<br><b>Región: </b>" + feature.properties.NOM_REGION +
+                    "<br><b>Provincia: </b>" + feature.properties.NOM_PROVIN +
+                    "<br><b>Comuna: </b>" + feature.properties.NOM_COMUNA + "<br>" +
+                    "<b>Unidad de medida: </b>" + medida + "<br>" +
+                    "<br><b>Profundidad (0 - 5 cm): </b>" + textDepth1 + " " + medida +
+                    "<br><b>Profundidad (5 - 15 cm): </b>" + textDepth2 + " " + medida +
+                    "<br><b>Profundidad (15 - 30 cm): </b>" + textDepth3 + " " + medida +
+                    "<br><b>Profundidad (30 - 60 cm): </b>" + textDepth4 + " " + medida +
+                    "<br><b>Profundidad (60 - 100 cm): </b>" + textDepth5 + " " + medida +
+                    "<br><b>Profundidad (100 - 200 cm): </b>" + textDepth6 + " " + medida + "<br>" +
+                    "<center><img class='bannerBottom' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/logo_DataIntelligence_normal.png' alt='Data Intelligence'/></center>", customOptions
+                );
+            }
+            else {
+                textDepth1 = "Sin información";
+                textDepth2 = "Sin información";
+                textDepth3 = "Sin información";
+                textDepth4 = "Sin información";
+                textDepth5 = "Sin información";
+                textDepth6 = "Sin información";
+
+                layer.bindPopup(
+                    "<b><center>" + title + "</center></b>" +
+                    "<br><b>Región: </b>" + feature.properties.NOM_REGION +
+                    "<br><b>Provincia: </b>" + feature.properties.NOM_PROVIN +
+                    "<br><b>Comuna: </b>" + feature.properties.NOM_COMUNA + "<br>" +
+                    "<b>Unidad de medida: </b>" + medida + "<br>" +
+                    "<br><b>Profundidad (0 - 5 cm): </b>" + textDepth1 +
+                    "<br><b>Profundidad (5 - 15 cm): </b>" + textDepth2 +
+                    "<br><b>Profundidad (15 - 30 cm): </b>" + textDepth3 +
+                    "<br><b>Profundidad (30 - 60 cm): </b>" + textDepth4 +
+                    "<br><b>Profundidad (60 - 100 cm): </b>" + textDepth5 +
+                    "<br><b>Profundidad (100 - 200 cm): </b>" + textDepth6 + "<br>" +
+                    "<center><img class='bannerBottom' src='https://raw.githubusercontent.com/Sud-Austral/mapa_glaciares/main/img/logo_DataIntelligence_normal.png' alt='Data Intelligence'/></center>", customOptions
+                );
+            }
+            
+        }
+        parseFloat(rangon1).toFixed(2)
+
+        // CCS TO CUSTIMIZE LEAFLET DEFAULT STYLES
+        var customOptions =
+        {
+            'className': 'custom'
+        }
+
+
+        // ESTILO 1
+        function estilo1(feature) {
+            rangon1 = feature.properties.R1;
+            rangon2 = feature.properties.R2;
+            rangon3 = feature.properties.R3;
+            rangon4 = feature.properties.R4;
+            rangon5 = feature.properties.R5;
+
+            colorn1 = feature.properties.C1;
+            colorn2 = feature.properties.C2;
+            colorn3 = feature.properties.C3;
+            colorn4 = feature.properties.C4;
+            colorn5 = feature.properties.C5;
+
+            if (feature.properties[depth1] <= -999) {
+                return {
+                    color: "#606060"
+                };
+            }
+            else if (feature.properties[depth1] <= feature.properties.R1 && feature.properties[depth1] > -999) {
+                return {
+                    color: "#" + feature.properties.C1
+                };
+            }
+            else if (feature.properties[depth1] > feature.properties.R1 && feature.properties[depth1] <= feature.properties.R2) {
+                return {
+                    color: "#" + feature.properties.C2
+                };
+            }
+            else if (feature.properties[depth1] > feature.properties.R2 && feature.properties[depth1] <= feature.properties.R3) {
+                return {
+                    color: "#" + feature.properties.C3
+                };
+            }
+            else if (feature.properties[depth1] > feature.properties.R3 && feature.properties[depth1] <= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C4
+                };
+            }
+            else if (feature.properties[depth1] >= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C5
+                };
+            }
+            else {
+                return 0
+            }
+        }
+
+        // ESTILO 2
+        function estilo2(feature) {
+
+            if (feature.properties[depth2] <= -999) {
+                return {
+                    color: "#606060"
+                };
+            }
+            else if (feature.properties[depth2] <= feature.properties.R1 && feature.properties[depth2] > -999) {
+                return {
+                    color: "#" + feature.properties.C1
+                };
+            }
+            else if (feature.properties[depth2] > feature.properties.R1 && feature.properties[depth2] <= feature.properties.R2) {
+                return {
+                    color: "#" + feature.properties.C2
+                };
+            }
+            else if (feature.properties[depth2] > feature.properties.R2 && feature.properties[depth2] <= feature.properties.R3) {
+                return {
+                    color: "#" + feature.properties.C3
+                };
+            }
+            else if (feature.properties[depth2] > feature.properties.R3 && feature.properties[depth2] <= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C4
+                };
+            }
+            else if (feature.properties[depth2] >= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C5
+                };
+            }
+            else {
+                return 0
+            }
+        }
+
+        // ESTILO 3
+        function estilo3(feature) {
+
+            if (feature.properties[depth3] <= -999) {
+                return {
+                    color: "#606060"
+                };
+            }
+            else if (feature.properties[depth3] <= feature.properties.R1 && feature.properties[depth3] > -999) {
+                return {
+                    color: "#" + feature.properties.C1
+                };
+            }
+            else if (feature.properties[depth3] > feature.properties.R1 && feature.properties[depth3] <= feature.properties.R2) {
+                return {
+                    color: "#" + feature.properties.C2
+                };
+            }
+            else if (feature.properties[depth3] > feature.properties.R2 && feature.properties[depth3] <= feature.properties.R3) {
+                return {
+                    color: "#" + feature.properties.C3
+                };
+            }
+            else if (feature.properties[depth3] > feature.properties.R3 && feature.properties[depth3] <= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C4
+                };
+            }
+            else if (feature.properties[depth3] >= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C5
+                };
+            }
+            else {
+                return 0
+            }
+        }
+
+        // ESTILO 4
+        function estilo4(feature) {
+
+            if (feature.properties[depth4] <= -999) {
+                return {
+                    color: "#606060"
+                };
+            }
+            else if (feature.properties[depth4] <= feature.properties.R1 && feature.properties[depth4] > -999) {
+                return {
+                    color: "#" + feature.properties.C1
+                };
+            }
+            else if (feature.properties[depth4] > feature.properties.R1 && feature.properties[depth4] <= feature.properties.R2) {
+                return {
+                    color: "#" + feature.properties.C2
+                };
+            }
+            else if (feature.properties[depth4] > feature.properties.R2 && feature.properties[depth4] <= feature.properties.R3) {
+                return {
+                    color: "#" + feature.properties.C3
+                };
+            }
+            else if (feature.properties[depth4] > feature.properties.R3 && feature.properties[depth4] <= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C4
+                };
+            }
+            else if (feature.properties[depth4] >= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C5
+                };
+            }
+            else {
+                return 0
+            }
+        }
+
+        // ESTILO 5
+        function estilo5(feature) {
+
+            if (feature.properties[depth5] <= -999) {
+                return {
+                    color: "#606060"
+                };
+            }
+            else if (feature.properties[depth5] <= feature.properties.R1 && feature.properties[depth5] > -999) {
+                return {
+                    color: "#" + feature.properties.C1
+                };
+            }
+            else if (feature.properties[depth5] > feature.properties.R1 && feature.properties[depth5] <= feature.properties.R2) {
+                return {
+                    color: "#" + feature.properties.C2
+                };
+            }
+            else if (feature.properties[depth5] > feature.properties.R2 && feature.properties[depth5] <= feature.properties.R3) {
+                return {
+                    color: "#" + feature.properties.C3
+                };
+            }
+            else if (feature.properties[depth5] > feature.properties.R3 && feature.properties[depth5] <= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C4
+                };
+            }
+            else if (feature.properties[depth5] >= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C5
+                };
+            }
+            else {
+                return 0
+            }
+        }
+
+        // ESTILO 6
+        function estilo6(feature) {
+
+            if (feature.properties[depth6] <= -999) {
+                return {
+                    color: "#606060"
+                };
+            }
+            else if (feature.properties[depth6] <= feature.properties.R1 && feature.properties[depth6] > -999) {
+                return {
+                    color: "#" + feature.properties.C1
+                };
+            }
+            else if (feature.properties[depth6] > feature.properties.R1 && feature.properties[depth6] <= feature.properties.R2) {
+                return {
+                    color: "#" + feature.properties.C2
+                };
+            }
+            else if (feature.properties[depth6] > feature.properties.R2 && feature.properties[depth6] <= feature.properties.R3) {
+                return {
+                    color: "#" + feature.properties.C3
+                };
+            }
+            else if (feature.properties[depth6] > feature.properties.R3 && feature.properties[depth6] <= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C4
+                };
+            }
+            else if (feature.properties[depth6] >= feature.properties.R4) {
+                return {
+                    color: "#" + feature.properties.C5
+                };
+            }
+            else {
+                return 0
+            }
+        }
+
+        // GEOJSON / SHAPE #1
+        var geojsonp1 = L.geoJson(comunas, {
+            style: estilo1,
+            pointToLayer: function (feature, latlng) {
+                return new L.CircleMarker(latlng, {
+                    radius: 5.5,
+                    fillOpacity: 1
+                });
+
+            },
+            onEachFeature: popup,
+        }).addTo(map);
+        map.fitBounds(geojsonp1.getBounds());
+
+        // GEOJSON / SHAPE #2
+        var geojsonp2 = L.geoJson(comunas, {
+            style: estilo2,
+            pointToLayer: function (feature, latlng) {
+                return new L.CircleMarker(latlng, {
+                    radius: 5.5,
+                    fillOpacity: 1
+                });
+
+            },
+            onEachFeature: popup,
+        }).addTo(map);
+        map.fitBounds(geojsonp2.getBounds());
+
+        // GEOJSON / SHAPE #3
+        var geojsonp3 = L.geoJson(comunas, {
+            style: estilo3,
+            pointToLayer: function (feature, latlng) {
+                return new L.CircleMarker(latlng, {
+                    radius: 5.5,
+                    fillOpacity: 1
+                });
+
+            },
+            onEachFeature: popup,
+        }).addTo(map);
+        map.fitBounds(geojsonp3.getBounds());
+
+        // GEOJSON / SHAPE #4
+        var geojsonp4 = L.geoJson(comunas, {
+            style: estilo4,
+            pointToLayer: function (feature, latlng) {
+                return new L.CircleMarker(latlng, {
+                    radius: 5.5,
+                    fillOpacity: 1
+                });
+
+            },
+            onEachFeature: popup,
+        }).addTo(map);
+        map.fitBounds(geojsonp4.getBounds());
+
+        // GEOJSON / SHAPE #5
+        var geojsonp5 = L.geoJson(comunas, {
+            style: estilo5,
+            pointToLayer: function (feature, latlng) {
+                return new L.CircleMarker(latlng, {
+                    radius: 5.5,
+                    fillOpacity: 1
+                });
+
+            },
+            onEachFeature: popup,
+        }).addTo(map);
+        map.fitBounds(geojsonp5.getBounds());
+
+        // GEOJSON / SHAPE #6
+        var geojsonp6 = L.geoJson(comunas, {
+            style: estilo6,
+            pointToLayer: function (feature, latlng) {
+                return new L.CircleMarker(latlng, {
+                    radius: 5.5,
+                    fillOpacity: 1
+                });
+
+            },
+            onEachFeature: popup,
+        }).addTo(map);
+        map.fitBounds(geojsonp6.getBounds());
+
+        // AGREGANDO LEYENDA
+        var legend = L.control({ position: 'bottomright' });
+
+        legend.onAdd = function () {
+            var div = L.DomUtil.create('div', 'legend');
+
+            div.innerHTML +=
+            '<div>' +
+            '<p class="titleLegend"><b>' + title + '</b></p>' +
+            '<p><span class="desc1" style="background: #' + colorn1 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Menor a ' + rangon1 + " " + medida + '<br>' +
+            '<span class="desc2" style="background: #' + colorn2 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' + rangon1 + " " + medida + ' - ' + rangon2 + " " + medida +'<br>' +
+            '<span class="desc3" style="background: #' + colorn3 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' + rangon2 + " " + medida + ' - ' + rangon3 + " " + medida + '<br>' +
+            '<span class="desc4" style="background: #' + colorn4 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' + rangon3 + " " + medida + ' - ' + rangon4 + " " + medida + '<br>' +
+            '<span class="desc5" style="background: #' + colorn5 + ';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Mayor a ' + rangon4 + " " + medida + '<br>' +
+            '<span class="desc6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sin información<br>' +
+            '</p>' +
+            '</div>';
+
+            return div;
+        };
+
+        legend.addTo(map);
+
+        // CAPAS
+        var capas = {
+            "Profundidad (0-5cm)": geojsonp1,
+            "Profundidad (5-15cm)": geojsonp2,
+            "Profundidad (15-30cm)": geojsonp3,
+            "Profundidad (30-60cm)": geojsonp6,
+            "Profundidad (60-100cm)": geojsonp5,
+            "Profundidad (100-200cm)": geojsonp6,
+
+        };
+
+        // LAYERS TO SHOW IN THE PUBLIC LINK
+        var overlayMaps = {
+
+        };
+
+        // ADDING LAYERS
+        L.control.layers(capas, overlayMaps, {
+            position: 'topright', // 'topleft', 'bottomleft', 'bottomright'
+            collapsed: false // true
+        }).addTo(map);
+
+        // REMOVE LAYER
+        map.removeLayer(geojsonp2);
+        map.removeLayer(geojsonp3);
+        map.removeLayer(geojsonp4);
+        map.removeLayer(geojsonp5);
+        map.removeLayer(geojsonp6);
+
+    </script>
+
+</body>
+</html>
