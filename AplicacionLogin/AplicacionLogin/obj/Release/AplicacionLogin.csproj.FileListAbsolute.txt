@@ -110,3 +110,4 @@ D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\Aplicaci
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.csproj.CopyComplete
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.dll
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.pdb
+D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.csprojAssemblyReference.cache
