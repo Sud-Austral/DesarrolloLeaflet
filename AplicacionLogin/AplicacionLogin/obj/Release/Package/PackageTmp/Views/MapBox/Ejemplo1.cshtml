@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo 3</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .legend {
+            background-color: #fff;
+            border-radius: 3px;
+            bottom: 30px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            padding: 10px;
+            position: absolute;
+            right: 10px;
+            z-index: 1;
+        }
+
+            .legend h4 {
+                margin: 0 0 10px;
+                text-align: center;
+            }
+
+            .legend div span {
+                border-radius: 50%;
+                display: inline-block;
+                height: 10px;
+                margin-right: 5px;
+                width: 10px;
+            }
+    </style>
+</head>
+<div>
+    <body>
+        <style>
+            .mapboxgl-popup {
+                max-width: 400px;
+                font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            }
+        </style>
+        <div id="map"></div>
+
+        <div id="state-legend" class="legend">
+            <h4>MUNICIPIOS</h4>
+            <div><span style="background-color: #1e82ad"></span>HOMBRES: 52.8%</div>
+            <div><span style="background-color: #f5498f"></span>MUJERES: 47.2%</div>
+        </div>
+
+        <div id="county-legend" class="legend" style="display: none">
+            <h4>MUNICIPIOS</h4>
+            <div><span style="background-color: #723122"></span>1,000,000</div>
+            <div><span style="background-color: #8b4225"></span>500,000</div>
+            <h4>MUNICIPIOS</h4>
+            <div><span style="background-color: #1e82ad"></span>HOMBRES</div>
+            <div><span style="background-color: #f5498f"></span>MUJERES</div>
+        </div>
+
+        <script>
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+            var arhivo = getParameterByName('file');
+
+            mapboxgl.accessToken = 'pk.eyJ1IjoiaGVjdG9ybWFyY2lhbGZsb3Jlc21lamlhIiwiYSI6ImNrc3Nha2Z0YjB0dGoyd28zY3VrY2plMmMifQ.uREmpaGz3s2SgpHVQc7Rdg';
+            // Create a new map.
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/hectormarcialfloresmejia/ckst4m5ky3tll18pso7xair9z',
+                center: [-70.66557950912359, -33.48621795345005],
+                zoom: 3
+            });
+
+
+            map.on('load', () => {
+                map.addSource('wms-test-source', {
+                    'type': 'raster',
+                    // use the tiles option to specify a WMS tile source URL
+                    // https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/
+                    'tiles': [
+                        //'https://img.nj.gov/imagerywms/Natural2015?bbox={bbox-epsg-3857}&format=image/png&service=WMS&version=1.1.1&request=GetMap&srs=EPSG:3857&transparent=true&width=256&height=256&layers=Natural2015'
+                        //'https://ows.mundialis.de/services/service?bbox={bbox-epsg-3857}&format=raster&service=WMS&version=1.1.1&request=GetMap&srs=EPSG:3857&transparent=true&width=256&height=256&layers=OSM-Overlay-WMS'
+                        'https://ide.dataintelligence-group.com/geoserver/glaciares/wms?service=WMS&version=1.1.0&request=GetMap&layers=glaciares%3AR14_BaseZonGlaciares_2017_2021q1&bbox=-72.32420218638171%2C-40.618011326661346%2C-71.6794614607777%2C-39.41945999927952&width=413&height=768&srs=EPSG%3A4326&format=image%2Fvnd.jpeg-png'
+                    ],
+                    'tileSize': 256
+                });
+                map.addLayer(
+                    {
+                        'id': 'wms-test-layer',
+                        'type': 'raster',
+                        'source': 'wms-test-source',
+                        //'paint': {}
+                    },
+                    //'aeroway-line'
+                );
+            });
+
+            
+        </script>
+
+    </body>
+</div>
+</html>

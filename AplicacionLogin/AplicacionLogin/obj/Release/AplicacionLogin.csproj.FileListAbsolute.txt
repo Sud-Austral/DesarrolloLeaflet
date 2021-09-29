@@ -1,3 +1,4 @@
+D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\EntityFramework.xml
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\AplicacionLogin.dll.config
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\AplicacionLogin.dll
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\AplicacionLogin.pdb
@@ -69,7 +70,6 @@ D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\Antlr3.Runtime.p
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\System.Net.Http.Formatting.xml
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\System.Web.Http.xml
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\System.Web.Http.WebHost.xml
-D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\EntityFramework.xml
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\EntityFramework.SqlServer.xml
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\Microsoft.AspNet.Identity.Core.xml
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\bin\Microsoft.AspNet.Identity.Owin.xml
@@ -110,4 +110,3 @@ D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\Aplicaci
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.csproj.CopyComplete
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.dll
 D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.pdb
-D:\GitHub\DesarrolloLeaflet\AplicacionLogin\AplicacionLogin\obj\Release\AplicacionLogin.csprojAssemblyReference.cache
